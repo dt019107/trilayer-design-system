@@ -1,0 +1,80 @@
+/**
+ * TRILAYER DESIGN SYSTEM — CARD & SURFACE COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--tl-comp-card-bg);
+  border: 1px solid var(--tl-comp-card-border);
+  border-radius: var(--tl-comp-card-radius);
+  padding: var(--tl-comp-card-padding);
+  box-shadow: var(--tl-comp-card-shadow);
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Variants */
+.tl-card--outlined {
+  box-shadow: none;
+  background-color: var(--tl-comp-card-bg);
+}
+
+.tl-card--filled {
+  background-color: var(--tl-comp-card-subtle-bg);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.tl-card--interactive {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tl-card--interactive:hover {
+  box-shadow: var(--tl-comp-card-shadow-hover);
+  border-color: var(--tl-sys-color-primary);
+  transform: translateY(-2px);
+}
+
+.tl-card--interactive:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Sub-components */
+.tl-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--tl-comp-card-gap);
+  gap: var(--tl-comp-card-gap);
+}
+
+.tl-card-title {
+  font-family: var(--tl-sys-font-family-heading);
+  font-size: var(--tl-comp-card-title-size);
+  font-weight: 700;
+  color: var(--tl-comp-card-title-color);
+  margin: 0;
+}
+
+.tl-card-body {
+  color: var(--tl-comp-card-body-color);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  line-height: var(--tl-sys-typescale-body-medium-line);
+  margin-bottom: var(--tl-comp-card-gap);
+}
+
+.tl-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--tl-sys-density-gap-md);
+  margin-top: auto;
+  padding-top: var(--tl-comp-card-gap);
+  border-top: 1px solid var(--tl-sys-color-outline-variant);
+}

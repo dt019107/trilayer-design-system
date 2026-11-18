@@ -1,0 +1,236 @@
+/**
+ * TRILAYER DESIGN SYSTEM — LAYER 3: COMPONENT TOKENS
+ * Component-scoped tokens that alias Layer 2 Semantic tokens (--tl-sys-*).
+ * Strict naming convention: --tl-comp-*
+ * 
+ * STRICT ARCHITECTURAL RULE:
+ * 1. This file NEVER references Layer 1 Primitives (--tl-ref-*) directly.
+ * 2. This file NEVER contains raw hex colors, pixel values, or numbers.
+ * 3. Every value is strictly an alias to a semantic token: var(--tl-sys-*).
+ */
+
+:root {
+  /* ==========================================================================
+     1. BUTTON COMPONENT TOKENS (--tl-comp-button-*)
+     ========================================================================== */
+  /* Shared Base */
+  --tl-comp-button-font-family:       var(--tl-sys-font-family-body);
+  --tl-comp-button-radius:            var(--tl-sys-shape-control);
+  --tl-comp-button-transition:        var(--tl-sys-motion-duration-quick) var(--tl-sys-motion-easing-standard);
+
+  /* Heights & Paddings by Density */
+  --tl-comp-button-height-sm:         var(--tl-sys-density-control-height-sm);
+  --tl-comp-button-height-md:         var(--tl-sys-density-control-height-md);
+  --tl-comp-button-height-lg:         var(--tl-sys-density-control-height-lg);
+  --tl-comp-button-padding-x-sm:      var(--tl-sys-density-padding-x-sm);
+  --tl-comp-button-padding-x-md:      var(--tl-sys-density-padding-x-md);
+  --tl-comp-button-padding-x-lg:      var(--tl-sys-density-padding-x-lg);
+  --tl-comp-button-gap:               var(--tl-sys-density-gap-md);
+
+  /* Primary Variant */
+  --tl-comp-button-primary-bg:        var(--tl-sys-color-primary);
+  --tl-comp-button-primary-text:      var(--tl-sys-color-on-primary);
+  --tl-comp-button-primary-border:    var(--tl-sys-color-transparent);
+  --tl-comp-button-primary-hover-bg:  var(--tl-sys-color-primary-hover);
+  --tl-comp-button-primary-active-bg: var(--tl-sys-color-primary-active);
+  --tl-comp-button-primary-shadow:    var(--tl-sys-elevation-1);
+  --tl-comp-button-spinner-size:      var(--tl-sys-space-md);
+
+  /* Secondary / Tonal Variant */
+  --tl-comp-button-secondary-bg:        var(--tl-sys-color-secondary-container);
+  --tl-comp-button-secondary-text:      var(--tl-sys-color-on-secondary-container);
+  --tl-comp-button-secondary-border:    var(--tl-sys-color-transparent);
+  --tl-comp-button-secondary-hover-bg:  var(--tl-sys-color-primary-container);
+  --tl-comp-button-secondary-active-bg: var(--tl-sys-color-outline);
+
+  /* Tertiary / Teal Variant (Component Layer Motif) */
+  --tl-comp-button-tertiary-bg:        var(--tl-sys-color-tertiary);
+  --tl-comp-button-tertiary-text:      var(--tl-sys-color-on-tertiary);
+  --tl-comp-button-tertiary-border:    var(--tl-sys-color-transparent);
+  --tl-comp-button-tertiary-hover-bg:  var(--tl-sys-color-tertiary-container);
+
+  /* Outline Variant */
+  --tl-comp-button-outline-bg:         var(--tl-sys-color-transparent);
+  --tl-comp-button-outline-text:       var(--tl-sys-color-on-surface);
+  --tl-comp-button-outline-border:     var(--tl-sys-color-outline);
+  --tl-comp-button-outline-hover-bg:   var(--tl-sys-color-surface-container);
+  --tl-comp-button-outline-hover-border: var(--tl-sys-color-primary);
+
+  /* Ghost / Text Variant */
+  --tl-comp-button-ghost-bg:           var(--tl-sys-color-transparent);
+  --tl-comp-button-ghost-text:         var(--tl-sys-color-on-surface-variant);
+  --tl-comp-button-ghost-border:       var(--tl-sys-color-transparent);
+  --tl-comp-button-ghost-hover-bg:     var(--tl-sys-color-surface-container-high);
+  --tl-comp-button-ghost-hover-text:   var(--tl-sys-color-on-surface);
+
+  /* Danger / Destructive Variant */
+  --tl-comp-button-danger-bg:          var(--tl-sys-color-error);
+  --tl-comp-button-danger-text:        var(--tl-sys-color-on-error);
+  --tl-comp-button-danger-border:      var(--tl-sys-color-transparent);
+  --tl-comp-button-danger-hover-bg:    var(--tl-sys-color-error-container);
+  --tl-comp-button-danger-shadow:      var(--tl-sys-elevation-1);
+
+  /* ==========================================================================
+     2. TEXT FIELD & INPUT CONTROLS (--tl-comp-input-*)
+     ========================================================================== */
+  --tl-comp-input-bg:                 var(--tl-sys-color-surface-container-lowest);
+  --tl-comp-input-text:               var(--tl-sys-color-on-surface);
+  --tl-comp-input-placeholder:        var(--tl-sys-color-on-surface-muted);
+  --tl-comp-input-border:             var(--tl-sys-color-outline);
+  --tl-comp-input-border-hover:       var(--tl-sys-color-on-surface-variant);
+  --tl-comp-input-border-focus:       var(--tl-sys-color-primary);
+  --tl-comp-input-radius:             var(--tl-sys-shape-control);
+  --tl-comp-input-height:             var(--tl-sys-density-control-height-md);
+  --tl-comp-input-padding-x:          var(--tl-sys-density-padding-x-md);
+  --tl-comp-input-font-size:          var(--tl-sys-typescale-body-medium-size);
+  --tl-comp-input-error-border:       var(--tl-sys-color-error);
+  --tl-comp-input-error-text:         var(--tl-sys-color-error);
+  --tl-comp-input-label-color:        var(--tl-sys-color-on-surface);
+  --tl-comp-input-helper-color:       var(--tl-sys-color-on-surface-muted);
+
+  /* ==========================================================================
+     3. SELECTION CONTROLS (SWITCH, CHECKBOX, RADIO)
+     ========================================================================== */
+  --tl-comp-control-track-bg:         var(--tl-sys-color-surface-container-highest);
+  --tl-comp-control-track-active-bg:  var(--tl-sys-color-primary);
+  --tl-comp-control-thumb-bg:         var(--tl-sys-color-on-surface);
+  --tl-comp-control-border:           var(--tl-sys-color-outline);
+  --tl-comp-control-radius:           var(--tl-sys-shape-control);
+  --tl-comp-checkbox-size:            var(--tl-sys-space-md);
+  --tl-comp-radio-size:               var(--tl-sys-space-md);
+  --tl-comp-switch-width:             var(--tl-sys-space-xl);
+  --tl-comp-switch-height:            var(--tl-sys-space-lg);
+  --tl-comp-switch-thumb-size:        var(--tl-sys-space-md);
+
+  /* ==========================================================================
+     4. CARD & CONTAINER (--tl-comp-card-*)
+     ========================================================================== */
+  --tl-comp-card-bg:                  var(--tl-sys-color-surface-container);
+  --tl-comp-card-subtle-bg:           var(--tl-sys-color-surface-container-high);
+  --tl-comp-card-border:              var(--tl-sys-color-outline);
+  --tl-comp-card-radius:              var(--tl-sys-shape-container);
+  --tl-comp-card-padding:             var(--tl-sys-space-lg);
+  --tl-comp-card-gap:                 var(--tl-sys-space-md);
+  --tl-comp-card-shadow:              var(--tl-sys-elevation-1);
+  --tl-comp-card-shadow-hover:        var(--tl-sys-elevation-2);
+  --tl-comp-card-title-color:         var(--tl-sys-color-on-surface);
+  --tl-comp-card-title-size:          var(--tl-sys-typescale-title-large-size);
+  --tl-comp-card-body-color:          var(--tl-sys-color-on-surface-variant);
+
+  /* ==========================================================================
+     5. BADGE & CHIP (--tl-comp-badge-*, --tl-comp-chip-*)
+     ========================================================================== */
+  --tl-comp-badge-radius:             var(--tl-sys-shape-badge);
+  --tl-comp-badge-font-size:          var(--tl-sys-typescale-label-caps-size);
+  --tl-comp-badge-gap:                var(--tl-sys-space-xs);
+  --tl-comp-badge-padding-y:          var(--tl-sys-space-2xs);
+  --tl-comp-badge-padding-x:          var(--tl-sys-space-sm);
+  --tl-comp-badge-dot-size:           var(--tl-sys-space-xs);
+  --tl-comp-badge-neutral-bg:         var(--tl-sys-color-surface-container-high);
+  --tl-comp-badge-neutral-text:       var(--tl-sys-color-on-surface-variant);
+  --tl-comp-badge-neutral-border:     var(--tl-sys-color-outline-variant);
+
+  --tl-comp-badge-brand-bg:           var(--tl-sys-color-primary-container);
+  --tl-comp-badge-brand-text:         var(--tl-sys-color-on-primary-container);
+  --tl-comp-badge-brand-border:       var(--tl-sys-color-primary);
+
+  --tl-comp-badge-success-bg:         var(--tl-sys-color-success-container);
+  --tl-comp-badge-success-text:       var(--tl-sys-color-on-success-container);
+  --tl-comp-badge-success-border:     var(--tl-sys-color-success-border);
+
+  --tl-comp-badge-warning-bg:         var(--tl-sys-color-warning-container);
+  --tl-comp-badge-warning-text:       var(--tl-sys-color-on-warning-container);
+  --tl-comp-badge-warning-border:     var(--tl-sys-color-warning-border);
+
+  --tl-comp-badge-danger-bg:          var(--tl-sys-color-error-container);
+  --tl-comp-badge-danger-text:        var(--tl-sys-color-on-error-container);
+  --tl-comp-badge-danger-border:      var(--tl-sys-color-error-border);
+
+  /* Chips */
+  --tl-comp-chip-bg:                  var(--tl-sys-color-surface-container);
+  --tl-comp-chip-text:                var(--tl-sys-color-on-surface);
+  --tl-comp-chip-border:              var(--tl-sys-color-outline);
+  --tl-comp-chip-radius:              var(--tl-sys-shape-control);
+  --tl-comp-chip-gap:                 var(--tl-sys-density-gap-md);
+  --tl-comp-chip-padding-x:           var(--tl-sys-density-padding-x-sm);
+  --tl-comp-chip-active-bg:           var(--tl-sys-color-primary-container);
+  --tl-comp-chip-active-text:         var(--tl-sys-color-on-primary-container);
+  --tl-comp-chip-active-border:       var(--tl-sys-color-primary);
+
+  /* ==========================================================================
+     6. DIALOG & MODAL OVERLAYS (--tl-comp-dialog-*)
+     ========================================================================== */
+  --tl-comp-dialog-scrim-bg:          var(--tl-sys-color-scrim);
+  --tl-comp-dialog-scrim-opacity:     var(--tl-sys-opacity-scrim);
+  --tl-comp-dialog-surface-bg:        var(--tl-sys-color-surface);
+  --tl-comp-dialog-border:            var(--tl-sys-color-outline);
+  --tl-comp-dialog-radius:            var(--tl-sys-shape-overlay);
+  --tl-comp-dialog-shadow:            var(--tl-sys-elevation-4);
+  --tl-comp-dialog-title-color:       var(--tl-sys-color-on-surface);
+  --tl-comp-dialog-title-size:        var(--tl-sys-typescale-title-large-size);
+  --tl-comp-dialog-body-color:        var(--tl-sys-color-on-surface-variant);
+  --tl-comp-dialog-padding:           var(--tl-sys-space-lg);
+  --tl-comp-dialog-gap:               var(--tl-sys-density-gap-lg);
+  --tl-comp-dialog-z-index:           var(--tl-sys-z-modal);
+
+  /* ==========================================================================
+     7. NAVIGATION, HEADER & SIDEBAR (--tl-comp-header-*, --tl-comp-nav-*)
+     ========================================================================== */
+  --tl-comp-header-bg:                var(--tl-sys-color-surface);
+  --tl-comp-header-border:            var(--tl-sys-color-outline-variant);
+  --tl-comp-header-title:             var(--tl-sys-color-on-surface);
+  --tl-comp-sidebar-bg:               var(--tl-sys-color-surface-container-low);
+  --tl-comp-sidebar-border:           var(--tl-sys-color-outline-variant);
+  --tl-comp-nav-item-text:            var(--tl-sys-color-on-surface-variant);
+  --tl-comp-nav-item-active-bg:       var(--tl-sys-color-primary-container);
+  --tl-comp-nav-item-active-text:     var(--tl-sys-color-on-primary-container);
+  --tl-comp-nav-item-hover-bg:        var(--tl-sys-color-surface-container-high);
+  --tl-comp-nav-item-radius:          var(--tl-sys-shape-control);
+
+  /* ==========================================================================
+     8. TOOLTIP & TOAST NOTIFICATIONS (--tl-comp-tooltip-*, --tl-comp-toast-*)
+     ========================================================================== */
+  --tl-comp-tooltip-bg:               var(--tl-sys-color-inverse-surface);
+  --tl-comp-tooltip-text:             var(--tl-sys-color-inverse-on-surface);
+  --tl-comp-tooltip-radius:           var(--tl-sys-shape-xs);
+  --tl-comp-tooltip-font-size:        var(--tl-sys-typescale-label-caps-size);
+  --tl-comp-tooltip-shadow:           var(--tl-sys-elevation-2);
+  --tl-comp-tooltip-padding-y:        var(--tl-sys-space-xs);
+  --tl-comp-tooltip-padding-x:        var(--tl-sys-space-sm);
+  --tl-comp-tooltip-z-index:          var(--tl-sys-z-tooltip);
+
+  --tl-comp-toast-bg:                 var(--tl-sys-color-surface-container-highest);
+  --tl-comp-toast-border:             var(--tl-sys-color-outline);
+  --tl-comp-toast-text:               var(--tl-sys-color-on-surface);
+  --tl-comp-toast-radius:             var(--tl-sys-shape-container);
+  --tl-comp-toast-shadow:             var(--tl-sys-elevation-3);
+  --tl-comp-toast-z-index:            var(--tl-sys-z-toast);
+  --tl-comp-toast-padding-y:          var(--tl-sys-space-sm);
+  --tl-comp-toast-padding-x:          var(--tl-sys-space-md);
+  --tl-comp-toast-close-padding:      var(--tl-sys-space-xs);
+  --tl-comp-toast-offset:             var(--tl-sys-space-lg);
+  --tl-comp-toast-gap:                var(--tl-sys-density-gap-md);
+
+  /* ==========================================================================
+     9. TABS & ACCORDION (--tl-comp-tabs-*, --tl-comp-accordion-*)
+     ========================================================================== */
+  --tl-comp-tabs-indicator-color:     var(--tl-sys-color-link);
+  --tl-comp-tabs-text:                var(--tl-sys-color-on-surface-variant);
+  --tl-comp-tabs-active-text:         var(--tl-sys-color-on-surface);
+  --tl-comp-tabs-gap:                 var(--tl-sys-space-md);
+  --tl-comp-tabs-margin-bottom:       var(--tl-sys-space-md);
+  --tl-comp-accordion-border:         var(--tl-sys-color-outline);
+  --tl-comp-accordion-header-bg:      var(--tl-sys-color-transparent);
+  --tl-comp-accordion-hover-bg:       var(--tl-sys-color-surface-container-low);
+  --tl-comp-divider-margin:           var(--tl-sys-space-lg);
+  --tl-comp-divider-vertical-height:  var(--tl-sys-space-lg);
+  --tl-comp-divider-vertical-margin:  var(--tl-sys-space-md);
+
+  /* ==========================================================================
+     10. SIGNATURE FEATURE: LAYER INSPECTOR ACCENT TOKENS
+     ========================================================================== */
+  --tl-comp-layer-prim-accent:        var(--tl-sys-color-layer-primitives);
+  --tl-comp-layer-sem-accent:         var(--tl-sys-color-layer-semantic);
+  --tl-comp-layer-comp-accent:        var(--tl-sys-color-layer-component);
+}
+

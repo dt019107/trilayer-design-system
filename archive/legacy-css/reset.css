@@ -1,0 +1,62 @@
+/**
+ * MODERN CSS RESET & FOUNDATIONAL BASE
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: var(--sem-font-family-body);
+  font-size: 16px;
+  line-height: var(--pr-font-lineheight-normal);
+  color: var(--sem-color-text-primary);
+  background-color: var(--sem-color-bg-canvas);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: var(--sem-color-text-brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+code, kbd, pre {
+  font-family: var(--sem-font-family-code);
+  font-size: 0.9em;
+}
+

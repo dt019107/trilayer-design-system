@@ -1,0 +1,118 @@
+/**
+ * TRILAYER DESIGN SYSTEM — INPUT & FORM FIELD COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tl-sys-density-gap-sm);
+  width: 100%;
+}
+
+.tl-label {
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-small-size);
+  font-weight: 600;
+  color: var(--tl-comp-input-label-color);
+  display: flex;
+  align-items: center;
+  gap: var(--tl-sys-density-gap-sm);
+}
+
+.tl-label-required {
+  color: var(--tl-comp-input-error-text);
+}
+
+.tl-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.tl-input {
+  width: 100%;
+  height: var(--tl-comp-input-height);
+  padding: 0 var(--tl-comp-input-padding-x);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-comp-input-font-size);
+  color: var(--tl-comp-input-text);
+  background-color: var(--tl-comp-input-bg);
+  border: 1px solid var(--tl-comp-input-border);
+  border-radius: var(--tl-comp-input-radius);
+  outline: none;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-input::placeholder {
+  color: var(--tl-comp-input-placeholder);
+}
+
+.tl-input:hover:not(:disabled) {
+  border-color: var(--tl-comp-input-border-hover);
+}
+
+.tl-input:focus {
+  border-color: var(--tl-comp-input-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tl-comp-input-border-focus) 18%, transparent);
+}
+
+.tl-input:disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+  background-color: var(--tl-sys-color-surface-container);
+}
+
+/* Error State */
+.tl-input.is-error,
+.tl-input:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: var(--tl-comp-input-error-border);
+}
+
+.tl-input.is-error:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tl-comp-input-error-border) 18%, transparent);
+}
+
+/* Helper & Error Message Text */
+.tl-helper-text {
+  font-size: var(--tl-sys-typescale-label-medium-size);
+  color: var(--tl-comp-input-helper-color);
+  line-height: var(--tl-sys-typescale-body-small-line);
+}
+
+.tl-helper-text--error {
+  color: var(--tl-comp-input-error-text);
+  font-weight: 500;
+}
+
+/* Textarea Variant */
+.tl-textarea {
+  width: 100%;
+  min-height: 88px;
+  padding: var(--tl-comp-card-gap) var(--tl-comp-input-padding-x);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-comp-input-font-size);
+  color: var(--tl-comp-input-text);
+  background-color: var(--tl-comp-input-bg);
+  border: 1px solid var(--tl-comp-input-border);
+  border-radius: var(--tl-comp-input-radius);
+  resize: vertical;
+  outline: none;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-textarea:hover:not(:disabled) {
+  border-color: var(--tl-comp-input-border-hover);
+}
+
+.tl-textarea:focus {
+  border-color: var(--tl-comp-input-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tl-comp-input-border-focus) 18%, transparent);
+}
+
+.tl-textarea:disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+}

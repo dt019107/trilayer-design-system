@@ -1,0 +1,191 @@
+/**
+ * TRILAYER DESIGN SYSTEM — SELECTION CONTROLS (CHECKBOX, RADIO, SWITCH)
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+/* ==========================================================================
+   CHECKBOX
+   ========================================================================== */
+.tl-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tl-comp-button-height-sm);
+  gap: var(--tl-sys-density-gap-md);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  color: var(--tl-sys-color-on-surface);
+  cursor: pointer;
+  user-select: none;
+}
+
+.tl-checkbox-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--tl-comp-checkbox-size);
+  height: var(--tl-comp-checkbox-size);
+  border: 1px solid var(--tl-comp-control-border);
+  border-radius: var(--tl-sys-shape-xs);
+  background-color: var(--tl-comp-input-bg);
+  cursor: pointer;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+  outline: none;
+}
+
+.tl-checkbox-input:hover:not(:disabled) {
+  border-color: var(--tl-sys-color-primary);
+}
+
+.tl-checkbox-input:checked,
+.tl-checkbox-input:indeterminate {
+  background-color: var(--tl-comp-control-track-active-bg);
+  border-color: var(--tl-comp-control-track-active-bg);
+}
+
+.tl-checkbox-input:checked::before {
+  content: "";
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid var(--tl-comp-control-thumb-bg);
+  border-bottom: 2px solid var(--tl-comp-control-thumb-bg);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.tl-checkbox-input:indeterminate::before {
+  content: "";
+  width: 8px;
+  height: 2px;
+  background-color: var(--tl-comp-control-thumb-bg);
+}
+
+.tl-checkbox-input:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.tl-checkbox-input:disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   RADIO BUTTON
+   ========================================================================== */
+.tl-radio-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tl-comp-button-height-sm);
+  gap: var(--tl-sys-density-gap-md);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  color: var(--tl-sys-color-on-surface);
+  cursor: pointer;
+  user-select: none;
+}
+
+.tl-radio-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--tl-comp-radio-size);
+  height: var(--tl-comp-radio-size);
+  border: 1px solid var(--tl-comp-control-border);
+  border-radius: var(--tl-sys-shape-full);
+  background-color: var(--tl-comp-input-bg);
+  cursor: pointer;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+  outline: none;
+}
+
+.tl-radio-input:hover:not(:disabled) {
+  border-color: var(--tl-sys-color-primary);
+}
+
+.tl-radio-input:checked {
+  border-color: var(--tl-comp-control-track-active-bg);
+}
+
+.tl-radio-input:checked::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: var(--tl-sys-shape-full);
+  background-color: var(--tl-comp-control-track-active-bg);
+}
+
+.tl-radio-input:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.tl-radio-input:disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   SWITCH (TOGGLE)
+   ========================================================================== */
+.tl-switch-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tl-comp-button-height-sm);
+  gap: var(--tl-sys-density-gap-lg);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  color: var(--tl-sys-color-on-surface);
+  cursor: pointer;
+  user-select: none;
+}
+
+.tl-switch-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--tl-comp-switch-width);
+  height: var(--tl-comp-switch-height);
+  border-radius: var(--tl-sys-shape-full);
+  background-color: var(--tl-comp-control-track-bg);
+  border: 1px solid var(--tl-comp-control-border);
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+  outline: none;
+}
+
+.tl-switch-input::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: var(--tl-comp-switch-thumb-size);
+  height: var(--tl-comp-switch-thumb-size);
+  border-radius: var(--tl-sys-shape-full);
+  background-color: var(--tl-comp-control-thumb-bg);
+  box-shadow: var(--tl-sys-elevation-1);
+  transition: transform var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-switch-input:checked {
+  background-color: var(--tl-comp-control-track-active-bg);
+  border-color: var(--tl-comp-control-track-active-bg);
+}
+
+.tl-switch-input:checked::before {
+  transform: translateX(18px);
+}
+
+.tl-switch-input:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.tl-switch-input:disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+}

@@ -1,0 +1,319 @@
+/**
+ * LAYER 2: SEMANTIC TOKENS
+ * Purpose-driven tokens that alias Layer 1 (Primitives).
+ * Handles Light/Dark theming, multi-brand palettes, and density modes.
+ * RULE: Every value here must be a var(--pr-*) primitive.
+ */
+
+:root,
+[data-theme="light"] {
+  /* Brand Default Assignment (Cobalt #1e5ee6) */
+  --sem-brand-50: var(--pr-color-blue-50);
+  --sem-brand-100: var(--pr-color-blue-100);
+  --sem-brand-200: var(--pr-color-blue-200);
+  --sem-brand-300: var(--pr-color-blue-300);
+  --sem-brand-400: var(--pr-color-blue-400);
+  --sem-brand-500: var(--pr-color-blue-500);
+  --sem-brand-600: var(--pr-color-blue-600);
+  --sem-brand-700: var(--pr-color-blue-700);
+  --sem-brand-800: var(--pr-color-blue-800);
+  --sem-brand-900: var(--pr-color-blue-900);
+  --sem-brand-950: var(--pr-color-blue-950);
+
+  /* Semantic Backgrounds (Light - Warm Luxury Crisp) */
+  --sem-color-bg-canvas: #fbfbfd;
+  --sem-color-bg-surface: #ffffff;
+  --sem-color-bg-surface-raised: #ffffff;
+  --sem-color-bg-surface-sunken: #f4f5f8;
+  --sem-color-bg-subtle: #f4f5f8;
+  --sem-color-bg-muted: #e9ecf1;
+
+  /* Brand Backgrounds (Light) - Dynamically derived from active brand */
+  --sem-color-bg-brand-default: var(--sem-brand-600);
+  --sem-color-bg-brand-hover: var(--sem-brand-700);
+  --sem-color-bg-brand-active: var(--sem-brand-800);
+  --sem-color-bg-brand-subtle: color-mix(in srgb, var(--sem-brand-500) 10%, transparent);
+  --sem-color-bg-brand-subtle-hover: color-mix(in srgb, var(--sem-brand-500) 18%, transparent);
+
+  /* Semantic Text Colors (Light) */
+  --sem-color-text-primary: #0f172a;
+  --sem-color-text-secondary: #475569;
+  --sem-color-text-muted: #94a3b8;
+  --sem-color-text-inverse: #ffffff;
+  --sem-color-text-brand: var(--sem-brand-600);
+
+  /* Semantic Borders (Light) */
+  --sem-color-border-subtle: rgba(15, 23, 42, 0.07);
+  --sem-color-border-default: rgba(15, 23, 42, 0.12);
+  --sem-color-border-strong: rgba(15, 23, 42, 0.20);
+  --sem-color-border-focus: var(--sem-brand-500);
+  --sem-color-border-brand: var(--sem-brand-600);
+
+  /* M3 Tonal Container Roles (Light) */
+  --sem-color-primary-container: color-mix(in srgb, var(--sem-brand-500) 12%, var(--sem-color-bg-surface));
+  --sem-color-on-primary-container: var(--sem-brand-700);
+  --sem-color-secondary-container: var(--sem-color-bg-subtle);
+  --sem-color-on-secondary-container: var(--sem-color-text-primary);
+  --sem-color-tertiary: #e06d53;
+  --sem-color-tertiary-container: color-mix(in srgb, #e06d53 14%, var(--sem-color-bg-surface));
+  --sem-color-on-tertiary-container: #94321b;
+
+  /* Feedback: Success (Light) */
+  --sem-color-status-success-bg: var(--pr-color-emerald-50);
+  --sem-color-status-success-subtle: var(--pr-color-emerald-100);
+  --sem-color-status-success-border: var(--pr-color-emerald-200);
+  --sem-color-status-success-solid: var(--pr-color-emerald-600);
+  --sem-color-status-success-text: var(--pr-color-emerald-800);
+
+  /* Feedback: Warning (Light) */
+  --sem-color-status-warning-bg: var(--pr-color-amber-50);
+  --sem-color-status-warning-subtle: var(--pr-color-amber-100);
+  --sem-color-status-warning-border: var(--pr-color-amber-200);
+  --sem-color-status-warning-solid: var(--pr-color-amber-500);
+  --sem-color-status-warning-text: var(--pr-color-amber-900);
+
+  /* Feedback: Danger / Error (Light) */
+  --sem-color-status-danger-bg: var(--pr-color-red-50);
+  --sem-color-status-danger-subtle: var(--pr-color-red-100);
+  --sem-color-status-danger-border: var(--pr-color-red-200);
+  --sem-color-status-danger-solid: var(--pr-color-red-600);
+  --sem-color-status-danger-solid-hover: var(--pr-color-red-700);
+  --sem-color-status-danger-text: var(--pr-color-red-700);
+
+  /* Feedback: Info (Light) */
+  --sem-color-status-info-bg: var(--pr-color-sky-50);
+  --sem-color-status-info-subtle: var(--pr-color-sky-100);
+  --sem-color-status-info-border: var(--pr-color-sky-200);
+  --sem-color-status-info-solid: var(--pr-color-sky-600);
+  --sem-color-status-info-text: var(--pr-color-sky-800);
+
+  /* Semantic Shadows (Light) */
+  --sem-shadow-card: var(--pr-shadow-sm);
+  --sem-shadow-card-hover: var(--pr-shadow-md);
+  --sem-shadow-dropdown: var(--pr-shadow-lg);
+  --sem-shadow-modal: var(--pr-shadow-2xl);
+  --sem-shadow-toast: var(--pr-shadow-xl);
+  --sem-shadow-focus-ring: 0 0 0 3px color-mix(in srgb, var(--sem-brand-600) 24%, transparent);
+  --sem-shadow-danger-ring: 0 0 0 3px rgba(220, 38, 38, 0.22);
+
+  /* Overlay */
+  --sem-color-overlay: rgba(13, 21, 34, 0.65);
+}
+
+/* ==========================================================================
+   DARK MODE
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Semantic Backgrounds (Dark - Luxury Velvet Obsidian) */
+  --sem-color-bg-canvas: #0c0e12;
+  --sem-color-bg-surface: #13161c;
+  --sem-color-bg-surface-raised: #181c24;
+  --sem-color-bg-surface-sunken: #08090b;
+  --sem-color-bg-subtle: #191c23;
+  --sem-color-bg-muted: #222630;
+
+  /* Brand Backgrounds (Dark) - Dynamic across ALL brand modes */
+  --sem-color-bg-brand-default: var(--sem-brand-500);
+  --sem-color-bg-brand-hover: var(--sem-brand-400);
+  --sem-color-bg-brand-active: var(--sem-brand-600);
+  --sem-color-bg-brand-subtle: color-mix(in srgb, var(--sem-brand-500) 18%, transparent);
+  --sem-color-bg-brand-subtle-hover: color-mix(in srgb, var(--sem-brand-500) 28%, transparent);
+
+  /* Semantic Text Colors (Dark) */
+  --sem-color-text-primary: #f8fafc;
+  --sem-color-text-secondary: #94a3b8;
+  --sem-color-text-muted: #64748b;
+  --sem-color-text-inverse: #0c0e12;
+  --sem-color-text-brand: var(--sem-brand-400);
+
+  /* Semantic Borders (Dark) */
+  --sem-color-border-subtle: rgba(255, 255, 255, 0.08);
+  --sem-color-border-default: rgba(255, 255, 255, 0.13);
+  --sem-color-border-strong: rgba(255, 255, 255, 0.22);
+  --sem-color-border-focus: var(--sem-brand-400);
+  --sem-color-border-brand: var(--sem-brand-500);
+
+  /* M3 Tonal Container Roles (Dark) */
+  --sem-color-primary-container: color-mix(in srgb, var(--sem-brand-500) 22%, var(--sem-color-bg-surface));
+  --sem-color-on-primary-container: var(--sem-brand-300);
+  --sem-color-secondary-container: var(--sem-color-bg-subtle);
+  --sem-color-on-secondary-container: var(--sem-color-text-primary);
+  --sem-color-tertiary: #f08c75;
+  --sem-color-tertiary-container: color-mix(in srgb, #f08c75 22%, var(--sem-color-bg-surface));
+  --sem-color-on-tertiary-container: #ffb4a2;
+
+  /* Feedback: Success (Dark) */
+  --sem-color-status-success-bg: rgba(16, 185, 129, 0.12);
+  --sem-color-status-success-subtle: rgba(16, 185, 129, 0.2);
+  --sem-color-status-success-border: rgba(16, 185, 129, 0.3);
+  --sem-color-status-success-solid: var(--pr-color-emerald-500);
+  --sem-color-status-success-text: var(--pr-color-emerald-300);
+
+  /* Feedback: Warning (Dark) */
+  --sem-color-status-warning-bg: rgba(245, 158, 11, 0.12);
+  --sem-color-status-warning-subtle: rgba(245, 158, 11, 0.2);
+  --sem-color-status-warning-border: rgba(245, 158, 11, 0.3);
+  --sem-color-status-warning-solid: var(--pr-color-amber-500);
+  --sem-color-status-warning-text: var(--pr-color-amber-300);
+
+  /* Feedback: Danger / Error (Dark) */
+  --sem-color-status-danger-bg: rgba(239, 68, 68, 0.12);
+  --sem-color-status-danger-subtle: rgba(239, 68, 68, 0.2);
+  --sem-color-status-danger-border: rgba(239, 68, 68, 0.3);
+  --sem-color-status-danger-solid: var(--pr-color-red-500);
+  --sem-color-status-danger-solid-hover: var(--pr-color-red-400);
+  --sem-color-status-danger-text: var(--pr-color-red-300);
+
+  /* Feedback: Info (Dark) */
+  --sem-color-status-info-bg: rgba(14, 165, 233, 0.12);
+  --sem-color-status-info-subtle: rgba(14, 165, 233, 0.2);
+  --sem-color-status-info-border: rgba(14, 165, 233, 0.3);
+  --sem-color-status-info-solid: var(--pr-color-sky-500);
+  --sem-color-status-info-text: var(--pr-color-sky-300);
+
+  /* Semantic Shadows (Dark) */
+  --sem-shadow-card: var(--pr-shadow-dark-sm);
+  --sem-shadow-card-hover: var(--pr-shadow-dark-md);
+  --sem-shadow-dropdown: var(--pr-shadow-dark-lg);
+  --sem-shadow-modal: var(--pr-shadow-dark-xl);
+  --sem-shadow-toast: var(--pr-shadow-dark-xl);
+  --sem-shadow-focus-ring: 0 0 0 3px color-mix(in srgb, var(--sem-brand-400) 35%, transparent);
+  --sem-shadow-danger-ring: 0 0 0 3px rgba(239, 68, 68, 0.3);
+
+  /* Overlay */
+  --sem-color-overlay: rgba(0, 0, 0, 0.85);
+}
+
+/* ==========================================================================
+   MULTI-BRAND SWITCHING (Tokens update across Light and Dark dynamically)
+   ========================================================================== */
+
+/* Brand: Purple (Creative / AI) */
+[data-brand="purple"] {
+  --sem-brand-50: var(--pr-color-purple-50);
+  --sem-brand-100: var(--pr-color-purple-100);
+  --sem-brand-200: var(--pr-color-purple-200);
+  --sem-brand-300: var(--pr-color-purple-300);
+  --sem-brand-400: var(--pr-color-purple-400);
+  --sem-brand-500: var(--pr-color-purple-500);
+  --sem-brand-600: var(--pr-color-purple-600);
+  --sem-brand-700: var(--pr-color-purple-700);
+  --sem-brand-800: var(--pr-color-purple-800);
+  --sem-brand-900: var(--pr-color-purple-900);
+  --sem-brand-950: var(--pr-color-purple-950);
+  --sem-color-tertiary: #06b6d4;
+  --sem-color-tertiary-container: color-mix(in srgb, #06b6d4 16%, var(--sem-color-bg-surface));
+  --sem-color-on-tertiary-container: #0891b2;
+}
+
+/* Brand: Emerald (Fintech / Eco) */
+[data-brand="emerald"] {
+  --sem-brand-50: var(--pr-color-emerald-50);
+  --sem-brand-100: var(--pr-color-emerald-100);
+  --sem-brand-200: var(--pr-color-emerald-200);
+  --sem-brand-300: var(--pr-color-emerald-300);
+  --sem-brand-400: var(--pr-color-emerald-400);
+  --sem-brand-500: var(--pr-color-emerald-500);
+  --sem-brand-600: var(--pr-color-emerald-600);
+  --sem-brand-700: var(--pr-color-emerald-700);
+  --sem-brand-800: var(--pr-color-emerald-800);
+  --sem-brand-900: var(--pr-color-emerald-900);
+  --sem-brand-950: var(--pr-color-emerald-950);
+  --sem-color-tertiary: #8b5cf6;
+  --sem-color-tertiary-container: color-mix(in srgb, #8b5cf6 16%, var(--sem-color-bg-surface));
+  --sem-color-on-tertiary-container: #6d28d9;
+}
+
+/* Brand: Amber (Warm / High-energy) */
+[data-brand="amber"] {
+  --sem-brand-50: var(--pr-color-amber-50);
+  --sem-brand-100: var(--pr-color-amber-100);
+  --sem-brand-200: var(--pr-color-amber-200);
+  --sem-brand-300: var(--pr-color-amber-300);
+  --sem-brand-400: var(--pr-color-amber-400);
+  --sem-brand-500: var(--pr-color-amber-500);
+  --sem-brand-600: var(--pr-color-amber-600);
+  --sem-brand-700: var(--pr-color-amber-700);
+  --sem-brand-800: var(--pr-color-amber-800);
+  --sem-brand-900: var(--pr-color-amber-900);
+  --sem-brand-950: var(--pr-color-amber-950);
+  --sem-color-tertiary: #4f46e5;
+  --sem-color-tertiary-container: color-mix(in srgb, #4f46e5 16%, var(--sem-color-bg-surface));
+  --sem-color-on-tertiary-container: #3730a3;
+}
+
+/* ==========================================================================
+   SEMANTIC SPACING, RADIUS & COMPOSITE TYPOGRAPHY ROLES
+   ========================================================================== */
+:root {
+  /* Semantic Radius */
+  --sem-radius-control-sm: var(--pr-radius-4);
+  --sem-radius-control: var(--pr-radius-6);
+  --sem-radius-control-lg: var(--pr-radius-8);
+  --sem-radius-card: var(--pr-radius-12);
+  --sem-radius-modal: var(--pr-radius-16);
+  --sem-radius-pill: var(--pr-radius-full);
+  --sem-radius-badge: var(--pr-radius-full);
+
+  /* Semantic Inset Spacing (Default/Comfortable) */
+  --sem-space-inset-xs: var(--pr-space-4);
+  --sem-space-inset-sm: var(--pr-space-8);
+  --sem-space-inset-md: var(--pr-space-16);
+  --sem-space-inset-lg: var(--pr-space-24);
+  --sem-space-inset-xl: var(--pr-space-32);
+
+  /* Semantic Stack (Vertical flow) */
+  --sem-space-stack-xs: var(--pr-space-4);
+  --sem-space-stack-sm: var(--pr-space-8);
+  --sem-space-stack-md: var(--pr-space-16);
+  --sem-space-stack-lg: var(--pr-space-24);
+  --sem-space-stack-xl: var(--pr-space-40);
+
+  /* Semantic Gap (Inline/Flex flow) */
+  --sem-space-gap-xs: var(--pr-space-4);
+  --sem-space-gap-sm: var(--pr-space-8);
+  --sem-space-gap-md: var(--pr-space-12);
+  --sem-space-gap-lg: var(--pr-space-16);
+  --sem-space-gap-xl: var(--pr-space-24);
+
+  /* Semantic Fonts */
+  --sem-font-family-body: var(--pr-font-family-sans);
+  --sem-font-family-code: var(--pr-font-family-mono);
+
+  /* Individual Size tokens */
+  --sem-font-size-caption: var(--pr-font-size-12);
+  --sem-font-size-body-sm: var(--pr-font-size-13);
+  --sem-font-size-body: var(--pr-font-size-14);
+  --sem-font-size-body-lg: var(--pr-font-size-16);
+  --sem-font-size-h4: var(--pr-font-size-18);
+  --sem-font-size-h3: var(--pr-font-size-20);
+  --sem-font-size-h2: var(--pr-font-size-24);
+  --sem-font-size-h1: var(--pr-font-size-30);
+  --sem-font-size-display: var(--pr-font-size-36);
+
+  /* Composite Typography Roles (Size + Line Height + Weight) */
+  --sem-type-display: 700 var(--pr-font-size-36) / var(--pr-font-lineheight-tight) var(--sem-font-family-body);
+  --sem-type-h1: 700 var(--pr-font-size-30) / var(--pr-font-lineheight-tight) var(--sem-font-family-body);
+  --sem-type-h2: 600 var(--pr-font-size-24) / var(--pr-font-lineheight-snug) var(--sem-font-family-body);
+  --sem-type-h3: 600 var(--pr-font-size-20) / var(--pr-font-lineheight-snug) var(--sem-font-family-body);
+  --sem-type-h4: 600 var(--pr-font-size-18) / var(--pr-font-lineheight-normal) var(--sem-font-family-body);
+  --sem-type-body-lg: 400 var(--pr-font-size-16) / var(--pr-font-lineheight-normal) var(--sem-font-family-body);
+  --sem-type-body: 400 var(--pr-font-size-14) / var(--pr-font-lineheight-normal) var(--sem-font-family-body);
+  --sem-type-body-sm: 400 var(--pr-font-size-13) / var(--pr-font-lineheight-normal) var(--sem-font-family-body);
+  --sem-type-caption: 500 var(--pr-font-size-12) / var(--pr-font-lineheight-snug) var(--sem-font-family-body);
+  --sem-type-code: 400 var(--pr-font-size-13) / var(--pr-font-lineheight-normal) var(--sem-font-family-code);
+}
+
+/* Density: Compact mode */
+[data-density="compact"] {
+  --sem-space-inset-xs: var(--pr-space-2);
+  --sem-space-inset-sm: var(--pr-space-6);
+  --sem-space-inset-md: var(--pr-space-10);
+  --sem-space-inset-lg: var(--pr-space-16);
+  --sem-space-inset-xl: var(--pr-space-24);
+
+  --sem-space-gap-xs: var(--pr-space-2);
+  --sem-space-gap-sm: var(--pr-space-4);
+  --sem-space-gap-md: var(--pr-space-8);
+  --sem-space-gap-lg: var(--pr-space-12);
+}

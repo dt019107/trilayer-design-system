@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-density="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilayer — Core Components Test Matrix (Phase 3)</title>
+
+  <!-- 3-Layer Tokens Cascade -->
+  <link rel="stylesheet" href="css/tokens.primitives.css">
+  <link rel="stylesheet" href="css/tokens.semantic.css">
+  <link rel="stylesheet" href="css/tokens.components.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- Component Layer Styles -->
+  <link rel="stylesheet" href="css/components/button.css">
+  <link rel="stylesheet" href="css/components/input.css">
+  <link rel="stylesheet" href="css/components/controls.css">
+  <link rel="stylesheet" href="css/components/card.css">
+  <link rel="stylesheet" href="css/components/badge-chip.css">
+  <link rel="stylesheet" href="css/components/dialog.css">
+  <link rel="stylesheet" href="css/components/feedback.css">
+  <link rel="stylesheet" href="css/components/tabs-divider.css">
+
+  <style>
+    .test-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: var(--tl-ref-space-40) var(--tl-ref-space-24) var(--tl-ref-space-96);
+    }
+
+    .matrix-section {
+      margin-bottom: var(--tl-ref-space-48);
+      padding-bottom: var(--tl-ref-space-32);
+      border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+    }
+
+    .matrix-title {
+      font-size: var(--tl-ref-font-size-24);
+      font-weight: 800;
+      margin-bottom: var(--tl-ref-space-8);
+      display: flex;
+      align-items: center;
+      gap: var(--tl-ref-space-10);
+    }
+
+    .matrix-desc {
+      font-size: var(--tl-ref-font-size-14);
+      color: var(--tl-sys-color-on-surface-variant);
+      margin-bottom: var(--tl-ref-space-24);
+    }
+
+    .state-row {
+      display: flex;
+      align-items: center;
+      gap: var(--tl-ref-space-16);
+      flex-wrap: wrap;
+      margin-bottom: var(--tl-ref-space-16);
+    }
+
+    .state-label {
+      min-width: 110px;
+      font-size: var(--tl-ref-font-size-12);
+      font-family: var(--tl-sys-font-family-code);
+      font-weight: 600;
+      color: var(--tl-sys-color-on-surface-muted);
+    }
+
+    .component-specimen-box {
+      padding: var(--tl-ref-space-24);
+      border-radius: var(--tl-sys-shape-container);
+      background-color: var(--tl-sys-color-surface-container-low);
+      border: 1px solid var(--tl-sys-color-outline-variant);
+      margin-bottom: var(--tl-ref-space-20);
+    }
+
+    .component-specimen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--tl-ref-space-20);
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-to-content">Skip to content</a>
+
+  <main id="main" class="test-page">
+    <!-- Header with Controls -->
+    <header class="tl-page-header">
+      <div class="tl-page-title-row">
+        <div>
+          <h1 class="tl-page-title">Trilayer Core Components Matrix</h1>
+          <p class="tl-page-subtitle">
+            Phase 3 Verification: All variants and states (default, hover, focus, active, disabled, loading) in Light and Dark themes.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+          <!-- Theme Switcher -->
+          <button class="tl-btn tl-btn--outline tl-btn--sm" id="btn-light" onclick="setTheme('light')">Light Theme</button>
+          <button class="tl-btn tl-btn--outline tl-btn--sm" id="btn-dark" onclick="setTheme('dark')">Dark Theme</button>
+
+          <!-- Density Switcher -->
+          <select id="density-selector" class="tl-density-select" onchange="setDensity(this.value)">
+            <option value="compact">Compact Density</option>
+            <option value="default" selected>Default Density</option>
+            <option value="comfortable">Comfortable Density</option>
+          </select>
+
+          <a href="index.html" class="tl-btn tl-btn--secondary tl-btn--sm">&larr; Back to Docs App</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- COMPONENT 1: BUTTON & ICON BUTTON -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">
+        <svg class="tl-brand-logo-svg" viewBox="0 0 32 32" fill="none"><path d="M16 3L30 10L16 17L2 10L16 3Z" fill="var(--tl-sys-color-layer-component)"/><path d="M16 10L30 17L16 24L2 17L16 10Z" fill="var(--tl-sys-color-layer-semantic)"/><path d="M16 17L30 24L16 31L2 24L16 17Z" fill="var(--tl-sys-color-layer-primitives)"/></svg>
+        1. Button &amp; Icon Button
+      </h2>
+      <p class="matrix-desc">Six core variants across 3 density scales, disabled states, and dynamic loading spinners.</p>
+
+      <div class="component-specimen-box">
+        <div class="state-row">
+          <span class="state-label">Variants:</span>
+          <button class="tl-btn tl-btn--primary tl-btn--md">Primary Action</button>
+          <button class="tl-btn tl-btn--secondary tl-btn--md">Secondary / Tonal</button>
+          <button class="tl-btn tl-btn--tertiary tl-btn--md">Tertiary (Teal)</button>
+          <button class="tl-btn tl-btn--outline tl-btn--md">Outline</button>
+          <button class="tl-btn tl-btn--ghost tl-btn--md">Ghost / Text</button>
+          <button class="tl-btn tl-btn--danger tl-btn--md">Destructive</button>
+        </div>
+
+        <div class="state-row">
+          <span class="state-label">Sizes:</span>
+          <button class="tl-btn tl-btn--primary tl-btn--sm">Small (32px)</button>
+          <button class="tl-btn tl-btn--primary tl-btn--md">Medium (40px)</button>
+          <button class="tl-btn tl-btn--primary tl-btn--lg">Large (48px)</button>
+        </div>
+
+        <div class="state-row">
+          <span class="state-label">States:</span>
+          <button class="tl-btn tl-btn--primary tl-btn--md">Default</button>
+          <button class="tl-btn tl-btn--primary tl-btn--md" disabled>Disabled State</button>
+          <button class="tl-btn tl-btn--primary tl-btn--md is-loading">Loading</button>
+          <button class="tl-btn tl-btn--outline tl-btn--md is-loading">Loading Outline</button>
+        </div>
+
+        <div class="state-row">
+          <span class="state-label">Icon Buttons:</span>
+          <button class="tl-btn-icon tl-btn-icon--sm" aria-label="Settings">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </button>
+          <button class="tl-btn-icon tl-btn-icon--md" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="tl-btn-icon tl-btn-icon--lg" aria-label="Bookmark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="tl-btn-icon tl-btn-icon--md" disabled aria-label="Disabled">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 2: TEXT FIELD & TEXTAREA -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">2. Text Field &amp; Form Inputs</h2>
+      <p class="matrix-desc">Default, hover, active focus ring, disabled, and error validation states.</p>
+
+      <div class="component-specimen-grid">
+        <div class="tl-form-group">
+          <label class="tl-label" for="inp-default">Default Field</label>
+          <input type="text" id="inp-default" class="tl-input" placeholder="e.g. sarah.chen@trilayer.design">
+          <span class="tl-helper-text">Enter your organization email.</span>
+        </div>
+
+        <div class="tl-form-group">
+          <label class="tl-label" for="inp-error">
+            Validation Error <span class="tl-label-required">*</span>
+          </label>
+          <input type="text" id="inp-error" class="tl-input is-error" value="invalid-domain">
+          <span class="tl-helper-text tl-helper-text--error">Domain must include a top-level extension (e.g. .com).</span>
+        </div>
+
+        <div class="tl-form-group">
+          <label class="tl-label" for="inp-disabled">Disabled Field</label>
+          <input type="text" id="inp-disabled" class="tl-input" value="trilayer-production-key" disabled>
+          <span class="tl-helper-text">Managed by organization policy.</span>
+        </div>
+
+        <div class="tl-form-group">
+          <label class="tl-label" for="inp-textarea">Textarea Field</label>
+          <textarea id="inp-textarea" class="tl-textarea" placeholder="Describe the component token requirements..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 3: SELECTION CONTROLS -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">3. Selection Controls (Checkbox, Radio, Switch)</h2>
+      <p class="matrix-desc">Unchecked, checked, indeterminate, and disabled states with keyboard navigation.</p>
+
+      <div class="component-specimen-box">
+        <div class="state-row">
+          <span class="state-label">Checkboxes:</span>
+          <label class="tl-checkbox-label">
+            <input type="checkbox" class="tl-checkbox-input">
+            <span>Unchecked</span>
+          </label>
+          <label class="tl-checkbox-label">
+            <input type="checkbox" class="tl-checkbox-input" checked>
+            <span>Checked</span>
+          </label>
+          <label class="tl-checkbox-label">
+            <input type="checkbox" class="tl-checkbox-input" id="chk-ind">
+            <span>Indeterminate</span>
+          </label>
+          <label class="tl-checkbox-label">
+            <input type="checkbox" class="tl-checkbox-input" checked disabled>
+            <span>Disabled Checked</span>
+          </label>
+        </div>
+
+        <div class="state-row">
+          <span class="state-label">Radio Buttons:</span>
+          <label class="tl-radio-label">
+            <input type="radio" name="demo-radio" class="tl-radio-input" checked>
+            <span>Option Alpha (Selected)</span>
+          </label>
+          <label class="tl-radio-label">
+            <input type="radio" name="demo-radio" class="tl-radio-input">
+            <span>Option Beta</span>
+          </label>
+          <label class="tl-radio-label">
+            <input type="radio" name="demo-radio-dis" class="tl-radio-input" disabled>
+            <span>Disabled</span>
+          </label>
+        </div>
+
+        <div class="state-row">
+          <span class="state-label">Switches:</span>
+          <label class="tl-switch-label">
+            <input type="checkbox" class="tl-switch-input">
+            <span>Dark Theme Auto-Sync</span>
+          </label>
+          <label class="tl-switch-label">
+            <input type="checkbox" class="tl-switch-input" checked>
+            <span>Strict Token Linting</span>
+          </label>
+          <label class="tl-switch-label">
+            <input type="checkbox" class="tl-switch-input" disabled>
+            <span>Disabled Setting</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 4: CARDS & CONTAINERS -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">4. Card &amp; Surface Containment</h2>
+      <p class="matrix-desc">Elevated, filled/tonal, outlined, and interactive hover-lift cards.</p>
+
+      <div class="component-specimen-grid">
+        <div class="tl-card">
+          <div class="tl-card-header">
+            <h3 class="tl-card-title">Elevated Surface</h3>
+            <span class="tl-badge tl-badge--brand">Layer 2</span>
+          </div>
+          <div class="tl-card-body">
+            Default elevated surface with subtle ambient shadow and tonal outline boundary.
+          </div>
+          <div class="tl-card-footer">
+            <button class="tl-btn tl-btn--outline tl-btn--sm">Inspect</button>
+            <button class="tl-btn tl-btn--primary tl-btn--sm">Confirm</button>
+          </div>
+        </div>
+
+        <div class="tl-card tl-card--outlined">
+          <div class="tl-card-header">
+            <h3 class="tl-card-title">Outlined Surface</h3>
+            <span class="tl-badge tl-badge--neutral">Zero Shadow</span>
+          </div>
+          <div class="tl-card-body">
+            Flat containment surface with visible border for clean demarcation on light canvas.
+          </div>
+          <div class="tl-card-footer">
+            <button class="tl-btn tl-btn--ghost tl-btn--sm">Dismiss</button>
+          </div>
+        </div>
+
+        <div class="tl-card tl-card--interactive" tabindex="0">
+          <div class="tl-card-header">
+            <h3 class="tl-card-title">Interactive Card</h3>
+            <span class="tl-badge tl-badge--success">Clickable</span>
+          </div>
+          <div class="tl-card-body">
+            Hover to test subtle lift elevation and border illumination. Focusable via keyboard Tab.
+          </div>
+          <div class="tl-card-footer">
+            <span style="font-size: 13px; font-weight: 600; color: var(--tl-sys-color-primary);">Open Token Chain &rarr;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 5: BADGES & CHIPS -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">5. Status Badges &amp; Interactive Chips</h2>
+      <p class="matrix-desc">Semantic state pills and interactive filter/action chips.</p>
+
+      <div class="component-specimen-box">
+        <div class="state-row">
+          <span class="state-label">Badges:</span>
+          <span class="tl-badge tl-badge--neutral">Neutral</span>
+          <span class="tl-badge tl-badge--brand"><span class="tl-badge__dot"></span>Brand Active</span>
+          <span class="tl-badge tl-badge--success"><span class="tl-badge__dot"></span>WCAG AA Pass</span>
+          <span class="tl-badge tl-badge--warning"><span class="tl-badge__dot"></span>Deprecated</span>
+          <span class="tl-badge tl-badge--danger"><span class="tl-badge__dot"></span>Token Conflict</span>
+        </div>
+
+        <div class="state-row">
+          <span class="state-label">Chips:</span>
+          <button class="tl-chip">All Components</button>
+          <button class="tl-chip is-active" aria-pressed="true">Primitives</button>
+          <button class="tl-chip">
+            <span>Semantic Tokens</span>
+            <span class="tl-chip__close" aria-label="Remove">&times;</span>
+          </button>
+          <button class="tl-chip" disabled>Disabled Chip</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 6: DIALOG & OVERLAYS -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">6. Modal Dialog &amp; Overlays</h2>
+      <p class="matrix-desc">Focus-trapped dialog with backdrop dismiss and keyboard ESC listener.</p>
+
+      <div class="component-specimen-box">
+        <button class="tl-btn tl-btn--primary tl-btn--md" id="btn-open-dialog">
+          Open Demo Modal Dialog
+        </button>
+        <span style="font-size: 13px; color: var(--tl-sys-color-on-surface-muted); margin-left: 12px;">
+          Press ESC or click backdrop to close once opened.
+        </span>
+      </div>
+    </section>
+
+    <!-- COMPONENT 7: TABS & TOAST FEEDBACK -->
+    <section class="matrix-section">
+      <h2 class="matrix-title">7. Tabs &amp; Toast Feedback</h2>
+      <p class="matrix-desc">Accessible tablist with Arrow keys and dynamic toast notifications.</p>
+
+      <div class="component-specimen-box">
+        <!-- Tabs Demo -->
+        <div id="demo-tabs">
+          <div class="tl-tabs-list" role="tablist" aria-label="Demo Tabs">
+            <button class="tl-tab-btn is-active" role="tab" aria-selected="true" id="tab-1" aria-controls="panel-1">
+              Token Architecture
+            </button>
+            <button class="tl-tab-btn" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" tabindex="-1">
+              Component Anatomy
+            </button>
+            <button class="tl-tab-btn" role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3" tabindex="-1">
+              Accessibility Specs
+            </button>
+          </div>
+
+          <div class="tl-tab-panel is-active" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+            <p style="font-size: 14px;"><strong>Layer 1 (Primitives) &rarr; Layer 2 (Semantic) &rarr; Layer 3 (Component)</strong>. Strictly enforced one-way flow.</p>
+          </div>
+          <div class="tl-tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+            <p style="font-size: 14px;">Components only bind to <code>--tl-comp-*</code> tokens, making style audits completely deterministic.</p>
+          </div>
+          <div class="tl-tab-panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+            <p style="font-size: 14px;">Focus rings, ARIA roles, contrast guarantees $\ge$ 4.5:1, and reduced-motion clamping.</p>
+          </div>
+        </div>
+
+        <hr class="tl-divider">
+
+        <!-- Toast Fire Buttons -->
+        <div class="state-row">
+          <span class="state-label">Fire Toasts:</span>
+          <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: 'Token copied to clipboard: --tl-comp-button-bg', type: 'info' })">
+            Info Toast
+          </button>
+          <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: 'Theme updated to Indigo Velvet (#5B5BD6)', type: 'success' })">
+            Success Toast
+          </button>
+          <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: 'Error: Cannot reference primitive directly in component', type: 'error' })">
+            Error Toast
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Modal Dialog Specimen -->
+  <div class="tl-dialog-overlay" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="tl-dialog">
+      <div class="tl-dialog-header">
+        <h3 class="tl-dialog-title" id="modal-title">Revoke API Token</h3>
+        <button class="tl-btn-icon tl-btn-icon--sm" data-dialog-close aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="tl-dialog-body">
+        <p style="margin-bottom: 12px; color: var(--tl-sys-color-on-surface);">
+          Are you sure you want to deactivate <strong>figma-sync-token</strong>?
+        </p>
+        <p style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant); margin: 0;">
+          Any automated GitHub Actions or design linting workflows using this credential will fail immediately. This action cannot be undone.
+        </p>
+      </div>
+      <div class="tl-dialog-footer">
+        <button class="tl-btn tl-btn--outline tl-btn--sm" data-dialog-close>Cancel</button>
+        <button class="tl-btn tl-btn--danger tl-btn--sm" data-dialog-close onclick="Toast.show({ message: 'Token revoked successfully.', type: 'error' })">
+          Revoke Token
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="tl-toast-container" class="tl-toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { Dialog } from "./js/components/dialog.js";
+    import { Tabs } from "./js/components/tabs.js";
+    import { Toast } from "./js/components/feedback.js";
+
+    window.Toast = Toast;
+
+    // Set indeterminate state on specimen checkbox
+    const ind = document.getElementById("chk-ind");
+    if (ind) ind.indeterminate = true;
+
+    // Init Dialog
+    const dialog = new Dialog("demo-modal");
+    const openBtn = document.getElementById("btn-open-dialog");
+    if (openBtn) {
+      openBtn.addEventListener("click", () => dialog.open(openBtn));
+    }
+
+    // Init Tabs
+    new Tabs("#demo-tabs");
+
+    // Interactive Theme & Density Toggles
+    window.setTheme = function(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    };
+
+    window.setDensity = function(density) {
+      document.documentElement.setAttribute("data-density", density);
+    };
+  </script>
+</body>
+</html>
+

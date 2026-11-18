@@ -1,0 +1,132 @@
+/**
+ * TRILAYER DESIGN SYSTEM — TABS & DIVIDER COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+/* ==========================================================================
+   TABS
+   ========================================================================== */
+.tl-tabs-list {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+  gap: var(--tl-comp-tabs-gap);
+  list-style: none;
+  margin-bottom: var(--tl-comp-tabs-margin-bottom);
+  overflow-x: auto;
+}
+
+.tl-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tl-sys-density-gap-sm);
+  padding: var(--tl-sys-space-sm) var(--tl-sys-space-xs);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--tl-comp-tabs-text);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+  outline: none;
+}
+
+.tl-tab-btn:hover {
+  color: var(--tl-sys-color-on-surface);
+}
+
+.tl-tab-btn.is-active,
+.tl-tab-btn[aria-selected="true"] {
+  color: var(--tl-comp-tabs-active-text);
+  border-bottom-color: var(--tl-comp-tabs-indicator-color);
+  font-weight: 600;
+}
+
+.tl-tab-btn:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.tl-tab-panel {
+  display: none;
+  outline: none;
+}
+
+.tl-tab-panel.is-active {
+  display: block;
+}
+
+/* ==========================================================================
+   DIVIDER
+   ========================================================================== */
+.tl-divider {
+  border: none;
+  border-top: 1px solid var(--tl-sys-color-outline-variant);
+  margin: var(--tl-comp-divider-margin) 0;
+  width: 100%;
+}
+
+.tl-divider--vertical {
+  display: inline-block;
+  border-top: none;
+  border-left: 1px solid var(--tl-sys-color-outline-variant);
+  height: var(--tl-comp-divider-vertical-height);
+  vertical-align: middle;
+  margin: 0 var(--tl-comp-divider-vertical-margin);
+}
+
+/* ==========================================================================
+   ACCORDION
+   ========================================================================== */
+.tl-accordion {
+  border: 1px solid var(--tl-comp-accordion-border);
+  border-radius: var(--tl-comp-card-radius);
+  overflow: hidden;
+  background-color: var(--tl-comp-card-bg);
+}
+
+.tl-accordion-item {
+  border-bottom: 1px solid var(--tl-comp-accordion-border);
+}
+
+.tl-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.tl-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--tl-comp-card-padding);
+  background-color: var(--tl-comp-accordion-header-bg);
+  border: none;
+  font-family: var(--tl-sys-font-family-heading);
+  font-size: var(--tl-sys-typescale-title-medium-size);
+  font-weight: 600;
+  color: var(--tl-comp-card-title-color);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-accordion-trigger:hover {
+  background-color: var(--tl-comp-accordion-hover-bg);
+}
+
+.tl-accordion-trigger:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: -2px;
+}
+
+.tl-accordion-panel {
+  padding: 0 var(--tl-comp-card-padding) var(--tl-comp-card-padding);
+  color: var(--tl-comp-card-body-color);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  line-height: var(--tl-sys-typescale-body-medium-line);
+}

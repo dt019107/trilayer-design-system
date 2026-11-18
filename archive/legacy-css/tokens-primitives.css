@@ -1,0 +1,234 @@
+/**
+ * LAYER 1: PRIMITIVES
+ * Raw values with NO semantic meaning or theme context.
+ * In a design system, nothing outside of the Semantic layer should reference these directly.
+ */
+
+:root {
+  /* ==========================================================================
+     COLOR PRIMITIVES (HEX / OKLCH)
+     ========================================================================== */
+
+  /* Pure Base Colors */
+  --pr-color-white: #ffffff;
+  --pr-color-black: #000000;
+  --pr-color-transparent: transparent;
+
+  /* Luxury Precision Neutrals */
+  --pr-color-neutral-0: #ffffff;
+  --pr-color-neutral-50: #fbfbfd;
+  --pr-color-neutral-100: #f4f5f8;
+  --pr-color-neutral-200: #e9ecf1;
+  --pr-color-neutral-300: #d6dbe4;
+  --pr-color-neutral-400: #94a3b8;
+  --pr-color-neutral-500: #64748b;
+  --pr-color-neutral-600: #475569;
+  --pr-color-neutral-700: #334155;
+  --pr-color-neutral-800: #1e293b;
+  --pr-color-neutral-900: #0f172a;
+  --pr-color-neutral-950: #0c0e12;
+  --pr-color-neutral-1000: #050608;
+
+  /* Precision Lapis (Luxury Brand Anchor) */
+  --pr-color-blue-50: #eef2ff;
+  --pr-color-blue-100: #e0e7ff;
+  --pr-color-blue-200: #c7d2fe;
+  --pr-color-blue-300: #a5b4fc;
+  --pr-color-blue-400: #818cf8;
+  --pr-color-blue-500: #3b5bfd;
+  --pr-color-blue-600: #2d55ff;
+  --pr-color-blue-700: #1d4ed8;
+  --pr-color-blue-800: #1e3a8a;
+  --pr-color-blue-900: #172554;
+  --pr-color-blue-950: #0f172a;
+
+  /* Purple / Violet (Brand Variant) */
+  --pr-color-purple-50: #faf5ff;
+  --pr-color-purple-100: #f3e8ff;
+  --pr-color-purple-200: #e9d5ff;
+  --pr-color-purple-300: #d8b4fe;
+  --pr-color-purple-400: #c084fc;
+  --pr-color-purple-500: #a855f7;
+  --pr-color-purple-600: #9333ea;
+  --pr-color-purple-700: #7e22ce;
+  --pr-color-purple-800: #6b21a8;
+  --pr-color-purple-900: #581c87;
+  --pr-color-purple-950: #3b0764;
+
+  /* Emerald / Green (Brand Variant & Success) */
+  --pr-color-emerald-50: #ecfdf5;
+  --pr-color-emerald-100: #d1fae5;
+  --pr-color-emerald-200: #a7f3d0;
+  --pr-color-emerald-300: #6ee7b7;
+  --pr-color-emerald-400: #34d399;
+  --pr-color-emerald-500: #10b981;
+  --pr-color-emerald-600: #059669;
+  --pr-color-emerald-700: #047857;
+  --pr-color-emerald-800: #065f46;
+  --pr-color-emerald-900: #064e3b;
+  --pr-color-emerald-950: #022c22;
+
+  /* Amber / Gold (Brand Variant & Warning) */
+  --pr-color-amber-50: #fffbeb;
+  --pr-color-amber-100: #fef3c7;
+  --pr-color-amber-200: #fde68a;
+  --pr-color-amber-300: #fcd34d;
+  --pr-color-amber-400: #fbbf24;
+  --pr-color-amber-500: #f59e0b;
+  --pr-color-amber-600: #d97706;
+  --pr-color-amber-700: #b45309;
+  --pr-color-amber-800: #92400e;
+  --pr-color-amber-900: #78350f;
+  --pr-color-amber-950: #451a03;
+
+  /* Red / Rose (Danger & Error) */
+  --pr-color-red-50: #fef2f2;
+  --pr-color-red-100: #fee2e2;
+  --pr-color-red-200: #fecaca;
+  --pr-color-red-300: #fca5a5;
+  --pr-color-red-400: #f87171;
+  --pr-color-red-500: #ef4444;
+  --pr-color-red-600: #dc2626;
+  --pr-color-red-700: #b91c1c;
+  --pr-color-red-800: #991b1b;
+  --pr-color-red-900: #7f1d1d;
+  --pr-color-red-950: #450a0a;
+
+  /* Cyan / Sky (Info) */
+  --pr-color-sky-50: #f0f9ff;
+  --pr-color-sky-100: #e0f2fe;
+  --pr-color-sky-200: #bae6fd;
+  --pr-color-sky-300: #7dd3fc;
+  --pr-color-sky-400: #38bdf8;
+  --pr-color-sky-500: #0ea5e9;
+  --pr-color-sky-600: #0284c7;
+  --pr-color-sky-700: #0369a1;
+  --pr-color-sky-800: #075985;
+  --pr-color-sky-900: #0c4a6e;
+  --pr-color-sky-950: #082f49;
+
+  /* ==========================================================================
+     SPACING & SIZING PRIMITIVES (4px Grid Base)
+     ========================================================================== */
+  --pr-space-0: 0px;
+  --pr-space-1: 1px;
+  --pr-space-2: 2px;
+  --pr-space-4: 4px;
+  --pr-space-6: 6px;
+  --pr-space-8: 8px;
+  --pr-space-10: 10px;
+  --pr-space-12: 12px;
+  --pr-space-14: 14px;
+  --pr-space-16: 16px;
+  --pr-space-20: 20px;
+  --pr-space-24: 24px;
+  --pr-space-28: 28px;
+  --pr-space-32: 32px;
+  --pr-space-40: 40px;
+  --pr-space-48: 48px;
+  --pr-space-56: 56px;
+  --pr-space-64: 64px;
+  --pr-space-80: 80px;
+  --pr-space-96: 96px;
+
+  /* ==========================================================================
+     TYPOGRAPHY PRIMITIVES (Named, Loaded Typeface: Public Sans & JetBrains Mono)
+     ========================================================================== */
+  --pr-font-family-sans: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pr-font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Font Sizes */
+  --pr-font-size-11: 0.6875rem; /* 11px */
+  --pr-font-size-12: 0.75rem;    /* 12px */
+  --pr-font-size-13: 0.8125rem;  /* 13px */
+  --pr-font-size-14: 0.875rem;   /* 14px */
+  --pr-font-size-16: 1rem;       /* 16px */
+  --pr-font-size-18: 1.125rem;   /* 18px */
+  --pr-font-size-20: 1.25rem;    /* 20px */
+  --pr-font-size-24: 1.5rem;     /* 24px */
+  --pr-font-size-30: 1.875rem;   /* 30px */
+  --pr-font-size-36: 2.25rem;    /* 36px */
+  --pr-font-size-48: 3rem;       /* 48px */
+
+  /* Font Weights */
+  --pr-font-weight-regular: 400;
+  --pr-font-weight-medium: 500;
+  --pr-font-weight-semibold: 600;
+  --pr-font-weight-bold: 700;
+
+  /* Line Heights */
+  --pr-font-lineheight-none: 1;
+  --pr-font-lineheight-tight: 1.25;
+  --pr-font-lineheight-snug: 1.375;
+  --pr-font-lineheight-normal: 1.5;
+  --pr-font-lineheight-relaxed: 1.625;
+
+  /* Letter Spacing */
+  --pr-font-letterspacing-tight: -0.02em;
+  --pr-font-letterspacing-normal: 0em;
+  --pr-font-letterspacing-wide: 0.025em;
+  --pr-font-letterspacing-wider: 0.05em;
+
+  /* ==========================================================================
+     BORDER RADIUS PRIMITIVES
+     ========================================================================== */
+  --pr-radius-none: 0px;
+  --pr-radius-2: 2px;
+  --pr-radius-4: 4px;
+  --pr-radius-6: 6px;
+  --pr-radius-8: 8px;
+  --pr-radius-10: 10px;
+  --pr-radius-12: 12px;
+  --pr-radius-16: 16px;
+  --pr-radius-24: 24px;
+  --pr-radius-full: 9999px;
+
+  /* ==========================================================================
+     BORDER WIDTH PRIMITIVES
+     ========================================================================== */
+  --pr-border-width-0: 0px;
+  --pr-border-width-1: 1px;
+  --pr-border-width-2: 2px;
+  --pr-border-width-4: 4px;
+
+  /* ==========================================================================
+     SHADOW & ELEVATION PRIMITIVES (Clean physical shadows without colored glow)
+     ========================================================================== */
+  --pr-shadow-xs: 0 1px 2px 0 rgba(13, 21, 34, 0.05);
+  --pr-shadow-sm: 0 1px 3px 0 rgba(13, 21, 34, 0.08), 0 1px 2px -1px rgba(13, 21, 34, 0.08);
+  --pr-shadow-md: 0 4px 6px -1px rgba(13, 21, 34, 0.08), 0 2px 4px -2px rgba(13, 21, 34, 0.08);
+  --pr-shadow-lg: 0 10px 15px -3px rgba(13, 21, 34, 0.08), 0 4px 6px -4px rgba(13, 21, 34, 0.08);
+  --pr-shadow-xl: 0 20px 25px -5px rgba(13, 21, 34, 0.1), 0 8px 10px -6px rgba(13, 21, 34, 0.08);
+  --pr-shadow-2xl: 0 25px 50px -12px rgba(13, 21, 34, 0.25);
+  --pr-shadow-inner: inset 0 2px 4px 0 rgba(13, 21, 34, 0.05);
+
+  /* Dark mode specific shadow adjustments */
+  --pr-shadow-dark-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+  --pr-shadow-dark-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --pr-shadow-dark-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --pr-shadow-dark-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+
+  /* ==========================================================================
+     MOTION & TRANSITIONS
+     ========================================================================== */
+  --pr-transition-duration-fast: 150ms;
+  --pr-transition-duration-normal: 200ms;
+  --pr-transition-duration-slow: 300ms;
+  --pr-transition-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --pr-transition-easing-in: cubic-bezier(0.4, 0, 1, 1);
+  --pr-transition-easing-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* ==========================================================================
+     Z-INDEX PRIMITIVES
+     ========================================================================== */
+  --pr-z-index-deep: -999;
+  --pr-z-index-base: 0;
+  --pr-z-index-dropdown: 1000;
+  --pr-z-index-sticky: 1100;
+  --pr-z-index-banner: 1200;
+  --pr-z-index-overlay: 1300;
+  --pr-z-index-modal: 1400;
+  --pr-z-index-popover: 1500;
+  --pr-z-index-toast: 1600;
+  --pr-z-index-tooltip: 1700;
+}

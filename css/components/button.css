@@ -1,0 +1,224 @@
+/**
+ * TRILAYER DESIGN SYSTEM — BUTTON & ICON BUTTON COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero Layer-1 primitive tokens.
+ */
+
+/* ==========================================================================
+   BASE BUTTON
+   ========================================================================== */
+.tl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tl-comp-button-gap);
+  font-family: var(--tl-comp-button-font-family);
+  font-weight: 600;
+  border-radius: var(--tl-comp-button-radius);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  transition: all var(--tl-comp-button-transition);
+  position: relative;
+  outline: none;
+}
+
+/* ==========================================================================
+   BUTTON SIZES (Controlled by Density in Tokens)
+   ========================================================================== */
+.tl-btn--sm {
+  height: var(--tl-comp-button-height-sm);
+  padding: 0 var(--tl-comp-button-padding-x-sm);
+  font-size: var(--tl-sys-typescale-body-small-size);
+}
+
+.tl-btn--md {
+  height: var(--tl-comp-button-height-md);
+  padding: 0 var(--tl-comp-button-padding-x-md);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+}
+
+.tl-btn--lg {
+  height: var(--tl-comp-button-height-lg);
+  padding: 0 var(--tl-comp-button-padding-x-lg);
+  font-size: var(--tl-sys-typescale-body-large-size);
+}
+
+/* ==========================================================================
+   BUTTON VARIANTS
+   ========================================================================== */
+/* Primary */
+.tl-btn--primary {
+  background-color: var(--tl-comp-button-primary-bg);
+  color: var(--tl-comp-button-primary-text);
+  border-color: var(--tl-comp-button-primary-border);
+  box-shadow: var(--tl-comp-button-primary-shadow);
+}
+
+.tl-btn--primary:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-primary-hover-bg);
+  color: var(--tl-comp-button-primary-text);
+  text-decoration: none;
+}
+
+.tl-btn--primary:active:not(:disabled) {
+  background-color: var(--tl-comp-button-primary-active-bg);
+}
+
+/* Secondary / Tonal */
+.tl-btn--secondary {
+  background-color: var(--tl-comp-button-secondary-bg);
+  color: var(--tl-comp-button-secondary-text);
+  border-color: var(--tl-comp-button-secondary-border);
+}
+
+.tl-btn--secondary:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-secondary-hover-bg);
+  color: var(--tl-comp-button-secondary-text);
+  text-decoration: none;
+}
+
+.tl-btn--secondary:active:not(:disabled) {
+  background-color: var(--tl-comp-button-secondary-active-bg);
+}
+
+/* Tertiary / Teal Layer Accent */
+.tl-btn--tertiary {
+  background-color: var(--tl-comp-button-tertiary-bg);
+  color: var(--tl-comp-button-tertiary-text);
+  border-color: var(--tl-comp-button-tertiary-border);
+}
+
+.tl-btn--tertiary:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-tertiary-hover-bg);
+  color: var(--tl-comp-button-tertiary-text);
+  text-decoration: none;
+}
+
+/* Outline */
+.tl-btn--outline {
+  background-color: var(--tl-comp-button-outline-bg);
+  color: var(--tl-comp-button-outline-text);
+  border-color: var(--tl-comp-button-outline-border);
+}
+
+.tl-btn--outline:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-outline-hover-bg);
+  border-color: var(--tl-comp-button-outline-hover-border);
+  text-decoration: none;
+}
+
+/* Ghost / Text */
+.tl-btn--ghost {
+  background-color: var(--tl-comp-button-ghost-bg);
+  color: var(--tl-comp-button-ghost-text);
+  border-color: var(--tl-comp-button-ghost-border);
+}
+
+.tl-btn--ghost:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-ghost-hover-bg);
+  color: var(--tl-comp-button-ghost-hover-text);
+  text-decoration: none;
+}
+
+/* Danger / Destructive */
+.tl-btn--danger {
+  background-color: var(--tl-comp-button-danger-bg);
+  color: var(--tl-comp-button-danger-text);
+  border-color: var(--tl-comp-button-danger-border);
+  box-shadow: var(--tl-comp-button-danger-shadow);
+}
+
+.tl-btn--danger:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-danger-hover-bg);
+  color: var(--tl-comp-button-danger-text);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   ICON BUTTON
+   ========================================================================== */
+.tl-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: var(--tl-comp-button-radius);
+  cursor: pointer;
+  border: 1px solid var(--tl-comp-button-outline-border);
+  background-color: transparent;
+  color: var(--tl-comp-button-outline-text);
+  transition: all var(--tl-comp-button-transition);
+}
+
+.tl-btn-icon--sm {
+  width: var(--tl-comp-button-height-sm);
+  height: var(--tl-comp-button-height-sm);
+}
+
+.tl-btn-icon--md {
+  width: var(--tl-comp-button-height-md);
+  height: var(--tl-comp-button-height-md);
+}
+
+.tl-btn-icon--lg {
+  width: var(--tl-comp-button-height-lg);
+  height: var(--tl-comp-button-height-lg);
+}
+
+.tl-btn-icon:hover:not(:disabled) {
+  background-color: var(--tl-comp-button-outline-hover-bg);
+  border-color: var(--tl-comp-button-outline-hover-border);
+}
+
+/* ==========================================================================
+   BUTTON STATES: FOCUS-VISIBLE, DISABLED, LOADING
+   ========================================================================== */
+.tl-btn:focus-visible,
+.tl-btn-icon:focus-visible {
+  outline: 2px solid var(--tl-sys-color-primary);
+  outline-offset: 2px;
+}
+
+.tl-btn:disabled,
+.tl-btn.is-disabled,
+.tl-btn-icon:disabled,
+.tl-btn-icon.is-disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* Loading Spinner inside Button */
+.tl-btn.is-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.tl-btn.is-loading::after {
+  content: "";
+  position: absolute;
+  width: var(--tl-comp-button-spinner-size);
+  height: var(--tl-comp-button-spinner-size);
+  border: 2px solid currentColor;
+  border-right-color: var(--tl-sys-color-transparent);
+  border-radius: var(--tl-sys-shape-full);
+  animation: tl-spin 0.6s linear infinite;
+  color: var(--tl-comp-button-primary-text);
+}
+
+.tl-btn--outline.is-loading::after,
+.tl-btn--secondary.is-loading::after,
+.tl-btn--ghost.is-loading::after {
+  color: var(--tl-sys-color-primary);
+}
+
+@keyframes tl-spin {
+  to { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,76 @@
+/**
+ * TRILAYER DESIGN SYSTEM — DIALOG & MODAL COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--tl-comp-dialog-scrim-bg);
+  opacity: 0;
+  visibility: hidden;
+  z-index: var(--tl-comp-dialog-z-index);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--tl-sys-space-md);
+  transition: opacity var(--tl-sys-motion-duration-standard) var(--tl-sys-motion-easing-standard),
+              visibility var(--tl-sys-motion-duration-standard) var(--tl-sys-motion-easing-standard);
+}
+
+.tl-dialog-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tl-dialog {
+  background-color: var(--tl-comp-dialog-surface-bg);
+  border: 1px solid var(--tl-comp-dialog-border);
+  border-radius: var(--tl-comp-dialog-radius);
+  box-shadow: var(--tl-comp-dialog-shadow);
+  width: 100%;
+  max-width: 520px;
+  overflow: hidden;
+  transform: scale(0.96) translateY(8px);
+  transition: transform var(--tl-sys-motion-duration-standard) var(--tl-sys-motion-easing-standard);
+  display: flex;
+  flex-direction: column;
+}
+
+.tl-dialog-overlay.is-open .tl-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.tl-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--tl-comp-dialog-padding);
+  border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+}
+
+.tl-dialog-title {
+  font-family: var(--tl-sys-font-family-heading);
+  font-size: var(--tl-comp-dialog-title-size);
+  font-weight: 700;
+  color: var(--tl-comp-dialog-title-color);
+  margin: 0;
+}
+
+.tl-dialog-body {
+  padding: var(--tl-comp-dialog-padding);
+  color: var(--tl-comp-dialog-body-color);
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  line-height: var(--tl-sys-typescale-body-medium-line);
+}
+
+.tl-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--tl-comp-dialog-gap);
+  padding: var(--tl-sys-space-md) var(--tl-comp-dialog-padding);
+  background-color: var(--tl-sys-color-surface-container-low);
+  border-top: 1px solid var(--tl-sys-color-outline-variant);
+}

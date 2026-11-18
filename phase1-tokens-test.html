@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-density="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilayer — Phase 1 Tokens &amp; Base Verification</title>
+  
+  <!-- The Three Token Layers in Exact Architectural Hierarchy -->
+  <link rel="stylesheet" href="css/tokens.primitives.css">
+  <link rel="stylesheet" href="css/tokens.semantic.css">
+  <link rel="stylesheet" href="css/tokens.components.css">
+  <link rel="stylesheet" href="css/base.css">
+
+  <style>
+    .test-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    .test-header {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+    }
+
+    .test-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .test-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .test-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: var(--tl-sys-shape-control);
+      border: 1px solid var(--tl-sys-color-outline);
+      background: var(--tl-sys-color-surface-container-low);
+      color: var(--tl-sys-color-on-surface);
+      cursor: pointer;
+      transition: all 120ms ease;
+    }
+
+    .test-btn:hover {
+      background: var(--tl-sys-color-surface-container-high);
+      border-color: var(--tl-sys-color-primary);
+    }
+
+    .test-btn.is-active {
+      background: var(--tl-sys-color-primary);
+      color: var(--tl-sys-color-on-primary);
+      border-color: var(--tl-sys-color-primary);
+    }
+
+    .test-section {
+      margin-bottom: 40px;
+    }
+
+    .test-section-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .layer-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: var(--tl-sys-shape-badge);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .layer-badge--prim {
+      background: var(--tl-sys-color-surface-container-highest);
+      color: var(--tl-sys-color-layer-primitives);
+      border: 1px solid var(--tl-sys-color-outline);
+    }
+
+    .layer-badge--sem {
+      background: var(--tl-sys-color-primary-container);
+      color: var(--tl-sys-color-layer-semantic);
+      border: 1px solid var(--tl-sys-color-primary);
+    }
+
+    .layer-badge--comp {
+      background: var(--tl-sys-color-tertiary-container);
+      color: var(--tl-sys-color-layer-component);
+      border: 1px solid var(--tl-sys-color-tertiary);
+    }
+
+    /* Verification Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--tl-comp-card-bg);
+      border: 1px solid var(--tl-comp-card-border);
+      border-radius: var(--tl-comp-card-radius);
+      padding: 24px;
+      box-shadow: var(--tl-comp-card-shadow);
+      transition: box-shadow 160ms ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--tl-comp-card-shadow-hover);
+    }
+
+    /* Token Chain Visualizer */
+    .token-chain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .token-chain-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 12px 16px;
+      background: var(--tl-sys-color-surface-container-low);
+      border: 1px solid var(--tl-sys-color-outline-variant);
+      border-radius: var(--tl-sys-shape-control);
+      font-size: 13px;
+    }
+
+    .token-pill {
+      font-family: var(--tl-sys-font-family-code);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--tl-sys-color-surface-container-high);
+      border: 1px solid var(--tl-sys-color-outline);
+      color: var(--tl-sys-color-on-surface);
+    }
+
+    .arrow {
+      color: var(--tl-sys-color-on-surface-muted);
+      font-weight: 700;
+    }
+
+    /* Specimen Previews */
+    .swatch-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .swatch {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--tl-sys-shape-control);
+      border: 1px solid var(--tl-sys-color-outline-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Buttons consuming strictly Component Tokens */
+    .sample-btn-primary {
+      height: var(--tl-comp-button-height-md);
+      padding: 0 var(--tl-comp-button-padding-x-md);
+      border-radius: var(--tl-comp-button-radius);
+      background: var(--tl-comp-button-primary-bg);
+      color: var(--tl-comp-button-primary-text);
+      border: 1px solid var(--tl-comp-button-primary-border);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--tl-comp-button-gap);
+      box-shadow: var(--tl-comp-button-primary-shadow);
+      transition: background var(--tl-comp-button-transition);
+    }
+
+    .sample-btn-primary:hover {
+      background: var(--tl-comp-button-primary-hover-bg);
+    }
+
+    .sample-btn-tertiary {
+      height: var(--tl-comp-button-height-md);
+      padding: 0 var(--tl-comp-button-padding-x-md);
+      border-radius: var(--tl-comp-button-radius);
+      background: var(--tl-comp-button-tertiary-bg);
+      color: var(--tl-comp-button-tertiary-text);
+      border: 1px solid var(--tl-comp-button-tertiary-border);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .sample-btn-outline {
+      height: var(--tl-comp-button-height-md);
+      padding: 0 var(--tl-comp-button-padding-x-md);
+      border-radius: var(--tl-comp-button-radius);
+      background: var(--tl-comp-button-outline-bg);
+      color: var(--tl-comp-button-outline-text);
+      border: 1px solid var(--tl-comp-button-outline-border);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-to-content">Skip to content</a>
+
+  <main id="main" class="test-container">
+    <header class="test-header">
+      <div class="test-title-row">
+        <div>
+          <h1>Trilayer Token Architecture</h1>
+          <p style="margin-top: 4px;">Phase 1 Verification: Three Layers, Theming, Density &amp; Strict Token Scoping</p>
+        </div>
+        <div class="test-controls">
+          <!-- Theme Switcher -->
+          <button class="test-btn is-active" id="btn-theme-light" onclick="setTheme('light')">Light Theme</button>
+          <button class="test-btn" id="btn-theme-dark" onclick="setTheme('dark')">Dark Theme</button>
+          
+          <!-- Density Switcher -->
+          <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted); margin-left: 8px;">Density:</span>
+          <button class="test-btn" onclick="setDensity('compact')">Compact</button>
+          <button class="test-btn is-active" id="btn-density-default" onclick="setDensity('default')">Default</button>
+          <button class="test-btn" onclick="setDensity('comfortable')">Comfortable</button>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 16px;">
+        <span class="layer-badge layer-badge--prim">Layer 1: Primitives (--tl-ref-*)</span>
+        <span class="layer-badge layer-badge--sem">Layer 2: Semantic (--tl-sys-*)</span>
+        <span class="layer-badge layer-badge--comp">Layer 3: Component (--tl-comp-*)</span>
+      </div>
+    </header>
+
+    <!-- Section 1: The Layer Inspector Chain -->
+    <section class="test-section">
+      <h2 class="test-section-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        Signature Feature: Layer Inspector Verification
+      </h2>
+      <div class="token-chain-list">
+        <div class="token-chain-item">
+          <strong>Primary Button Background:</strong>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-component);">--tl-comp-button-primary-bg</span>
+          <span class="arrow">&rarr;</span>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-semantic);">--tl-sys-color-primary</span>
+          <span class="arrow">&rarr;</span>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-primitives);">--tl-ref-indigo-500</span>
+          <span class="arrow">&rarr;</span>
+          <strong id="val-btn-bg">#5B5BD6 (Light) / #787FE3 (Dark)</strong>
+        </div>
+
+        <div class="token-chain-item">
+          <strong>Control Corner Radius:</strong>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-component);">--tl-comp-button-radius</span>
+          <span class="arrow">&rarr;</span>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-semantic);">--tl-sys-shape-control</span>
+          <span class="arrow">&rarr;</span>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-primitives);">--tl-ref-radius-8</span>
+          <span class="arrow">&rarr;</span>
+          <strong>8px (Soft Scale)</strong>
+        </div>
+
+        <div class="token-chain-item">
+          <strong>Card Surface:</strong>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-component);">--tl-comp-card-bg</span>
+          <span class="arrow">&rarr;</span>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-semantic);">--tl-sys-color-surface</span>
+          <span class="arrow">&rarr;</span>
+          <span class="token-pill" style="border-color: var(--tl-sys-color-layer-primitives);">--tl-ref-white / --tl-ref-gray-950</span>
+          <span class="arrow">&rarr;</span>
+          <strong>Tonal Adaptive Surface</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Live Rendered Elements Consuming Component Tokens -->
+    <section class="test-section">
+      <h2 class="test-section-title">Live Components Rendered with Pure Component Tokens</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 style="margin-bottom: 8px;">Button Variations</h3>
+          <p style="font-size: 13px; margin-bottom: 16px;">Consuming <code>--tl-comp-button-*</code> with responsive density.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <button class="sample-btn-primary">Primary Action</button>
+            <button class="sample-btn-tertiary">Teal Layer</button>
+            <button class="sample-btn-outline">Outline</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 8px;">Tonal Brand Swatches</h3>
+          <p style="font-size: 13px; margin-bottom: 16px;">Indigo Seed (#5B5BD6) ramp in Layer 1.</p>
+          <div class="swatch-group">
+            <div class="swatch" style="background: var(--tl-ref-indigo-100); color: #161346;">100</div>
+            <div class="swatch" style="background: var(--tl-ref-indigo-300); color: #161346;">300</div>
+            <div class="swatch" style="background: var(--tl-ref-indigo-500); color: #ffffff;">500</div>
+            <div class="swatch" style="background: var(--tl-ref-indigo-700); color: #ffffff;">700</div>
+            <div class="swatch" style="background: var(--tl-ref-indigo-900); color: #ffffff;">900</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelectorAll('[id^="btn-theme-"]').forEach(btn => btn.classList.remove('is-active'));
+      const activeBtn = document.getElementById('btn-theme-' + theme);
+      if (activeBtn) activeBtn.classList.add('is-active');
+    }
+
+    function setDensity(density) {
+      document.documentElement.setAttribute('data-density', density);
+      document.querySelectorAll('.test-controls button').forEach(btn => {
+        if (['Compact', 'Default', 'Comfortable'].includes(btn.textContent)) {
+          btn.classList.toggle('is-active', btn.textContent.toLowerCase() === density);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,282 @@
+/**
+ * TRILAYER DESIGN SYSTEM — LAYER 1: PRIMITIVES
+ * Raw values with NO semantic meaning or component context.
+ * Strict naming convention: --tl-ref-*
+ * 
+ * Accents:
+ * - Primitives layer accent: Neutral/Slate
+ * - Semantic layer accent: Indigo (#5B5BD6)
+ * - Component layer accent: Teal (#0EA5E9 / #14B8A6)
+ */
+
+:root {
+  /* ==========================================================================
+     COLOR RAMPS: BRAND SEED (INDIGO #5B5BD6)
+     ========================================================================== */
+  --tl-ref-indigo-25:  #F7F7FD;
+  --tl-ref-indigo-50:  #EFF0FC;
+  --tl-ref-indigo-100: #E0E2F9;
+  --tl-ref-indigo-200: #C4C8F4;
+  --tl-ref-indigo-300: #9FA6EC;
+  --tl-ref-indigo-400: #787FE3;
+  --tl-ref-indigo-500: #5B5BD6; /* Brand Seed */
+  --tl-ref-indigo-600: #4844C7;
+  --tl-ref-indigo-700: #3A35AE;
+  --tl-ref-indigo-800: #2F2A8E;
+  --tl-ref-indigo-900: #262272;
+  --tl-ref-indigo-950: #161346;
+
+  /* ==========================================================================
+     COLOR RAMPS: NEUTRAL / SLATE (Base Surfaces, Text & Borders)
+     ========================================================================== */
+  --tl-ref-gray-0:   #FFFFFF;
+  --tl-ref-gray-25:  #FCFCFD;
+  --tl-ref-gray-50:  #F8F9FA;
+  --tl-ref-gray-100: #F1F3F5;
+  --tl-ref-gray-150: #E9ECEF;
+  --tl-ref-gray-200: #DEE2E6;
+  --tl-ref-gray-300: #CED4DA;
+  --tl-ref-gray-400: #ADB5BD;
+  --tl-ref-gray-500: #868E96;
+  --tl-ref-gray-600: #495057;
+  --tl-ref-gray-700: #343A40;
+  --tl-ref-gray-800: #212529;
+  --tl-ref-gray-850: #181B1E;
+  --tl-ref-gray-900: #121417;
+  --tl-ref-gray-950: #0A0C0E;
+  --tl-ref-gray-1000: #050607;
+
+  /* Pure White & Black Constants */
+  --tl-ref-white: #FFFFFF;
+  --tl-ref-black: #000000;
+  --tl-ref-color-transparent: transparent;
+
+  /* ==========================================================================
+     COLOR RAMPS: TEAL (Component Layer Accent)
+     ========================================================================== */
+  --tl-ref-teal-50:  #F0FDFA;
+  --tl-ref-teal-100: #CCFBF1;
+  --tl-ref-teal-200: #99F6E4;
+  --tl-ref-teal-300: #5EEAD4;
+  --tl-ref-teal-400: #2DD4BF;
+  --tl-ref-teal-500: #14B8A6;
+  --tl-ref-teal-600: #0D9488;
+  --tl-ref-teal-700: #0F766E;
+  --tl-ref-teal-800: #115E59;
+  --tl-ref-teal-900: #134E4A;
+  --tl-ref-teal-950: #042F2E;
+
+  /* ==========================================================================
+     COLOR RAMPS: EMERALD (Functional Success)
+     ========================================================================== */
+  --tl-ref-emerald-50:  #ECFDF5;
+  --tl-ref-emerald-100: #D1FAE5;
+  --tl-ref-emerald-200: #A7F3D0;
+  --tl-ref-emerald-300: #6EE7B7;
+  --tl-ref-emerald-400: #34D399;
+  --tl-ref-emerald-500: #10B981;
+  --tl-ref-emerald-600: #059669;
+  --tl-ref-emerald-700: #047857;
+  --tl-ref-emerald-800: #065F46;
+  --tl-ref-emerald-900: #064E3B;
+  --tl-ref-emerald-950: #022C22;
+
+  /* ==========================================================================
+     COLOR RAMPS: AMBER (Functional Warning)
+     ========================================================================== */
+  --tl-ref-amber-50:  #FFFBEB;
+  --tl-ref-amber-100: #FEF3C7;
+  --tl-ref-amber-200: #FDE68A;
+  --tl-ref-amber-300: #FCD34D;
+  --tl-ref-amber-400: #FBBF24;
+  --tl-ref-amber-500: #F59E0B;
+  --tl-ref-amber-600: #D97706;
+  --tl-ref-amber-700: #B45309;
+  --tl-ref-amber-800: #92400E;
+  --tl-ref-amber-900: #78350F;
+  --tl-ref-amber-950: #451A03;
+
+  /* ==========================================================================
+     COLOR RAMPS: ROSE / CRIMSON (Functional Danger & Error)
+     ========================================================================== */
+  --tl-ref-rose-50:  #FFF1F2;
+  --tl-ref-rose-100: #FFE4E6;
+  --tl-ref-rose-200: #FECDD3;
+  --tl-ref-rose-300: #FDA4AF;
+  --tl-ref-rose-400: #FB7185;
+  --tl-ref-rose-500: #F43F5E;
+  --tl-ref-rose-600: #E11D48;
+  --tl-ref-rose-700: #BE123C;
+  --tl-ref-rose-800: #9F1239;
+  --tl-ref-rose-900: #881337;
+  --tl-ref-rose-950: #4C0519;
+
+  /* ==========================================================================
+     COLOR RAMPS: SKY (Functional Information & Tech)
+     ========================================================================== */
+  --tl-ref-sky-50:  #F0F9FF;
+  --tl-ref-sky-100: #E0F2FE;
+  --tl-ref-sky-200: #BAE6FD;
+  --tl-ref-sky-300: #7DD3FC;
+  --tl-ref-sky-400: #38BDF8;
+  --tl-ref-sky-500: #0EA5E9;
+  --tl-ref-sky-600: #0284C7;
+  --tl-ref-sky-700: #0369A1;
+  --tl-ref-sky-800: #075985;
+  --tl-ref-sky-900: #0C4A6E;
+  --tl-ref-sky-950: #082F49;
+
+  /* ==========================================================================
+     COLOR RAMPS: VIOLET (Creative Accent & Premium Roles)
+     ========================================================================== */
+  --tl-ref-violet-50:  #F5F3FF;
+  --tl-ref-violet-100: #EDE9FE;
+  --tl-ref-violet-200: #DDD6FE;
+  --tl-ref-violet-300: #C4B5FD;
+  --tl-ref-violet-400: #A78BFA;
+  --tl-ref-violet-500: #8B5CF6;
+  --tl-ref-violet-600: #7C3AED;
+  --tl-ref-violet-700: #6D28D9;
+  --tl-ref-violet-800: #5B21B6;
+  --tl-ref-violet-900: #4C1D95;
+  --tl-ref-violet-950: #2E1065;
+
+  /* ==========================================================================
+     SPACING SCALE (4px / 8px Modular Rhythm)
+     ========================================================================== */
+  --tl-ref-space-0:   0px;
+  --tl-ref-space-1:   1px;
+  --tl-ref-space-2:   2px;
+  --tl-ref-space-4:   4px;
+  --tl-ref-space-6:   6px;
+  --tl-ref-space-8:   8px;
+  --tl-ref-space-10:  10px;
+  --tl-ref-space-12:  12px;
+  --tl-ref-space-14:  14px;
+  --tl-ref-space-16:  16px;
+  --tl-ref-space-20:  20px;
+  --tl-ref-space-24:  24px;
+  --tl-ref-space-28:  28px;
+  --tl-ref-space-32:  32px;
+  --tl-ref-space-36:  36px;
+  --tl-ref-space-40:  40px;
+  --tl-ref-space-48:  48px;
+  --tl-ref-space-56:  56px;
+  --tl-ref-space-64:  64px;
+  --tl-ref-space-80:  80px;
+  --tl-ref-space-96:  96px;
+  --tl-ref-space-128: 128px;
+
+  /* ==========================================================================
+     CORNER RADIUS SCALE (Soft Scale: 4 / 8 / 12 / 16 / 24 + Full)
+     ========================================================================== */
+  --tl-ref-radius-0:    0px;
+  --tl-ref-radius-4:    4px;
+  --tl-ref-radius-8:    8px;
+  --tl-ref-radius-12:   12px;
+  --tl-ref-radius-16:   16px;
+  --tl-ref-radius-24:   24px;
+  --tl-ref-radius-32:   32px;
+  --tl-ref-radius-full: 9999px;
+
+  /* ==========================================================================
+     TYPOGRAPHY PRIMITIVES: FAMILIES, SIZES, WEIGHTS, LEADING
+     ========================================================================== */
+  --tl-ref-font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --tl-ref-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --tl-ref-font-code:    'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Type Scale */
+  --tl-ref-font-size-11: 11px;
+  --tl-ref-font-size-12: 12px;
+  --tl-ref-font-size-13: 13px;
+  --tl-ref-font-size-14: 14px;
+  --tl-ref-font-size-15: 15px;
+  --tl-ref-font-size-16: 16px;
+  --tl-ref-font-size-18: 18px;
+  --tl-ref-font-size-20: 20px;
+  --tl-ref-font-size-24: 24px;
+  --tl-ref-font-size-28: 28px;
+  --tl-ref-font-size-32: 32px;
+  --tl-ref-font-size-40: 40px;
+  --tl-ref-font-size-48: 48px;
+  --tl-ref-font-size-56: 56px;
+
+  /* Weights */
+  --tl-ref-font-weight-400: 400;
+  --tl-ref-font-weight-500: 500;
+  --tl-ref-font-weight-600: 600;
+  --tl-ref-font-weight-700: 700;
+  --tl-ref-font-weight-800: 800;
+
+  /* Line Heights */
+  --tl-ref-line-height-100: 1.0;
+  --tl-ref-line-height-115: 1.15;
+  --tl-ref-line-height-125: 1.25;
+  --tl-ref-line-height-135: 1.35;
+  --tl-ref-line-height-140: 1.4;
+  --tl-ref-line-height-150: 1.5;
+  --tl-ref-line-height-160: 1.6;
+
+  /* Letter Spacing */
+  --tl-ref-letter-spacing-tight:  -0.025em;
+  --tl-ref-letter-spacing-snug:   -0.015em;
+  --tl-ref-letter-spacing-normal:  0em;
+  --tl-ref-letter-spacing-wide:    0.025em;
+  --tl-ref-letter-spacing-wider:   0.06em;
+  --tl-ref-letter-spacing-caps:    0.08em;
+
+  /* ==========================================================================
+     ELEVATION PRIMITIVES (Layered Ambient + Key Drop Shadows)
+     ========================================================================== */
+  --tl-ref-elevation-0: none;
+  --tl-ref-elevation-1: 0 1px 2px 0 rgba(18, 20, 23, 0.05), 0 1px 3px 1px rgba(18, 20, 23, 0.04);
+  --tl-ref-elevation-2: 0 2px 6px -1px rgba(18, 20, 23, 0.08), 0 1px 4px 0 rgba(18, 20, 23, 0.04);
+  --tl-ref-elevation-3: 0 6px 16px -2px rgba(18, 20, 23, 0.09), 0 2px 8px 0 rgba(18, 20, 23, 0.04);
+  --tl-ref-elevation-4: 0 12px 28px -4px rgba(18, 20, 23, 0.12), 0 4px 12px 0 rgba(18, 20, 23, 0.06);
+  --tl-ref-elevation-5: 0 24px 48px -8px rgba(18, 20, 23, 0.16), 0 8px 24px 0 rgba(18, 20, 23, 0.08);
+
+  /* Dark Elevation Ambient */
+  --tl-ref-elevation-dark-1: 0 1px 3px 0 rgba(0, 0, 0, 0.40);
+  --tl-ref-elevation-dark-2: 0 3px 8px -1px rgba(0, 0, 0, 0.50);
+  --tl-ref-elevation-dark-3: 0 8px 20px -3px rgba(0, 0, 0, 0.60);
+  --tl-ref-elevation-dark-4: 0 16px 36px -6px rgba(0, 0, 0, 0.70);
+  --tl-ref-elevation-dark-5: 0 28px 56px -10px rgba(0, 0, 0, 0.85);
+
+  /* ==========================================================================
+     MOTION PRIMITIVES (Cubic-bezier curves & Durations)
+     ========================================================================== */
+  --tl-ref-motion-duration-inst:   50ms;
+  --tl-ref-motion-duration-short:  120ms;
+  --tl-ref-motion-duration-medium: 240ms;
+  --tl-ref-motion-duration-long:   360ms;
+  --tl-ref-motion-duration-extra:  500ms;
+
+  --tl-ref-motion-ease-standard:   cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --tl-ref-motion-ease-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --tl-ref-motion-ease-accelerate: cubic-bezier(0.3, 0.0, 1.0, 1.0);
+  --tl-ref-motion-ease-emphasized: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+
+  /* ==========================================================================
+     STATE OVERLAY OPACITIES (M3 State Layer Pattern)
+     ========================================================================== */
+  --tl-ref-opacity-hover:    0.08;
+  --tl-ref-opacity-focus:    0.12;
+  --tl-ref-opacity-pressed:  0.16;
+  --tl-ref-opacity-dragged:  0.20;
+  --tl-ref-opacity-disabled: 0.38;
+
+  /* ==========================================================================
+     Z-INDEX STACK
+     ========================================================================== */
+  --tl-ref-z-base:       0;
+  --tl-ref-z-raised:     10;
+  --tl-ref-z-dropdown:   100;
+  --tl-ref-z-sticky:     200;
+  --tl-ref-z-overlay:    300;
+  --tl-ref-z-modal:      400;
+  --tl-ref-z-popover:    500;
+  --tl-ref-z-toast:      600;
+  --tl-ref-z-tooltip:    700;
+}
+

@@ -1,0 +1,212 @@
+/**
+ * LAYER 3: COMPONENT TOKENS
+ * Scoped tokens tailored to specific component properties.
+ * RULE: Every component token aliases Layer 2 (Semantic) tokens ONLY.
+ * Nothing skips directly to primitives.
+ */
+
+:root {
+  /* ==========================================================================
+     BUTTON TOKENS (--btn-*)
+     ========================================================================== */
+
+  /* Common button properties */
+  --btn-radius: var(--sem-radius-control);
+  --btn-radius-sm: var(--sem-radius-control-sm);
+  --btn-radius-lg: var(--sem-radius-control-lg);
+  --btn-radius-pill: var(--sem-radius-pill);
+  --btn-font-family: var(--sem-font-family-body);
+  --btn-font-weight: 500;
+  --btn-focus-ring: var(--sem-shadow-focus-ring);
+  --btn-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --btn-gap: var(--sem-space-gap-sm);
+
+  /* Button Sizes */
+  --btn-sm-height: 32px;
+  --btn-sm-padding-x: var(--sem-space-inset-sm);
+  --btn-sm-padding-y: var(--sem-space-inset-xs);
+  --btn-sm-font-size: var(--sem-font-size-caption);
+
+  --btn-md-height: 40px;
+  --btn-md-padding-x: var(--sem-space-inset-md);
+  --btn-md-padding-y: var(--sem-space-inset-sm);
+  --btn-md-font-size: var(--sem-font-size-body);
+
+  --btn-lg-height: 48px;
+  --btn-lg-padding-x: var(--sem-space-inset-lg);
+  --btn-lg-padding-y: var(--sem-space-inset-md);
+  --btn-lg-font-size: var(--sem-font-size-body-lg);
+
+  /* Primary Variant */
+  --btn-primary-bg: var(--sem-color-bg-brand-default);
+  --btn-primary-bg-hover: var(--sem-color-bg-brand-hover);
+  --btn-primary-bg-active: var(--sem-color-bg-brand-active);
+  --btn-primary-text: var(--sem-color-text-inverse);
+  --btn-primary-border: transparent;
+
+  /* Secondary Variant */
+  --btn-secondary-bg: var(--sem-color-bg-subtle);
+  --btn-secondary-bg-hover: var(--sem-color-bg-muted);
+  --btn-secondary-bg-active: var(--sem-color-border-subtle);
+  --btn-secondary-text: var(--sem-color-text-primary);
+  --btn-secondary-border: transparent;
+
+  /* Outline Variant */
+  --btn-outline-bg: transparent;
+  --btn-outline-bg-hover: var(--sem-color-bg-subtle);
+  --btn-outline-text: var(--sem-color-text-primary);
+  --btn-outline-border: var(--sem-color-border-default);
+  --btn-outline-border-hover: var(--sem-color-border-strong);
+
+  /* Ghost Variant */
+  --btn-ghost-bg: transparent;
+  --btn-ghost-bg-hover: var(--sem-color-bg-subtle);
+  --btn-ghost-text: var(--sem-color-text-primary);
+  --btn-ghost-border: transparent;
+
+  /* Destructive Variant */
+  --btn-danger-bg: var(--sem-color-status-danger-solid);
+  --btn-danger-bg-hover: var(--sem-color-status-danger-solid-hover);
+  --btn-danger-text: var(--sem-color-text-inverse);
+  --btn-danger-border: transparent;
+  --btn-danger-focus-ring: var(--sem-shadow-danger-ring);
+
+  /* Disabled State */
+  --btn-disabled-bg: var(--sem-color-bg-muted);
+  --btn-disabled-text: var(--sem-color-text-muted);
+  --btn-disabled-border: transparent;
+
+  /* ==========================================================================
+     INPUT & FORM FIELD TOKENS (--input-*, --form-*)
+     ========================================================================== */
+  --input-bg: var(--sem-color-bg-surface);
+  --input-text: var(--sem-color-text-primary);
+  --input-placeholder: var(--sem-color-text-muted);
+  --input-border-default: var(--sem-color-border-default);
+  --input-border-hover: var(--sem-color-border-strong);
+  --input-border-focus: var(--sem-color-border-focus);
+  --input-border-error: var(--sem-color-status-danger-solid);
+  --input-focus-ring: var(--sem-shadow-focus-ring);
+  --input-error-ring: var(--sem-shadow-danger-ring);
+  --input-radius: var(--sem-radius-control);
+  --input-font-size: var(--sem-font-size-body);
+
+  --input-sm-height: 32px;
+  --input-sm-padding-x: var(--sem-space-inset-sm);
+  --input-md-height: 40px;
+  --input-md-padding-x: var(--sem-space-inset-md);
+  --input-lg-height: 48px;
+  --input-lg-padding-x: var(--sem-space-inset-md);
+
+  --form-label-color: var(--sem-color-text-primary);
+  --form-label-font-size: var(--sem-font-size-body-sm);
+  --form-label-font-weight: 500;
+  --form-helper-color: var(--sem-color-text-secondary);
+  --form-error-color: var(--sem-color-status-danger-text);
+
+  /* ==========================================================================
+     CARD TOKENS (--card-*)
+     ========================================================================== */
+  --card-bg: var(--sem-color-bg-surface);
+  --card-border: var(--sem-color-border-subtle);
+  --card-radius: var(--sem-radius-card);
+  --card-shadow: var(--sem-shadow-card);
+  --card-shadow-hover: var(--sem-shadow-card-hover);
+  --card-padding-sm: var(--sem-space-inset-sm);
+  --card-padding-md: var(--sem-space-inset-md);
+  --card-padding-lg: var(--sem-space-inset-lg);
+
+  /* ==========================================================================
+     BADGE & TAG TOKENS (--badge-*)
+     ========================================================================== */
+  --badge-radius: var(--sem-radius-badge);
+  --badge-font-size: var(--sem-font-size-caption);
+  --badge-padding-x: var(--sem-space-inset-sm);
+  --badge-padding-y: 2px;
+  --badge-font-weight: 500;
+
+  /* Neutral Badge */
+  --badge-neutral-bg: var(--sem-color-bg-subtle);
+  --badge-neutral-text: var(--sem-color-text-secondary);
+  --badge-neutral-border: var(--sem-color-border-subtle);
+
+  /* Brand Badge */
+  --badge-brand-bg: var(--sem-color-bg-brand-subtle);
+  --badge-brand-text: var(--sem-color-text-brand);
+  --badge-brand-border: transparent;
+
+  /* Success Badge */
+  --badge-success-bg: var(--sem-color-status-success-bg);
+  --badge-success-text: var(--sem-color-status-success-text);
+  --badge-success-border: var(--sem-color-status-success-border);
+
+  /* Warning Badge */
+  --badge-warning-bg: var(--sem-color-status-warning-bg);
+  --badge-warning-text: var(--sem-color-status-warning-text);
+  --badge-warning-border: var(--sem-color-status-warning-border);
+
+  /* Danger Badge */
+  --badge-danger-bg: var(--sem-color-status-danger-bg);
+  --badge-danger-text: var(--sem-color-status-danger-text);
+  --badge-danger-border: var(--sem-color-status-danger-border);
+
+  /* Info Badge */
+  --badge-info-bg: var(--sem-color-status-info-bg);
+  --badge-info-text: var(--sem-color-status-info-text);
+  --badge-info-border: var(--sem-color-status-info-border);
+
+  /* ==========================================================================
+     MODAL & DIALOG TOKENS (--modal-*)
+     ========================================================================== */
+  --modal-bg: var(--sem-color-bg-surface-raised);
+  --modal-border: var(--sem-color-border-subtle);
+  --modal-radius: var(--sem-radius-modal);
+  --modal-shadow: var(--sem-shadow-modal);
+  --modal-overlay: var(--sem-color-overlay);
+  --modal-header-padding: var(--sem-space-inset-lg);
+  --modal-body-padding: var(--sem-space-inset-lg);
+  --modal-footer-padding: var(--sem-space-inset-lg);
+
+  /* ==========================================================================
+     DROPDOWN & POPOVER TOKENS (--dropdown-*)
+     ========================================================================== */
+  --dropdown-bg: var(--sem-color-bg-surface-raised);
+  --dropdown-border: var(--sem-color-border-subtle);
+  --dropdown-radius: var(--sem-radius-card);
+  --dropdown-shadow: var(--sem-shadow-dropdown);
+  --dropdown-item-padding: var(--sem-space-inset-sm) var(--sem-space-inset-md);
+  --dropdown-item-hover-bg: var(--sem-color-bg-subtle);
+  --dropdown-item-text: var(--sem-color-text-primary);
+  --dropdown-item-text-muted: var(--sem-color-text-secondary);
+
+  /* ==========================================================================
+     TOAST TOKENS (--toast-*)
+     ========================================================================== */
+  --toast-bg: var(--sem-color-bg-surface-raised);
+  --toast-border: var(--sem-color-border-subtle);
+  --toast-radius: var(--sem-radius-card);
+  --toast-shadow: var(--sem-shadow-toast);
+  --toast-text: var(--sem-color-text-primary);
+  --toast-padding: var(--sem-space-inset-md);
+
+  /* ==========================================================================
+     TABS TOKENS (--tabs-*)
+     ========================================================================== */
+  --tabs-border: var(--sem-color-border-subtle);
+  --tabs-text: var(--sem-color-text-secondary);
+  --tabs-text-active: var(--sem-color-text-brand);
+  --tabs-indicator-color: var(--sem-color-bg-brand-default);
+  --tabs-hover-bg: var(--sem-color-bg-subtle);
+
+  /* ==========================================================================
+     TABLE TOKENS (--table-*)
+     ========================================================================== */
+  --table-bg: var(--sem-color-bg-surface);
+  --table-header-bg: var(--sem-color-bg-subtle);
+  --table-header-text: var(--sem-color-text-secondary);
+  --table-border: var(--sem-color-border-subtle);
+  --table-row-hover: var(--sem-color-bg-subtle);
+  --table-cell-padding-x: var(--sem-space-inset-md);
+  --table-cell-padding-y: var(--sem-space-inset-sm);
+}
+
