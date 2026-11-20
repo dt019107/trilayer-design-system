@@ -16,6 +16,41 @@ import { copyToClipboard } from "./utils/copy-code.js";
 window.Toast = Toast;
 window.copyToClipboard = copyToClipboard;
 
+// Global Theme Seed Switcher for Hero & Playgrounds
+window.__onSeedChange = function(seedHex) {
+  try {
+    const result = ColorEngine.applyThemeFromSeed(seedHex);
+    localStorage.setItem("trilayer_custom_seed", seedHex);
+    const picker = document.getElementById("hero-color-picker");
+    if (picker && picker.value !== seedHex) picker.value = seedHex;
+    
+    // Update live badge indicator if present
+    const contrastBadge = document.getElementById("hero-contrast-ratio");
+    if (contrastBadge && result && result.contrastRatio) {
+      contrastBadge.textContent = `${result.contrastRatio}:1 AAA`;
+    }
+    
+    Toast.show({ 
+      message: `Tonal palette regenerated from seed ${seedHex}`, 
+      type: "info" 
+    });
+  } catch (err) {
+    console.error("Failed to apply theme seed:", err);
+  }
+};
+
+window.__onResetTheme = function() {
+  try {
+    localStorage.removeItem("trilayer_custom_seed");
+    ColorEngine.resetToDefault();
+    const picker = document.getElementById("hero-color-picker");
+    if (picker) picker.value = "#5B5BD6";
+    Toast.show({ message: "Reset to default Indigo brand theme", type: "info" });
+  } catch (err) {
+    console.error("Failed to reset theme:", err);
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Check & apply custom theme seed if saved
   try {

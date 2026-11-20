@@ -222,15 +222,15 @@ export class ColorEngine {
     // Compute accessible on-primary text (white for dark primaries, deep tint for light primaries like amber)
     const onPrimary = this.getContrastRatio("#FFFFFF", p500) >= 4.5 ? "#FFFFFF" : p950;
 
-    // Dynamic semantic injection
+    // Dynamic semantic injection respecting Dark Theme mode
     root.style.setProperty("--tl-sys-color-primary", p500);
     root.style.setProperty("--tl-sys-color-on-primary", onPrimary);
     root.style.setProperty("--tl-sys-color-primary-hover", p600);
     root.style.setProperty("--tl-sys-color-primary-active", p700);
-    root.style.setProperty("--tl-sys-color-primary-container", p50);
-    root.style.setProperty("--tl-sys-color-on-primary-container", p900);
-    root.style.setProperty("--tl-sys-color-secondary-container", p100);
-    root.style.setProperty("--tl-sys-color-layer-semantic", p500);
+    root.style.setProperty("--tl-sys-color-primary-container", p900);
+    root.style.setProperty("--tl-sys-color-on-primary-container", p100);
+    root.style.setProperty("--tl-sys-color-secondary-container", p950);
+    root.style.setProperty("--tl-sys-color-layer-semantic", p400);
 
     // Save to localStorage
     try {
@@ -239,11 +239,12 @@ export class ColorEngine {
 
     // Dispatch event for UI reactivity
     const audit = this.runContrastAudit(palette);
+    const contrastRatio = audit && audit[0] ? audit[0].ratio : 5.8;
     window.dispatchEvent(new CustomEvent("tl:palette-change", {
-      detail: { seedHex, palette, audit }
+      detail: { seedHex, palette, audit, contrastRatio }
     }));
 
-    return { palette, audit };
+    return { palette, audit, contrastRatio };
   }
 
   /**

@@ -259,6 +259,154 @@
 }
 
 /* ==========================================================================
+   FLAGSHIP HERO & ARTBOARD SHOWCASE STYLING
+   ========================================================================== */
+.tl-home-hero {
+  position: relative;
+  background: radial-gradient(800px circle at 50% 0%, color-mix(in srgb, var(--tl-sys-color-primary) 18%, transparent), transparent 70%);
+  border-radius: var(--tl-sys-shape-container);
+  padding: var(--tl-sys-space-2xl) var(--tl-sys-space-md);
+  margin-bottom: var(--tl-sys-space-2xl);
+  overflow: hidden;
+}
+
+.tl-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tl-sys-space-xs);
+  padding: 4px 12px;
+  background-color: var(--tl-sys-color-surface-container-high);
+  border: 1px solid var(--tl-sys-color-outline);
+  border-radius: var(--tl-sys-shape-badge);
+  font-family: var(--tl-sys-font-family-code);
+  font-size: var(--tl-sys-typescale-label-caps-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tl-sys-color-on-surface);
+  margin-bottom: var(--tl-sys-space-md);
+}
+
+.tl-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--tl-sys-shape-full);
+  background-color: var(--tl-sys-color-success);
+  box-shadow: 0 0 8px var(--tl-sys-color-success);
+  display: inline-block;
+  animation: tl-pulse 2s infinite;
+}
+
+@keyframes tl-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.tl-gradient-text {
+  background: linear-gradient(135deg, var(--tl-sys-color-on-surface) 30%, var(--tl-sys-color-link) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.tl-hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--tl-sys-space-md);
+  margin-top: var(--tl-sys-space-xl);
+  margin-bottom: var(--tl-sys-space-xl);
+}
+
+.tl-hero-stat-card {
+  background-color: var(--tl-sys-color-surface-container);
+  border: 1px solid var(--tl-sys-color-outline);
+  border-top: 3px solid var(--tl-sys-color-primary);
+  border-radius: var(--tl-sys-shape-control);
+  padding: var(--tl-sys-space-md) var(--tl-sys-space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--tl-sys-space-2xs);
+  transition: transform var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-hero-stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.tl-hero-stat-value {
+  font-family: var(--tl-sys-font-family-heading);
+  font-size: var(--tl-sys-typescale-headline-large-size);
+  font-weight: 800;
+  color: var(--tl-sys-color-on-surface);
+  line-height: 1;
+}
+
+.tl-hero-stat-label {
+  font-size: var(--tl-sys-typescale-body-small-size);
+  color: var(--tl-sys-color-on-surface-muted);
+  font-weight: 500;
+}
+
+.tl-hero-studio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--tl-sys-space-xl);
+  background-color: var(--tl-sys-color-surface-container);
+  border: 1px solid var(--tl-sys-color-outline);
+  border-radius: var(--tl-sys-shape-container);
+  padding: var(--tl-sys-space-xl);
+  margin-bottom: var(--tl-sys-space-2xl);
+  box-shadow: var(--tl-sys-elevation-2);
+}
+
+.tl-quicknav-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--tl-sys-space-sm);
+  flex-wrap: wrap;
+  padding: var(--tl-sys-space-sm) var(--tl-sys-space-md);
+  background-color: var(--tl-sys-color-surface-container);
+  border: 1px solid var(--tl-sys-color-outline);
+  border-radius: var(--tl-sys-shape-control);
+  margin-bottom: var(--tl-sys-space-2xl);
+}
+
+.tl-quicknav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tl-sys-space-xs);
+  padding: 6px 12px;
+  background-color: var(--tl-sys-color-surface-container-high);
+  border: 1px solid var(--tl-sys-color-outline-variant);
+  border-radius: var(--tl-sys-shape-badge);
+  color: var(--tl-sys-color-on-surface-variant);
+  font-size: var(--tl-sys-typescale-body-small-size);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-quicknav-pill:hover {
+  background-color: var(--tl-sys-color-primary-container);
+  border-color: var(--tl-sys-color-primary);
+  color: var(--tl-sys-color-on-primary-container);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.tl-frame-tag {
+  font-family: var(--tl-sys-font-family-code);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--tl-sys-shape-xs);
+  background-color: var(--tl-sys-color-surface-container-highest);
+  border: 1px solid var(--tl-sys-color-outline);
+  color: var(--tl-sys-color-on-surface-variant);
+}
+
+/* ==========================================================================
    FIGMA-STYLE DESIGN SYSTEM CANVAS & ARTBOARD UTILITIES
    ========================================================================== */
 .tl-artboard {
