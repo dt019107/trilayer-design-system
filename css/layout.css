@@ -96,32 +96,13 @@
 
 .tl-brand-version {
   font-family: var(--tl-sys-font-family-code);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 1px 7px;
-  border-radius: 9999px;
-  background-color: color-mix(in srgb, var(--tl-sys-color-on-surface) 6%, transparent);
-  color: var(--tl-sys-color-on-surface-variant);
-  border: 1px solid color-mix(in srgb, var(--tl-sys-color-outline-variant) 60%, transparent);
-  line-height: 1.4;
-  margin-left: 2px;
-}
-
-/* Vertical divider between brand and desktop navigation */
-.tl-header-divider {
-  display: none;
-  width: 1px;
-  height: 20px;
-  background-color: color-mix(in srgb, var(--tl-sys-color-outline-variant) 65%, transparent);
-  margin: 0 var(--tl-sys-space-xs);
-  flex-shrink: 0;
-}
-
-@media (min-width: 900px) {
-  .tl-header-divider {
-    display: block;
-  }
+  font-size: var(--tl-sys-typescale-label-caps-size);
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--tl-sys-shape-badge);
+  background-color: var(--tl-sys-color-primary-container);
+  color: var(--tl-sys-color-on-primary-container);
+  border: 1px solid var(--tl-sys-color-primary);
 }
 
 /* Desktop Navigation Links */
@@ -129,6 +110,7 @@
   display: none;
   align-items: center;
   gap: var(--tl-sys-space-2xs);
+  margin-left: var(--tl-sys-space-sm);
 }
 
 @media (min-width: 900px) {
@@ -138,52 +120,46 @@
 }
 
 .tl-header-nav-link {
-  font-size: 13px;
+  font-size: var(--tl-sys-typescale-body-small-size);
   font-weight: 500;
   color: var(--tl-sys-color-on-surface-variant);
   padding: 6px 12px;
   border-radius: var(--tl-sys-shape-control);
-  border: 1px solid transparent;
   text-decoration: none;
-  line-height: 1.4;
   transition: all var(--tl-sys-motion-duration-quick) ease;
 }
 
 .tl-header-nav-link:hover {
   color: var(--tl-sys-color-on-surface);
-  background-color: color-mix(in srgb, var(--tl-sys-color-on-surface) 6%, transparent);
-  border-color: color-mix(in srgb, var(--tl-sys-color-outline-variant) 40%, transparent);
+  background-color: var(--tl-sys-color-surface-container-high);
   text-decoration: none;
 }
 
 .tl-header-nav-link.is-active {
-  color: var(--tl-sys-color-on-surface);
-  background-color: color-mix(in srgb, var(--tl-sys-color-on-surface) 10%, transparent);
-  border-color: color-mix(in srgb, var(--tl-sys-color-outline-variant) 80%, transparent);
+  color: var(--tl-sys-color-primary);
+  background-color: var(--tl-sys-color-primary-container);
   font-weight: 600;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Header Right Actions */
 .tl-header-right {
   display: flex;
   align-items: center;
-  gap: var(--tl-sys-space-xs);
+  gap: var(--tl-sys-space-sm);
 }
 
 /* Search Trigger Button */
 .tl-search-trigger {
   display: flex;
   align-items: center;
-  gap: var(--tl-sys-space-xs);
-  height: 38px;
-  min-height: 38px;
-  padding: 0 10px 0 12px;
-  background-color: color-mix(in srgb, var(--tl-sys-color-surface-container) 80%, transparent);
+  gap: var(--tl-sys-space-sm);
+  min-height: 40px;
+  padding: 0 var(--tl-sys-space-md);
+  background-color: var(--tl-sys-color-surface-container);
   border: 1px solid var(--tl-sys-color-outline-variant);
   border-radius: var(--tl-sys-shape-control);
   color: var(--tl-sys-color-on-surface-muted);
-  font-size: 13px;
+  font-size: var(--tl-sys-typescale-body-small-size);
   font-family: var(--tl-sys-font-family-body);
   cursor: pointer;
   transition: all var(--tl-sys-motion-duration-quick) ease;
@@ -191,55 +167,47 @@
 
 .tl-search-trigger:hover {
   background-color: var(--tl-sys-color-surface-container-high);
-  border-color: color-mix(in srgb, var(--tl-sys-color-outline) 80%, transparent);
+  border-color: var(--tl-sys-color-primary);
   color: var(--tl-sys-color-on-surface);
 }
 
 .tl-search-placeholder {
-  font-size: 13px;
+  font-size: var(--tl-sys-typescale-body-small-size);
   color: var(--tl-sys-color-on-surface-muted);
 }
 
 .tl-kbd {
   font-family: var(--tl-sys-font-family-code);
-  font-size: 11px;
+  font-size: var(--tl-sys-typescale-label-caps-size);
   font-weight: 600;
-  padding: 1px 6px;
+  padding: 2px 6px;
   border-radius: var(--tl-sys-shape-xs);
-  background-color: color-mix(in srgb, var(--tl-sys-color-on-surface) 6%, transparent);
-  border: 1px solid var(--tl-sys-color-outline-variant);
-  color: var(--tl-sys-color-on-surface-muted);
-  margin-left: var(--tl-sys-space-xs);
+  background-color: var(--tl-sys-color-surface);
+  border: 1px solid var(--tl-sys-color-outline);
+  color: var(--tl-sys-color-on-surface-variant);
 }
 
-/* Header Icon Action Buttons */
+/* Header Icon Action Buttons (44x44px target) */
 .tl-header-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  min-height: 38px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: var(--tl-sys-shape-control);
   border: 1px solid var(--tl-sys-color-outline-variant);
-  background-color: color-mix(in srgb, var(--tl-sys-color-surface-container) 80%, transparent);
-  color: var(--tl-sys-color-on-surface-muted);
+  background-color: transparent;
+  color: var(--tl-sys-color-on-surface-variant);
   cursor: pointer;
   transition: all var(--tl-sys-motion-duration-quick) ease;
 }
 
 .tl-header-btn:hover {
   background-color: var(--tl-sys-color-surface-container-high);
-  border-color: color-mix(in srgb, var(--tl-sys-color-outline) 80%, transparent);
+  border-color: var(--tl-sys-color-outline);
   color: var(--tl-sys-color-on-surface);
-}
-
-@media (pointer: coarse), (max-width: 767px) {
-  .tl-header-btn {
-    min-width: 44px;
-    min-height: 44px;
-  }
 }
 
 /* Density Dropdown Wrapper */
@@ -247,15 +215,15 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  height: 38px;
-  background-color: color-mix(in srgb, var(--tl-sys-color-surface-container) 80%, transparent);
+  background-color: var(--tl-sys-color-surface-container);
   border: 1px solid var(--tl-sys-color-outline-variant);
   border-radius: var(--tl-sys-shape-control);
+  height: 40px;
   transition: all var(--tl-sys-motion-duration-quick) ease;
 }
 
 .tl-density-wrapper:hover {
-  border-color: color-mix(in srgb, var(--tl-sys-color-outline) 80%, transparent);
+  border-color: var(--tl-sys-color-outline);
   background-color: var(--tl-sys-color-surface-container-high);
 }
 
@@ -268,20 +236,13 @@
 
 .tl-density-select {
   height: 100%;
-  padding: 0 10px 0 30px;
-  font-size: 13px;
-  font-weight: 500;
+  padding: 0 12px 0 30px;
+  font-size: var(--tl-sys-typescale-label-medium-size);
+  font-weight: 600;
   border: none;
   background: transparent;
-  color: var(--tl-sys-color-on-surface-variant);
-  cursor: pointer;
-  outline: none;
-  transition: color var(--tl-sys-motion-duration-quick) ease;
-}
-
-.tl-density-wrapper:hover .tl-density-select {
   color: var(--tl-sys-color-on-surface);
-}
+  cursor: pointer;
   outline: none;
 }
 
