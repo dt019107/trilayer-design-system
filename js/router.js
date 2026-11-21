@@ -344,7 +344,7 @@ export class Router {
               Select a brand seed color. The engine recalculates the complete 12-step perceptual tonal ramp and updates all semantic mappings live across the entire interface.
             </p>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <input type="color" id="hero-color-picker" value="#5B5BD6" style="width: 32px; height: 32px; border: none; border-radius: var(--tl-sys-shape-xs); cursor: pointer; background: transparent;" oninput="window.__onSeedChange(this.value)" aria-label="Brand Seed Color Picker">
+              <input type="color" id="hero-color-picker" value="#5B5BD6" style="width: 44px; height: 44px; min-width: 44px; min-height: 44px; border: none; border-radius: var(--tl-sys-shape-xs); cursor: pointer; background: transparent;" oninput="window.__onSeedChange(this.value)" aria-label="Brand Seed Color Picker">
               <button class="tl-chip" onclick="window.__onSeedChange('#5B5BD6')"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #5B5BD6;"></span> Indigo</button>
               <button class="tl-chip" onclick="window.__onSeedChange('#059669')"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #059669;"></span> Emerald</button>
               <button class="tl-chip" onclick="window.__onSeedChange('#E11D48')"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #E11D48;"></span> Crimson</button>

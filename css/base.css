@@ -39,25 +39,49 @@ body {
 }
 
 /* ==========================================================================
-   HEADINGS & TYPOGRAPHY FOUNDATIONS
+   HEADINGS & TYPOGRAPHY FOUNDATIONS (Fluid Scaling & Optimal Measure)
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--tl-sys-font-family-heading);
   color: var(--tl-sys-color-on-surface);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
-h1 { font-size: var(--tl-sys-typescale-headline-large-size); }
-h2 { font-size: var(--tl-sys-typescale-headline-medium-size); }
-h3 { font-size: var(--tl-sys-typescale-title-large-size); }
-h4 { font-size: var(--tl-sys-typescale-title-medium-size); }
+h1 { font-size: clamp(26px, 4.5vw, 40px); }
+h2 { font-size: clamp(20px, 3vw, 28px); }
+h3 { font-size: clamp(16px, 2vw, 20px); }
+h4 { font-size: clamp(14px, 1.5vw, 16px); }
 
 p {
   color: var(--tl-sys-color-on-surface-variant);
-  font-size: var(--tl-sys-typescale-body-large-size);
+  font-size: clamp(14px, 1.2vw, 16px);
   line-height: var(--tl-sys-typescale-body-large-line);
+  max-width: 72ch;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+/* ==========================================================================
+   MOBILE & TOUCH ERGONOMICS (44x44px Minimum Target)
+   ========================================================================== */
+@media (pointer: coarse), (max-width: 767px) {
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .tl-btn,
+  .tl-header-btn,
+  .tl-nav-toggle,
+  .tl-chip,
+  .tl-quicknav-pill {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
 }
 
 a {
