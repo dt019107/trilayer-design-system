@@ -92,7 +92,7 @@ export function renderComponentPage(component) {
       <div class="tl-playground-controls">
         <span class="tl-playground-control-label">Test Controls:</span>
         <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: 'Triggered ${component.title} action', type: 'info' })">Test Trigger</button>
-        <button class="tl-btn tl-btn--secondary tl-btn--sm" onclick="Toast.show({ message: '${component.title} component verified in Dark Canvas', type: 'success' })">Verify Component</button>
+        <button class="tl-btn tl-btn--secondary tl-btn--sm" onclick="Toast.show({ message: '${component.title} component verified', type: 'success' })">Verify Component</button>
       </div>
     </div>
 

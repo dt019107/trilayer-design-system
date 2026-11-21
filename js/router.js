@@ -380,7 +380,6 @@ export class Router {
                 <input type="checkbox" checked style="accent-color: var(--tl-sys-color-primary);" aria-label="Auto Sync Toggle">
                 <span style="font-size: 13px; color: var(--tl-sys-color-on-surface);">Auto Sync</span>
               </label>
-              <span class="tl-badge tl-badge--neutral" style="text-transform: none;">Dark Canvas Active</span>
               <span class="tl-chip" style="pointer-events: none;">DTCG Compliant</span>
             </div>
             <div style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted); line-height: 1.4; border-top: 1px solid var(--tl-sys-color-outline-variant); padding-top: 10px;">

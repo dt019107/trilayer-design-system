@@ -94,6 +94,21 @@ export class NavigationController {
       }
     });
 
+    // Update active class on top-level header navbar links
+    document.querySelectorAll(".tl-header-nav-link").forEach(link => {
+      const href = link.getAttribute("href") || "";
+      const linkHash = href.replace(/^#/, "");
+      const isHome = (normalized === "/" || normalized === "") && linkHash === "/";
+      const isSection = linkHash !== "/" && normalized.startsWith(linkHash);
+      const isActive = isHome || isSection;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
     // Update breadcrumbs
     this.updateBreadcrumbs(normalized);
 
