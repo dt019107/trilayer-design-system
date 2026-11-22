@@ -47,6 +47,10 @@
   font-size: var(--tl-sys-typescale-body-large-size);
 }
 
+.tl-btn:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
 /* ==========================================================================
    BUTTON VARIANTS
    ========================================================================== */
@@ -152,6 +156,10 @@
   background-color: transparent;
   color: var(--tl-comp-button-outline-text);
   transition: all var(--tl-comp-button-transition);
+}
+
+.tl-btn-icon:active:not(:disabled) {
+  transform: scale(0.985);
 }
 
 .tl-btn-icon--sm {

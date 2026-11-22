@@ -60,7 +60,7 @@ p {
   color: var(--tl-sys-color-on-surface-variant);
   font-size: clamp(14px, 1.2vw, 16px);
   line-height: var(--tl-sys-typescale-body-large-line);
-  max-width: 72ch;
+  max-width: 65ch;
   text-wrap: pretty;
   overflow-wrap: break-word;
 }

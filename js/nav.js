@@ -189,9 +189,30 @@ export class NavigationController {
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && this.isOpen) {
         this.closeDrawer();
-        if (this.toggleBtn) this.toggleBtn.focus();
       }
     });
+
+    // Trap Tab focus inside sidebar drawer while open (accessibility-engineer)
+    if (this.sidebar) {
+      this.sidebar.addEventListener("keydown", (e) => {
+        if (!this.isOpen || e.key !== "Tab") return;
+        const focusables = Array.from(this.sidebar.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    }
   }
 
   toggleDrawer() {
@@ -215,6 +236,16 @@ export class NavigationController {
       this.toggleBtn.setAttribute("aria-expanded", "true");
     }
     document.body.style.overflow = "hidden";
+
+    // Focus destination on open (accessibility-engineer)
+    setTimeout(() => {
+      if (this.closeBtn && window.getComputedStyle(this.closeBtn).display !== "none") {
+        this.closeBtn.focus();
+      } else {
+        const firstLink = this.sidebar?.querySelector(".tl-nav-link, a, button");
+        if (firstLink) firstLink.focus();
+      }
+    }, 60);
   }
 
   closeDrawer() {
@@ -228,6 +259,7 @@ export class NavigationController {
     }
     if (this.toggleBtn) {
       this.toggleBtn.setAttribute("aria-expanded", "false");
+      this.toggleBtn.focus();
     }
     document.body.style.overflow = "";
   }
