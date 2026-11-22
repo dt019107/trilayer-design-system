@@ -632,3 +632,71 @@
   color: var(--tl-sys-color-on-surface-muted);
   margin-bottom: var(--tl-sys-space-2xs);
 }
+
+/* ==========================================================================
+   TACTILE MICRO-INTERACTIONS & AMBIENT SHEEN (Biings Pattern)
+   ========================================================================== */
+.tl-has-lift {
+  transition: transform var(--tl-sys-motion-duration-quick) ease,
+              box-shadow var(--tl-sys-motion-duration-quick) ease,
+              border-color var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-has-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.45);
+  border-color: color-mix(in srgb, var(--tl-sys-color-outline) 80%, transparent);
+}
+
+.tl-surface-ambient {
+  position: relative;
+  background-image: radial-gradient(ellipse at top left, color-mix(in srgb, var(--tl-sys-color-primary) 6%, transparent) 0%, transparent 70%);
+}
+
+/* 3-Column Variant Matrix Table */
+.tl-variant-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--tl-sys-typescale-body-small-size);
+}
+
+.tl-variant-matrix-table th {
+  padding: var(--tl-sys-space-sm) var(--tl-sys-space-md);
+  text-align: left;
+  font-size: var(--tl-sys-typescale-label-caps-size);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tl-sys-color-on-surface-muted);
+  border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+  background-color: var(--tl-sys-color-surface-container-low);
+}
+
+.tl-variant-matrix-table td {
+  padding: var(--tl-sys-space-md);
+  border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+  vertical-align: middle;
+}
+
+.tl-variant-matrix-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tl-variant-matrix-preview {
+  min-width: 160px;
+}
+
+.tl-variant-matrix-token code {
+  font-family: var(--tl-sys-font-family-code);
+  font-size: var(--tl-sys-typescale-label-medium-size);
+  color: var(--tl-sys-color-primary);
+  background-color: color-mix(in srgb, var(--tl-sys-color-on-surface) 6%, transparent);
+  padding: 2px 6px;
+  border-radius: var(--tl-sys-shape-xs);
+  border: 1px solid var(--tl-sys-color-outline-variant);
+}
+
+.tl-variant-matrix-intent {
+  color: var(--tl-sys-color-on-surface-variant);
+  font-size: var(--tl-sys-typescale-body-small-size);
+  line-height: 1.5;
+}

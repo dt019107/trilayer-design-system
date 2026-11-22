@@ -1,0 +1,101 @@
+/**
+ * TRILAYER DESIGN SYSTEM — AVATAR COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: var(--tl-comp-avatar-radius);
+  background-color: var(--tl-comp-avatar-bg);
+  color: var(--tl-comp-avatar-text);
+  font-family: var(--tl-comp-avatar-font-family);
+  font-weight: 600;
+  border: 1px solid var(--tl-comp-avatar-border);
+  box-sizing: border-box;
+  user-select: none;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.tl-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Sizes */
+.tl-avatar--sm {
+  width: var(--tl-comp-avatar-size-sm);
+  height: var(--tl-comp-avatar-size-sm);
+  font-size: var(--tl-comp-avatar-font-size-sm);
+}
+
+.tl-avatar--md {
+  width: var(--tl-comp-avatar-size-md);
+  height: var(--tl-comp-avatar-size-md);
+  font-size: var(--tl-comp-avatar-font-size-md);
+}
+
+.tl-avatar--lg {
+  width: var(--tl-comp-avatar-size-lg);
+  height: var(--tl-comp-avatar-size-lg);
+  font-size: var(--tl-comp-avatar-font-size-lg);
+}
+
+.tl-avatar--xl {
+  width: var(--tl-comp-avatar-size-xl);
+  height: var(--tl-comp-avatar-size-xl);
+  font-size: var(--tl-comp-avatar-font-size-xl);
+}
+
+/* Status Indicator Dot */
+.tl-avatar__status {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: var(--tl-sys-space-sm);
+  height: var(--tl-sys-space-sm);
+  border-radius: var(--tl-sys-shape-full);
+  border: 2px solid var(--tl-comp-avatar-status-border);
+  box-sizing: content-box;
+}
+
+.tl-avatar__status--online {
+  background-color: var(--tl-comp-avatar-status-online);
+}
+
+.tl-avatar__status--busy {
+  background-color: var(--tl-comp-avatar-status-busy);
+}
+
+.tl-avatar__status--away {
+  background-color: var(--tl-comp-avatar-status-away);
+}
+
+/* Avatar Group (Stacked) */
+.tl-avatar-group {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tl-avatar-group .tl-avatar {
+  margin-left: calc(-1 * var(--tl-comp-avatar-group-offset));
+  border: 2px solid var(--tl-comp-avatar-status-border);
+}
+
+.tl-avatar-group .tl-avatar:first-child {
+  margin-left: 0px;
+}
+
+.tl-avatar-group .tl-avatar--more {
+  background-color: var(--tl-sys-color-surface-container-highest);
+  color: var(--tl-sys-color-on-surface-variant);
+  font-size: var(--tl-comp-avatar-font-size-sm);
+}

@@ -1,0 +1,43 @@
+/**
+ * TRILAYER DESIGN SYSTEM — SPINNER / LOADER COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-spinner {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: var(--tl-sys-shape-full);
+  border-style: solid;
+  border-color: var(--tl-comp-spinner-track);
+  border-top-color: var(--tl-comp-spinner-indicator);
+  animation: tl-spin var(--tl-comp-spinner-duration) linear infinite;
+  vertical-align: middle;
+}
+
+.tl-spinner--sm {
+  width: var(--tl-comp-spinner-size-sm);
+  height: var(--tl-comp-spinner-size-sm);
+  border-width: 2px;
+}
+
+.tl-spinner--md {
+  width: var(--tl-comp-spinner-size-md);
+  height: var(--tl-comp-spinner-size-md);
+  border-width: 2px;
+}
+
+.tl-spinner--lg {
+  width: var(--tl-comp-spinner-size-lg);
+  height: var(--tl-comp-spinner-size-lg);
+  border-width: 2px;
+}
+
+@keyframes tl-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

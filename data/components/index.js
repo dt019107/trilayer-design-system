@@ -14,6 +14,10 @@ import card from "./card.js";
 import badge from "./badge.js";
 import chip from "./chip.js";
 import tooltip from "./tooltip.js";
+import avatar from "./avatar.js";
+import skeleton from "./skeleton.js";
+import callout from "./callout.js";
+import spinner from "./spinner.js";
 
 export const components = {
   "button": button,
@@ -25,7 +29,11 @@ export const components = {
   "card": card,
   "badge": badge,
   "chip": chip,
-  "tooltip": tooltip
+  "tooltip": tooltip,
+  "avatar": avatar,
+  "skeleton": skeleton,
+  "callout": callout,
+  "spinner": spinner
 };
 
 export const componentsList = Object.values(components);

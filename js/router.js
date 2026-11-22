@@ -388,6 +388,43 @@ export class Router {
           </div>
         </div>
 
+        <!-- Quick-Start Installation & Drop-in Integration (Biings DS Pattern) -->
+        <div class="tl-card tl-has-lift tl-surface-ambient" style="margin-top: 24px; padding: clamp(20px, 3vw, 28px); border-radius: var(--tl-sys-shape-container); border: 1px solid var(--tl-sys-color-outline);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tl-sys-color-link); margin-bottom: 4px;">Developer Onboarding</div>
+              <h2 style="font-size: 18px; margin: 0; color: var(--tl-sys-color-on-surface);">Quick Start: 3 Steps to Production</h2>
+            </div>
+            <span class="tl-badge tl-badge--brand">Zero-Build &bull; ES Modules</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div style="background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline-variant); border-radius: var(--tl-sys-shape-control); padding: 14px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 9999px; background: var(--tl-sys-color-primary); color: var(--tl-sys-color-on-primary); font-size: 11px; font-weight: 700;">1</span>
+                <strong style="font-size: 13px; color: var(--tl-sys-color-on-surface);">Install via NPM</strong>
+              </div>
+              <pre style="margin: 0; padding: 10px; background: var(--tl-sys-color-surface-container-high); border-radius: var(--tl-sys-shape-xs); font-family: var(--tl-sys-font-family-code); font-size: 12px; color: var(--tl-sys-color-link); overflow-x: auto;"><code>npm install @trilayer/core</code></pre>
+            </div>
+
+            <div style="background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline-variant); border-radius: var(--tl-sys-shape-control); padding: 14px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 9999px; background: var(--tl-sys-color-primary); color: var(--tl-sys-color-on-primary); font-size: 11px; font-weight: 700;">2</span>
+                <strong style="font-size: 13px; color: var(--tl-sys-color-on-surface);">Drop in CSS Cascade</strong>
+              </div>
+              <pre style="margin: 0; padding: 10px; background: var(--tl-sys-color-surface-container-high); border-radius: var(--tl-sys-shape-xs); font-family: var(--tl-sys-font-family-code); font-size: 12px; color: var(--tl-sys-color-on-surface-variant); overflow-x: auto;"><code>&lt;link rel="stylesheet" href="css/tokens.components.css"&gt;</code></pre>
+            </div>
+
+            <div style="background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline-variant); border-radius: var(--tl-sys-shape-control); padding: 14px;">
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 9999px; background: var(--tl-sys-color-primary); color: var(--tl-sys-color-on-primary); font-size: 11px; font-weight: 700;">3</span>
+                <strong style="font-size: 13px; color: var(--tl-sys-color-on-surface);">Consume Component Tokens</strong>
+              </div>
+              <pre style="margin: 0; padding: 10px; background: var(--tl-sys-color-surface-container-high); border-radius: var(--tl-sys-shape-xs); font-family: var(--tl-sys-font-family-code); font-size: 12px; color: var(--tl-sys-color-on-surface-variant); overflow-x: auto;"><code>color: var(--tl-comp-button-primary-bg);</code></pre>
+            </div>
+          </div>
+        </div>
+
         <!-- Quick Jump Artboard Bar -->
         <div class="tl-quicknav-bar">
           <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tl-sys-color-on-surface-muted); margin-right: 4px;">Jump to Artboard:</span>

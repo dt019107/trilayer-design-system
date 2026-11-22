@@ -1,0 +1,62 @@
+/**
+ * TRILAYER DESIGN SYSTEM — SKELETON COMPONENT
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-skeleton {
+  display: block;
+  background-color: var(--tl-comp-skeleton-bg);
+  border-radius: var(--tl-comp-skeleton-radius);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.tl-skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(
+    90deg,
+    var(--tl-sys-color-transparent) 0%,
+    var(--tl-comp-skeleton-highlight) 50%,
+    var(--tl-sys-color-transparent) 100%
+  );
+  animation: tl-skeleton-shimmer var(--tl-comp-skeleton-animation-dur) infinite ease-in-out;
+  transform: translateX(-100%);
+}
+
+@keyframes tl-skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.tl-skeleton--text {
+  height: var(--tl-sys-space-md);
+  margin-bottom: var(--tl-sys-space-sm);
+  border-radius: var(--tl-sys-shape-xs);
+}
+
+.tl-skeleton--title {
+  height: var(--tl-sys-space-lg);
+  width: 60%;
+  margin-bottom: var(--tl-sys-space-md);
+  border-radius: var(--tl-sys-shape-xs);
+}
+
+.tl-skeleton--avatar {
+  width: var(--tl-sys-density-control-height-md);
+  height: var(--tl-sys-density-control-height-md);
+  border-radius: var(--tl-sys-shape-full);
+}
+
+.tl-skeleton--card {
+  height: calc(var(--tl-sys-space-xl) * 4);
+  width: 100%;
+  border-radius: var(--tl-sys-shape-container);
+}

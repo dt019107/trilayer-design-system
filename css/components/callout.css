@@ -1,0 +1,71 @@
+/**
+ * TRILAYER DESIGN SYSTEM — CALLOUT / MESSAGE BANNER
+ * Strict Layer 3 consumption: uses ONLY component tokens (--tl-comp-*)
+ * Zero hex colors. Zero primitive tokens.
+ */
+
+.tl-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--tl-comp-callout-gap);
+  padding: var(--tl-comp-callout-padding);
+  border-radius: var(--tl-comp-callout-radius);
+  border: 1px solid var(--tl-sys-color-outline-variant);
+  background-color: var(--tl-sys-color-surface-container);
+  color: var(--tl-sys-color-on-surface);
+  font-family: var(--tl-sys-font-family-body);
+  position: relative;
+}
+
+.tl-callout__icon {
+  flex-shrink: 0;
+  width: var(--tl-sys-space-lg);
+  height: var(--tl-sys-space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tl-callout__content {
+  flex: 1;
+}
+
+.tl-callout__title {
+  font-size: var(--tl-sys-typescale-body-medium-size);
+  font-weight: 600;
+  margin: 0px 0px var(--tl-sys-space-xs) 0px;
+  color: inherit;
+}
+
+.tl-callout__body {
+  font-size: var(--tl-sys-typescale-body-small-size);
+  line-height: var(--tl-sys-typescale-body-small-line);
+  margin: 0px;
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* Semantic Variants */
+.tl-callout--info {
+  background-color: var(--tl-comp-callout-info-bg);
+  border-color: var(--tl-comp-callout-info-border);
+  color: var(--tl-comp-callout-info-text);
+}
+
+.tl-callout--success {
+  background-color: var(--tl-comp-callout-success-bg);
+  border-color: var(--tl-comp-callout-success-border);
+  color: var(--tl-comp-callout-success-text);
+}
+
+.tl-callout--warning {
+  background-color: var(--tl-comp-callout-warning-bg);
+  border-color: var(--tl-comp-callout-warning-border);
+  color: var(--tl-comp-callout-warning-text);
+}
+
+.tl-callout--danger {
+  background-color: var(--tl-comp-callout-danger-bg);
+  border-color: var(--tl-comp-callout-danger-border);
+  color: var(--tl-comp-callout-danger-text);
+}

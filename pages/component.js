@@ -96,6 +96,17 @@ export function renderComponentPage(component) {
       </div>
     </div>
 
+    <!-- 2B. VARIANT MATRIX (Biings Design System Pattern) -->
+    <div class="card" style="margin-bottom: 32px; padding: 0; overflow: hidden;">
+      <div style="padding: 16px 24px; border-bottom: 1px solid var(--tl-sys-color-outline-variant); background-color: var(--tl-sys-color-surface-container-low); display: flex; align-items: center; justify-content: space-between;">
+        <h2 style="font-size: 16px; margin: 0;">Variant Matrix</h2>
+        <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">Visual Live Previews &amp; Usage Rules</span>
+      </div>
+      <div style="overflow-x: auto;">
+        ${renderVariantMatrix(component.id, component.variants)}
+      </div>
+    </div>
+
     <!-- 3. CODE BLOCK TABS (HTML / CSS) WITH COPY BUTTON -->
     <div class="tl-code-block-wrapper">
       <div class="tl-code-header">
@@ -330,9 +341,227 @@ function renderLiveSpecimen(id) {
           <div class="tl-tooltip" role="tooltip">Explains button purpose on focus</div>
         </div>
       `;
+    case "avatar":
+      return `
+        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <div class="tl-avatar tl-avatar--sm"><span>SM</span></div>
+          <div class="tl-avatar tl-avatar--md"><span>MD</span><span class="tl-avatar__status tl-avatar__status--online"></span></div>
+          <div class="tl-avatar tl-avatar--lg"><span>LG</span><span class="tl-avatar__status tl-avatar__status--busy"></span></div>
+          <div class="tl-avatar tl-avatar--xl"><span>XL</span><span class="tl-avatar__status tl-avatar__status--away"></span></div>
+          <div class="tl-avatar-group" style="margin-left: 12px;">
+            <div class="tl-avatar tl-avatar--md"><span>AB</span></div>
+            <div class="tl-avatar tl-avatar--md"><span>CD</span></div>
+            <div class="tl-avatar tl-avatar--md"><span>EF</span></div>
+            <div class="tl-avatar tl-avatar--md tl-avatar--more">+4</div>
+          </div>
+        </div>
+      `;
+    case "skeleton":
+      return `
+        <div style="display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 360px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div class="tl-skeleton tl-skeleton--avatar"></div>
+            <div style="flex: 1;">
+              <div class="tl-skeleton tl-skeleton--title" style="margin-bottom: 6px; width: 50%;"></div>
+              <div class="tl-skeleton tl-skeleton--text" style="margin-bottom: 0px; width: 80%;"></div>
+            </div>
+          </div>
+          <div class="tl-skeleton tl-skeleton--text"></div>
+          <div class="tl-skeleton tl-skeleton--text" style="width: 70%;"></div>
+        </div>
+      `;
+    case "callout":
+      return `
+        <div style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 500px;">
+          <div class="tl-callout tl-callout--info">
+            <div class="tl-callout__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <div class="tl-callout__content">
+              <div class="tl-callout__title">Design Token Recommendation</div>
+              <p class="tl-callout__body">Reference semantic tokens in application code to automatically inherit theme changes.</p>
+            </div>
+          </div>
+          <div class="tl-callout tl-callout--success">
+            <div class="tl-callout__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="tl-callout__content">
+              <div class="tl-callout__title">WCAG 2.2 AA Contrast Verified</div>
+              <p class="tl-callout__body">All tonal combinations satisfy minimum 4.5:1 text-to-background contrast requirements.</p>
+            </div>
+          </div>
+        </div>
+      `;
+    case "spinner":
+      return `
+        <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div class="tl-spinner tl-spinner--sm"></div>
+            <span style="font-size: 11px; color: var(--tl-sys-color-on-surface-muted);">Small (16px)</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div class="tl-spinner tl-spinner--md"></div>
+            <span style="font-size: 11px; color: var(--tl-sys-color-on-surface-muted);">Medium (24px)</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div class="tl-spinner tl-spinner--lg"></div>
+            <span style="font-size: 11px; color: var(--tl-sys-color-on-surface-muted);">Large (32px)</span>
+          </div>
+        </div>
+      `;
     default:
       return `<button class="tl-btn tl-btn--primary tl-btn--md">${id}</button>`;
   }
+}
+
+function renderVariantMatrix(id, variants = []) {
+  const customMatrices = {
+    button: [
+      {
+        preview: `<button class="tl-btn tl-btn--primary tl-btn--sm">Primary</button>`,
+        token: `.tl-btn--primary`,
+        intent: `High-emphasis main action in a given container. Use only once per view.`
+      },
+      {
+        preview: `<button class="tl-btn tl-btn--secondary tl-btn--sm">Secondary</button>`,
+        token: `.tl-btn--secondary`,
+        intent: `Medium-emphasis actions such as filters, pagination, or secondary choices.`
+      },
+      {
+        preview: `<button class="tl-btn tl-btn--outline tl-btn--sm">Outline</button>`,
+        token: `.tl-btn--outline`,
+        intent: `Subtle, neutral actions with a bordered boundary. Commonly paired with primary actions.`
+      },
+      {
+        preview: `<button class="tl-btn tl-btn--danger tl-btn--sm">Danger</button>`,
+        token: `.tl-btn--danger`,
+        intent: `Destructive, permanent, or high-risk actions like deletion and access revocation.`
+      }
+    ],
+    avatar: [
+      {
+        preview: `<div class="tl-avatar tl-avatar--md"><span>DT</span><span class="tl-avatar__status tl-avatar__status--online"></span></div>`,
+        token: `.tl-avatar--md + .tl-avatar__status--online`,
+        intent: `Standard 32px profile avatar with live presence status indicator.`
+      },
+      {
+        preview: `<div class="tl-avatar tl-avatar--sm"><span>JD</span><span class="tl-avatar__status tl-avatar__status--busy"></span></div>`,
+        token: `.tl-avatar--sm + .tl-avatar__status--busy`,
+        intent: `Compact 24px avatar optimized for dense data tables and comments.`
+      },
+      {
+        preview: `<div class="tl-avatar-group"><div class="tl-avatar tl-avatar--sm"><span>A</span></div><div class="tl-avatar tl-avatar--sm"><span>B</span></div><div class="tl-avatar tl-avatar--sm tl-avatar--more">+3</div></div>`,
+        token: `.tl-avatar-group`,
+        intent: `Clustered overlapping avatars with +N counter for teams and reviewers.`
+      }
+    ],
+    skeleton: [
+      {
+        preview: `<div class="tl-skeleton tl-skeleton--title" style="width: 140px; margin: 0;"></div>`,
+        token: `.tl-skeleton--title`,
+        intent: `Thick heading wireframe placeholder while title data loads.`
+      },
+      {
+        preview: `<div class="tl-skeleton tl-skeleton--text" style="width: 180px; margin: 0;"></div>`,
+        token: `.tl-skeleton--text`,
+        intent: `Standard body line placeholder with animated shimmer.`
+      },
+      {
+        preview: `<div class="tl-skeleton tl-skeleton--avatar" style="width: 32px; height: 32px;"></div>`,
+        token: `.tl-skeleton--avatar`,
+        intent: `Circular avatar placeholder for user profile elements.`
+      }
+    ],
+    callout: [
+      {
+        preview: `<div class="tl-callout tl-callout--info" style="padding: 6px 10px;"><strong style="font-size: 12px;">Info</strong></div>`,
+        token: `.tl-callout--info`,
+        intent: `Informational notices, tips, and general system guidance.`
+      },
+      {
+        preview: `<div class="tl-callout tl-callout--success" style="padding: 6px 10px;"><strong style="font-size: 12px;">Success</strong></div>`,
+        token: `.tl-callout--success`,
+        intent: `Confirmed events, verified states, and completed workflows.`
+      },
+      {
+        preview: `<div class="tl-callout tl-callout--warning" style="padding: 6px 10px;"><strong style="font-size: 12px;">Warning</strong></div>`,
+        token: `.tl-callout--warning`,
+        intent: `Attention-requiring items, deprecations, or non-blocking warnings.`
+      },
+      {
+        preview: `<div class="tl-callout tl-callout--danger" style="padding: 6px 10px;"><strong style="font-size: 12px;">Danger</strong></div>`,
+        token: `.tl-callout--danger`,
+        intent: `Critical errors, security notices, and destructive consequences.`
+      }
+    ],
+    spinner: [
+      {
+        preview: `<div class="tl-spinner tl-spinner--sm"></div>`,
+        token: `.tl-spinner--sm`,
+        intent: `Compact 16px spinner for inline button and text field loading.`
+      },
+      {
+        preview: `<div class="tl-spinner tl-spinner--md"></div>`,
+        token: `.tl-spinner--md`,
+        intent: `Standard 24px spinner for cards, tables, and content sections.`
+      },
+      {
+        preview: `<div class="tl-spinner tl-spinner--lg"></div>`,
+        token: `.tl-spinner--lg`,
+        intent: `Large 32px spinner for modals and full-viewport loading states.`
+      }
+    ],
+    badge: [
+      {
+        preview: `<span class="tl-badge tl-badge--neutral">Neutral</span>`,
+        token: `.tl-badge--neutral`,
+        intent: `General metadata, versions, and non-status categorizations.`
+      },
+      {
+        preview: `<span class="tl-badge tl-badge--brand"><span class="tl-badge__dot"></span>Brand</span>`,
+        token: `.tl-badge--brand`,
+        intent: `Primary feature tag, system-level property, or active state.`
+      },
+      {
+        preview: `<span class="tl-badge tl-badge--success"><span class="tl-badge__dot"></span>Passing</span>`,
+        token: `.tl-badge--success`,
+        intent: `Passing tests, verified status, and healthy operational states.`
+      },
+      {
+        preview: `<span class="tl-badge tl-badge--danger"><span class="tl-badge__dot"></span>Failed</span>`,
+        token: `.tl-badge--danger`,
+        intent: `Failed builds, critical issues, and high-priority alerts.`
+      }
+    ]
+  };
+
+  const rows = customMatrices[id] || variants.map(v => ({
+    preview: `<span class="tl-badge tl-badge--neutral">${v.name}</span>`,
+    token: `.tl-${id}--${v.name.toLowerCase().replace(/\\s+/g, '-')}`,
+    intent: v.desc || `Applies ${v.name} styling and behavior.`
+  }));
+
+  return `
+    <table class="tl-variant-matrix-table">
+      <thead>
+        <tr>
+          <th style="width: 220px;">Live Preview</th>
+          <th style="width: 260px;">Token / Class Hook</th>
+          <th>Design Guideline &amp; Intent</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map(r => `
+          <tr>
+            <td class="tl-variant-matrix-preview">${r.preview}</td>
+            <td class="tl-variant-matrix-token"><code>${r.token}</code></td>
+            <td class="tl-variant-matrix-intent">${r.intent}</td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
 }
 
 function escapeHtml(str) {

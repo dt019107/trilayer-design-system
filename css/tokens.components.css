@@ -232,5 +232,64 @@
   --tl-comp-layer-prim-accent:        var(--tl-sys-color-layer-primitives);
   --tl-comp-layer-sem-accent:         var(--tl-sys-color-layer-semantic);
   --tl-comp-layer-comp-accent:        var(--tl-sys-color-layer-component);
+
+  /* ==========================================================================
+     11. AVATAR COMPONENT TOKENS (--tl-comp-avatar-*)
+     ========================================================================== */
+  --tl-comp-avatar-radius:            var(--tl-sys-shape-full);
+  --tl-comp-avatar-font-family:       var(--tl-sys-font-family-body);
+  --tl-comp-avatar-bg:                var(--tl-sys-color-surface-container-high);
+  --tl-comp-avatar-text:              var(--tl-sys-color-on-surface);
+  --tl-comp-avatar-border:            var(--tl-sys-color-outline-variant);
+  --tl-comp-avatar-size-sm:           var(--tl-sys-space-lg);
+  --tl-comp-avatar-size-md:           var(--tl-sys-density-control-height-sm);
+  --tl-comp-avatar-size-lg:           var(--tl-sys-density-control-height-md);
+  --tl-comp-avatar-size-xl:           var(--tl-sys-density-control-height-lg);
+  --tl-comp-avatar-font-size-sm:      var(--tl-sys-typescale-label-caps-size);
+  --tl-comp-avatar-font-size-md:      var(--tl-sys-typescale-label-medium-size);
+  --tl-comp-avatar-font-size-lg:      var(--tl-sys-typescale-body-medium-size);
+  --tl-comp-avatar-font-size-xl:      var(--tl-sys-typescale-title-medium-size);
+  --tl-comp-avatar-status-online:     var(--tl-sys-color-success);
+  --tl-comp-avatar-status-busy:       var(--tl-sys-color-error);
+  --tl-comp-avatar-status-away:       var(--tl-sys-color-warning);
+  --tl-comp-avatar-status-border:     var(--tl-sys-color-surface);
+  --tl-comp-avatar-group-offset:      var(--tl-sys-space-sm);
+
+  /* ==========================================================================
+     12. SKELETON COMPONENT TOKENS (--tl-comp-skeleton-*)
+     ========================================================================== */
+  --tl-comp-skeleton-bg:              var(--tl-sys-color-surface-container);
+  --tl-comp-skeleton-highlight:       var(--tl-sys-color-surface-container-highest);
+  --tl-comp-skeleton-radius:          var(--tl-sys-shape-control);
+  --tl-comp-skeleton-animation-dur:   var(--tl-sys-motion-duration-deliberate);
+
+  /* ==========================================================================
+     13. CALLOUT / MESSAGE BANNER (--tl-comp-callout-*)
+     ========================================================================== */
+  --tl-comp-callout-radius:           var(--tl-sys-shape-container);
+  --tl-comp-callout-padding:          var(--tl-sys-space-md);
+  --tl-comp-callout-gap:              var(--tl-sys-space-sm);
+  --tl-comp-callout-info-bg:          var(--tl-sys-color-surface-container-high);
+  --tl-comp-callout-info-border:      var(--tl-sys-color-primary);
+  --tl-comp-callout-info-text:        var(--tl-sys-color-on-surface);
+  --tl-comp-callout-success-bg:       var(--tl-sys-color-success-container);
+  --tl-comp-callout-success-border:   var(--tl-sys-color-success);
+  --tl-comp-callout-success-text:     var(--tl-sys-color-on-success-container);
+  --tl-comp-callout-warning-bg:       var(--tl-sys-color-warning-container);
+  --tl-comp-callout-warning-border:   var(--tl-sys-color-warning);
+  --tl-comp-callout-warning-text:     var(--tl-sys-color-on-warning-container);
+  --tl-comp-callout-danger-bg:        var(--tl-sys-color-error-container);
+  --tl-comp-callout-danger-border:    var(--tl-sys-color-error);
+  --tl-comp-callout-danger-text:      var(--tl-sys-color-on-error-container);
+
+  /* ==========================================================================
+     14. SPINNER / LOADER (--tl-comp-spinner-*)
+     ========================================================================== */
+  --tl-comp-spinner-track:            var(--tl-sys-color-surface-container-highest);
+  --tl-comp-spinner-indicator:        var(--tl-sys-color-primary);
+  --tl-comp-spinner-size-sm:          var(--tl-sys-space-md);
+  --tl-comp-spinner-size-md:          var(--tl-sys-space-lg);
+  --tl-comp-spinner-size-lg:          var(--tl-sys-density-control-height-sm);
+  --tl-comp-spinner-duration:         var(--tl-sys-motion-duration-deliberate);
 }
 
