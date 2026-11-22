@@ -82,7 +82,7 @@ export class CommandPalette {
       }
     });
 
-    // 3. Index Signature Features & Foundations
+    // 3. Index Core Token Views & Foundations
     this.searchIndex.push(
       {
         title: "The Three Layers Architecture",

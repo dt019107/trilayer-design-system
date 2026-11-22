@@ -184,7 +184,7 @@ export const FoundationPages = {
                   </div>
                 </div>
                 <div style="font-family: ${item.font === 'Manrope' ? 'var(--tl-ref-font-heading)' : (item.font === 'JetBrains Mono' ? 'var(--tl-sys-font-family-code)' : 'var(--tl-ref-font-body)')}; font-size: ${item.size}; line-height: ${item.line}; font-weight: ${item.weight}; color: var(--tl-sys-color-on-surface); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                  Exceptional digital craft with mathematical precision.
+                  The quick brown fox jumps over the lazy dog.
                 </div>
               </div>
             `).join("")}

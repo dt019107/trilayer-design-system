@@ -1,7 +1,7 @@
 /**
  * TRILAYER DESIGN SYSTEM — COMPONENT PAGE TEMPLATE
  * Reusable master template rendering any component definition from /data/components/*.js.
- * Includes the Signature Feature: "Layer Inspector" and live interactive controls.
+ * Includes the Token Resolution Inspector and live interactive controls.
  */
 
 export function renderComponentPage(component) {
@@ -23,12 +23,12 @@ export function renderComponentPage(component) {
       <p class="tl-page-subtitle">${component.description}</p>
     </div>
 
-    <!-- 1. SIGNATURE FEATURE: LAYER INSPECTOR PANEL -->
+    <!-- 1. TOKEN RESOLUTION INSPECTOR PANEL -->
     <div class="tl-layer-inspector">
       <div class="tl-layer-inspector-header">
         <div class="tl-layer-inspector-title">
           <svg class="tl-brand-logo-svg" viewBox="0 0 32 32" fill="none"><path d="M16 3L30 10L16 17L2 10L16 3Z" fill="var(--tl-sys-color-layer-component)"/><path d="M16 10L30 17L16 24L2 17L16 10Z" fill="var(--tl-sys-color-layer-semantic)"/><path d="M16 17L30 24L16 31L2 24L16 17Z" fill="var(--tl-sys-color-layer-primitives)"/></svg>
-          Signature Feature: Layer Inspector
+          Token Resolution Inspector
         </div>
         <span class="tl-layer-inspector-badge">3-Layer Token Chain</span>
       </div>
