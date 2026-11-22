@@ -18,11 +18,20 @@ import avatar from "./avatar.js";
 import skeleton from "./skeleton.js";
 import callout from "./callout.js";
 import spinner from "./spinner.js";
+import tabs from "./tabs.js";
+import accordion from "./accordion.js";
+import select from "./select.js";
+import divider from "./divider.js";
+import iconButton from "./icon-button.js";
+import menu from "./menu.js";
+import progress from "./progress.js";
+import snackbar from "./snackbar.js";
 
 export const components = {
   "button": button,
+  "icon-button": iconButton,
   "text-field": textField,
-  "dialog": dialog,
+  "select": select,
   "checkbox": checkbox,
   "radio": radio,
   "switch": switchComp,
@@ -33,7 +42,14 @@ export const components = {
   "avatar": avatar,
   "skeleton": skeleton,
   "callout": callout,
-  "spinner": spinner
+  "spinner": spinner,
+  "dialog": dialog,
+  "menu": menu,
+  "snackbar": snackbar,
+  "tabs": tabs,
+  "accordion": accordion,
+  "divider": divider,
+  "progress": progress
 };
 
 export const componentsList = Object.values(components);

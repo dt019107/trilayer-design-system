@@ -116,3 +116,36 @@
   opacity: var(--tl-sys-state-disabled-opacity);
   cursor: not-allowed;
 }
+
+/* ==========================================================================
+   SELECT DROPDOWN
+   ========================================================================== */
+.tl-select {
+  width: 100%;
+  height: var(--tl-comp-input-height);
+  padding: 0 var(--tl-comp-input-padding-x);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-comp-input-font-size);
+  color: var(--tl-comp-input-text);
+  background-color: var(--tl-comp-input-bg);
+  border: 1px solid var(--tl-comp-input-border);
+  border-radius: var(--tl-comp-input-radius);
+  outline: none;
+  cursor: pointer;
+  transition: all var(--tl-sys-motion-duration-quick) ease;
+}
+
+.tl-select:hover:not(:disabled) {
+  border-color: var(--tl-comp-input-border-hover);
+}
+
+.tl-select:focus {
+  border-color: var(--tl-comp-input-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tl-comp-input-border-focus) 18%, transparent);
+}
+
+.tl-select:disabled {
+  opacity: var(--tl-sys-state-disabled-opacity);
+  cursor: not-allowed;
+  background-color: var(--tl-sys-color-surface-container);
+}

@@ -410,6 +410,99 @@ function renderLiveSpecimen(id) {
           </div>
         </div>
       `;
+    case "icon-button":
+      return `
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <button class="tl-btn-icon tl-btn-icon--sm" aria-label="Search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+          <button class="tl-btn-icon tl-btn-icon--md" aria-label="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+          <button class="tl-btn-icon tl-btn-icon--lg" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+        </div>
+      `;
+    case "select":
+      return `
+        <div style="width: 100%; max-width: 320px;" class="tl-form-group">
+          <label class="tl-label" for="demo-select">Deployment Environment</label>
+          <select id="demo-select" class="tl-select">
+            <option>Production (Edge CDN)</option>
+            <option>Staging (Preview Branch)</option>
+            <option>Development (Local Host)</option>
+          </select>
+          <span class="tl-helper-text">Select your target cluster for variable propagation.</span>
+        </div>
+      `;
+    case "tabs":
+      return `
+        <div style="width: 100%; max-width: 480px;">
+          <div class="tl-tabs-list" role="tablist">
+            <button class="tl-tab-btn is-active" role="tab" aria-selected="true">Overview</button>
+            <button class="tl-tab-btn" role="tab" aria-selected="false">API Reference</button>
+            <button class="tl-tab-btn" role="tab" aria-selected="false">Usage Examples</button>
+          </div>
+          <div class="tl-tab-panel is-active" style="padding: 12px 0; color: var(--tl-sys-color-on-surface-variant); font-size: 13px;">
+            Content area for the active Design Tokens panel.
+          </div>
+        </div>
+      `;
+    case "accordion":
+      return `
+        <div class="tl-accordion" style="width: 100%; max-width: 500px;">
+          <div class="tl-accordion-item">
+            <button class="tl-accordion-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: transparent; border: none; color: var(--tl-sys-color-on-surface); font-size: 14px; font-weight: 600; cursor: pointer;">
+              <span>How are token tiers isolated?</span>
+              <span>&minus;</span>
+            </button>
+            <div style="padding: 0 16px 14px 16px; color: var(--tl-sys-color-on-surface-variant); font-size: 13px; line-height: 1.5;">
+              Components only reference Semantic tokens, ensuring zero accidental coupling with raw primitives.
+            </div>
+          </div>
+        </div>
+      `;
+    case "divider":
+      return `
+        <div style="width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant);">Horizontal Divider:</span>
+          <hr class="tl-divider" style="margin: 0;">
+          <div style="display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--tl-sys-color-on-surface-muted);">
+            <span>Item Left</span>
+            <div class="tl-divider--vertical" style="height: 18px;" aria-hidden="true"></div>
+            <span>Item Middle</span>
+            <div class="tl-divider--vertical" style="height: 18px;" aria-hidden="true"></div>
+            <span>Item Right</span>
+          </div>
+        </div>
+      `;
+    case "menu":
+      return `
+        <div class="tl-card" style="width: 100%; max-width: 240px; padding: 6px; box-shadow: var(--tl-sys-elevation-3);">
+          <button class="tl-btn tl-btn--ghost tl-btn--sm" style="width: 100%; justify-content: flex-start;">Rename Symbol</button>
+          <button class="tl-btn tl-btn--ghost tl-btn--sm" style="width: 100%; justify-content: flex-start;">Export Tokens</button>
+          <hr class="tl-divider" style="margin: 4px 0;">
+          <button class="tl-btn tl-btn--danger tl-btn--sm" style="width: 100%; justify-content: flex-start;">Delete Branch</button>
+        </div>
+      `;
+    case "progress":
+      return `
+        <div style="width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">
+            <span>Uploading tokens bundle...</span>
+            <strong>75%</strong>
+          </div>
+          <div style="width: 100%; background: var(--tl-comp-spinner-track); border-radius: 9999px; height: 8px; overflow: hidden;">
+            <div style="background: var(--tl-sys-color-primary); height: 100%; width: 75%;"></div>
+          </div>
+        </div>
+      `;
+    case "snackbar":
+      return `
+        <div class="tl-toast tl-toast--info" style="position: static; max-width: 380px;">
+          <div class="tl-toast__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+          <div class="tl-toast__content">
+            <span class="tl-toast__title">Changes published</span>
+            <span class="tl-toast__message">Design tokens updated in production.</span>
+          </div>
+          <button class="tl-toast__close" aria-label="Dismiss">&times;</button>
+        </div>
+      `;
     default:
       return `<button class="tl-btn tl-btn--primary tl-btn--md">${id}</button>`;
   }
