@@ -42,9 +42,9 @@ export function renderComponentPage(component) {
           const activeVal = isDark ? (chain.valueDark || chain.valueLight) : chain.valueLight;
           return `
           <div class="tl-token-chain-card">
-            <strong style="min-width: 180px; font-size: 13px; color: var(--tl-sys-color-on-surface);">${chain.element}</strong>
+            <strong style="font-size: 13px; color: var(--tl-sys-color-on-surface);">${chain.element}</strong>
             
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <div class="tl-token-chain-flow">
               <!-- Layer 3: Component Token -->
               <div class="tl-token-chain-node">
                 <span class="tl-token-chain-tier" style="color: var(--tl-sys-color-layer-component);">Layer 3 (Component)</span>

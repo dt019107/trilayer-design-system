@@ -24,6 +24,9 @@ html {
   tab-size: 2;
   scroll-behavior: smooth;
   color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -34,8 +37,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ==========================================================================
