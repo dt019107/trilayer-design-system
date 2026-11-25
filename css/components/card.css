@@ -40,6 +40,10 @@
   transform: translateY(-2px);
 }
 
+.tl-card--interactive:active {
+  transform: scale(0.988) translateY(1px);
+}
+
 .tl-card--interactive:focus-visible {
   outline: 2px solid var(--tl-sys-color-primary);
   outline-offset: 2px;

@@ -91,6 +91,10 @@ export function renderComponentPage(component) {
 
       <div class="tl-playground-controls">
         <span class="tl-playground-control-label">Test Controls:</span>
+        <button class="tl-btn tl-btn--outline tl-btn--sm" id="btn-toggle-anatomy" onclick="window.__toggleAnatomy()" aria-label="Toggle Figma Anatomy Overlay">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          Figma Anatomy
+        </button>
         <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: 'Triggered ${component.title} action', type: 'info' })">Test Trigger</button>
         <button class="tl-btn tl-btn--secondary tl-btn--sm" onclick="Toast.show({ message: '${component.title} component verified', type: 'success' })">Verify Component</button>
       </div>
@@ -107,12 +111,13 @@ export function renderComponentPage(component) {
       </div>
     </div>
 
-    <!-- 3. CODE BLOCK TABS (HTML / CSS) WITH COPY BUTTON -->
+    <!-- 3. CODE BLOCK TABS (HTML / CSS / FIGMA CODE CONNECT) WITH COPY BUTTON -->
     <div class="tl-code-block-wrapper">
       <div class="tl-code-header">
         <div class="tl-code-tabs" role="tablist">
           <button class="tl-code-tab-btn is-active" id="tab-html" onclick="window.__switchCodeTab('html')">HTML</button>
           <button class="tl-code-tab-btn" id="tab-css" onclick="window.__switchCodeTab('css')">CSS (Component Layer)</button>
+          <button class="tl-code-tab-btn" id="tab-figma" onclick="window.__switchCodeTab('figma')">Figma Code Connect (.figma.tsx)</button>
         </div>
         <button class="tl-copy-code-btn" id="btn-copy-code" onclick="window.__copyActiveCode()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
@@ -122,6 +127,7 @@ export function renderComponentPage(component) {
       <div id="code-snippet-container">
         <pre class="tl-code-pre"><code id="code-snippet-html">${escapeHtml(component.codeSnippets?.html || "")}</code></pre>
         <pre class="tl-code-pre" style="display: none;"><code id="code-snippet-css">${escapeHtml(component.codeSnippets?.css || "")}</code></pre>
+        <pre class="tl-code-pre" style="display: none;"><code id="code-snippet-figma">${escapeHtml(generateFigmaCodeConnect(component))}</code></pre>
       </div>
     </div>
 
@@ -657,6 +663,40 @@ function renderVariantMatrix(id, variants = []) {
   `;
 }
 
+function generateFigmaCodeConnect(component) {
+  if (component.codeSnippets?.figma) return component.codeSnippets.figma;
+  const compPascal = (component.title || "Component").replace(/[^a-zA-Z0-9]/g, "");
+  const variants = component.variants || [];
+  const variantEnumLines = variants.length > 0
+    ? variants.slice(0, 4).map(v => `      ${v.name.replace(/[^a-zA-Z0-9]/g, '') || 'Default'}: '${v.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}'`).join(',\n')
+    : `      Default: 'default'`;
+
+  return `import figma from '@figma/code-connect';
+import { ${compPascal} } from './${compPascal}';
+
+/**
+ * Figma Code Connect definition for ${component.title}
+ * Maps Figma component variants to production props.
+ */
+figma.connect(${compPascal}, 'https://www.figma.com/design/:file_key/:name?node-id=${component.id}', {
+  props: {
+    variant: figma.enum('Variant', {
+${variantEnumLines}
+    }),
+    disabled: figma.boolean('Disabled'),
+    children: figma.string('Label')
+  },
+  example: (props) => (
+    <${compPascal}
+      variant={props.variant}
+      disabled={props.disabled}
+    >
+      {props.children}
+    </${compPascal}>
+  )
+});`;
+}
+
 function escapeHtml(str) {
   return str
     .replace(/&/g, "&amp;")
@@ -674,19 +714,31 @@ if (typeof window !== "undefined") {
     window.__activeCodeTab = tab;
     const htmlPre = document.getElementById("code-snippet-html")?.parentElement;
     const cssPre = document.getElementById("code-snippet-css")?.parentElement;
+    const figmaPre = document.getElementById("code-snippet-figma")?.parentElement;
     const tabHtml = document.getElementById("tab-html");
     const tabCss = document.getElementById("tab-css");
+    const tabFigma = document.getElementById("tab-figma");
 
-    if (tab === "html") {
-      if (htmlPre) htmlPre.style.display = "block";
-      if (cssPre) cssPre.style.display = "none";
-      if (tabHtml) tabHtml.classList.add("is-active");
-      if (tabCss) tabCss.classList.remove("is-active");
-    } else {
-      if (htmlPre) htmlPre.style.display = "none";
-      if (cssPre) cssPre.style.display = "block";
-      if (tabHtml) tabHtml.classList.remove("is-active");
-      if (tabCss) tabCss.classList.add("is-active");
+    if (htmlPre) htmlPre.style.display = (tab === "html") ? "block" : "none";
+    if (cssPre) cssPre.style.display = (tab === "css") ? "block" : "none";
+    if (figmaPre) figmaPre.style.display = (tab === "figma") ? "block" : "none";
+
+    if (tabHtml) tabHtml.classList.toggle("is-active", tab === "html");
+    if (tabCss) tabCss.classList.toggle("is-active", tab === "css");
+    if (tabFigma) tabFigma.classList.toggle("is-active", tab === "figma");
+  };
+
+  window.__toggleAnatomy = function() {
+    const stage = document.getElementById("comp-demo-stage");
+    if (stage) {
+      stage.classList.toggle("has-anatomy-overlay");
+      const isActive = stage.classList.contains("has-anatomy-overlay");
+      if (window.Toast) {
+        window.Toast.show({
+          message: isActive ? "Figma Anatomy & Bounding Box Overlay Enabled" : "Figma Anatomy Overlay Hidden",
+          type: "info"
+        });
+      }
     }
   };
 
@@ -694,12 +746,13 @@ if (typeof window !== "undefined") {
     const tab = window.__activeCodeTab || "html";
     const el = document.getElementById(`code-snippet-${tab}`);
     if (el) {
+      const label = tab === "figma" ? "Figma Code Connect" : tab.toUpperCase();
       if (typeof window.copyToClipboard === "function") {
-        window.copyToClipboard(el.textContent, `${tab.toUpperCase()} code`);
+        window.copyToClipboard(el.textContent, `${label} code`);
       } else if (navigator.clipboard) {
         navigator.clipboard.writeText(el.textContent);
         if (window.Toast) {
-          window.Toast.show({ message: `Copied ${tab.toUpperCase()} code to clipboard!`, type: "success" });
+          window.Toast.show({ message: `Copied ${label} snippet to clipboard!`, type: "success" });
         }
       }
     }

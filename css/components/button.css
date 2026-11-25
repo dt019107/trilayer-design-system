@@ -65,6 +65,7 @@
 .tl-btn--primary:hover:not(:disabled) {
   background-color: var(--tl-comp-button-primary-hover-bg);
   color: var(--tl-comp-button-primary-text);
+  box-shadow: var(--tl-comp-button-primary-hover-shadow);
   text-decoration: none;
 }
 

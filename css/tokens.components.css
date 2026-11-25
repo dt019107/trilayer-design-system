@@ -34,6 +34,7 @@
   --tl-comp-button-primary-hover-bg:  var(--tl-sys-color-primary-hover);
   --tl-comp-button-primary-active-bg: var(--tl-sys-color-primary-active);
   --tl-comp-button-primary-shadow:    var(--tl-sys-elevation-1);
+  --tl-comp-button-primary-hover-shadow: var(--tl-sys-elevation-2);
   --tl-comp-button-spinner-size:      var(--tl-sys-space-md);
 
   /* Secondary / Tonal Variant */
