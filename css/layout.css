@@ -24,15 +24,19 @@
   overflow-x: hidden;
   background-color: var(--tl-sys-color-surface);
   color: var(--tl-sys-color-on-surface);
+  padding-top: var(--tl-layout-header-height);
 }
 
 /* ==========================================================================
    TOP BAR / HEADER
    ========================================================================== */
 .tl-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: var(--tl-sys-z-sticky);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: calc(var(--tl-sys-z-sticky) + 10);
   height: var(--tl-layout-header-height);
   background-color: color-mix(in srgb, var(--tl-sys-color-surface) 84%, transparent);
   backdrop-filter: blur(20px) saturate(190%);
