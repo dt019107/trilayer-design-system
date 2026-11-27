@@ -9,90 +9,88 @@
  */
 
 /* ==========================================================================
-   PURE DARK THEME (Default & Persistent Canvas)
+   PURE LIGHT THEME (Design System Global Canvas)
    ========================================================================== */
-:root,
-[data-theme="dark"],
-[data-theme="light"] {
+:root {
   --tl-sys-color-transparent:            var(--tl-ref-color-transparent);
 
   /* ------------------------------------------------------------------------
-     1. Brand & Role Colors (High-Contrast Vibrant Palette)
+     1. Brand & Role Colors (Indigo Palette)
      ------------------------------------------------------------------------ */
   --tl-sys-color-primary:                var(--tl-ref-indigo-500);
   --tl-sys-color-on-primary:             var(--tl-ref-white);
-  --tl-sys-color-primary-container:      var(--tl-ref-indigo-900);
-  --tl-sys-color-on-primary-container:   var(--tl-ref-indigo-100);
+  --tl-sys-color-primary-container:      var(--tl-ref-indigo-50);
+  --tl-sys-color-on-primary-container:   var(--tl-ref-indigo-900);
   --tl-sys-color-primary-hover:          var(--tl-ref-indigo-600);
   --tl-sys-color-primary-active:         var(--tl-ref-indigo-700);
 
-  /* High-Contrast Interactive Links & Accent Text (8.5:1 AAA on Dark Canvas) */
-  --tl-sys-color-link:                   var(--tl-ref-indigo-300);
-  --tl-sys-color-link-hover:             var(--tl-ref-indigo-200);
+  /* High-Contrast Interactive Links & Accent Text (WCAG AA compliant on light canvas) */
+  --tl-sys-color-link:                   var(--tl-ref-indigo-600);
+  --tl-sys-color-link-hover:             var(--tl-ref-indigo-700);
 
   /* Secondary */
-  --tl-sys-color-secondary:              var(--tl-ref-indigo-200);
-  --tl-sys-color-on-secondary:           var(--tl-ref-indigo-900);
-  --tl-sys-color-secondary-container:    var(--tl-ref-indigo-800);
-  --tl-sys-color-on-secondary-container: var(--tl-ref-indigo-50);
+  --tl-sys-color-secondary:              var(--tl-ref-indigo-700);
+  --tl-sys-color-on-secondary:           var(--tl-ref-white);
+  --tl-sys-color-secondary-container:    var(--tl-ref-indigo-50);
+  --tl-sys-color-on-secondary-container: var(--tl-ref-indigo-900);
 
-  /* Tertiary */
-  --tl-sys-color-tertiary:               var(--tl-ref-teal-400);
-  --tl-sys-color-on-tertiary:            var(--tl-ref-teal-950);
-  --tl-sys-color-tertiary-container:     var(--tl-ref-teal-900);
-  --tl-sys-color-on-tertiary-container:  var(--tl-ref-teal-100);
+  /* Tertiary / Component Layer Accent (Teal) */
+  --tl-sys-color-tertiary:               var(--tl-ref-teal-600);
+  --tl-sys-color-on-tertiary:            var(--tl-ref-white);
+  --tl-sys-color-tertiary-container:     var(--tl-ref-teal-50);
+  --tl-sys-color-on-tertiary-container:  var(--tl-ref-teal-950);
 
   /* ------------------------------------------------------------------------
-     2. Surface Hierarchy (Dark Canvas: 1000/950/900/850/800 Progression)
+     2. Surface Hierarchy (Clean Light Canvas Progression)
      ------------------------------------------------------------------------ */
-  --tl-sys-color-surface:                  var(--tl-ref-gray-950);
-  --tl-sys-color-surface-dim:              var(--tl-ref-gray-1000);
-  --tl-sys-color-surface-bright:           var(--tl-ref-gray-850);
-  --tl-sys-color-surface-container-lowest: var(--tl-ref-gray-1000);
-  --tl-sys-color-surface-container-low:    var(--tl-ref-gray-950);
-  --tl-sys-color-surface-container:        var(--tl-ref-gray-900);
-  --tl-sys-color-surface-container-high:   var(--tl-ref-gray-850);
-  --tl-sys-color-surface-container-highest:var(--tl-ref-gray-800);
+  --tl-sys-color-surface:                  var(--tl-ref-white);
+  --tl-sys-color-surface-dim:              var(--tl-ref-gray-50);
+  --tl-sys-color-surface-bright:           var(--tl-ref-white);
+  --tl-sys-color-surface-container-lowest: var(--tl-ref-white);
+  --tl-sys-color-surface-container-low:    var(--tl-ref-gray-50);
+  --tl-sys-color-surface-container:        var(--tl-ref-white);
+  --tl-sys-color-surface-container-high:   var(--tl-ref-gray-100);
+  --tl-sys-color-surface-container-highest:var(--tl-ref-gray-150);
 
-  /* Text & Content on Dark Surfaces (WCAG AAA Optimized) */
-  --tl-sys-color-on-surface:               var(--tl-ref-gray-0);
-  --tl-sys-color-on-surface-variant:       var(--tl-ref-gray-100);
-  --tl-sys-color-on-surface-muted:         var(--tl-ref-gray-300);
-  --tl-sys-color-inverse-surface:          var(--tl-ref-gray-50);
-  --tl-sys-color-inverse-on-surface:       var(--tl-ref-gray-900);
-  --tl-sys-color-inverse-primary:          var(--tl-ref-indigo-600);
+  /* Text & Content on Light Surfaces (WCAG AAA 16.5:1 on #FFFFFF) */
+  --tl-sys-color-on-surface:               var(--tl-ref-gray-900);
+  --tl-sys-color-on-surface-variant:       var(--tl-ref-gray-600);
+  --tl-sys-color-on-surface-muted:         var(--tl-ref-gray-400);
+  --tl-sys-color-inverse-surface:          var(--tl-ref-gray-950);
+  --tl-sys-color-inverse-on-surface:       var(--tl-ref-gray-0);
+  --tl-sys-color-inverse-primary:          var(--tl-ref-indigo-200);
 
   /* Borders & Outlines (Crisp >= 3:1 Non-Text Contrast SC 1.4.11) */
-  --tl-sys-color-outline:                  var(--tl-ref-gray-500);
-  --tl-sys-color-outline-variant:          var(--tl-ref-gray-600);
-  --tl-sys-color-outline-subtle:           var(--tl-ref-gray-700);
+  --tl-sys-color-outline:                  var(--tl-ref-gray-300);
+  --tl-sys-color-outline-variant:          var(--tl-ref-gray-200);
+  --tl-sys-color-outline-subtle:           var(--tl-ref-gray-150);
 
   /* ------------------------------------------------------------------------
      3. Functional / Semantic Status Roles
      ------------------------------------------------------------------------ */
-  --tl-sys-color-success:                  var(--tl-ref-emerald-400);
-  --tl-sys-color-on-success:               var(--tl-ref-emerald-950);
-  --tl-sys-color-success-container:        var(--tl-ref-emerald-950);
-  --tl-sys-color-on-success-container:     var(--tl-ref-emerald-100);
-  --tl-sys-color-success-border:           var(--tl-ref-emerald-700);
+  --tl-sys-color-success:                  var(--tl-ref-emerald-600);
+  --tl-sys-color-on-success:               var(--tl-ref-white);
+  --tl-sys-color-success-container:        var(--tl-ref-emerald-50);
+  --tl-sys-color-on-success-container:     var(--tl-ref-emerald-950);
+  --tl-sys-color-success-border:           var(--tl-ref-emerald-300);
 
-  --tl-sys-color-warning:                  var(--tl-ref-amber-400);
-  --tl-sys-color-on-warning:               var(--tl-ref-amber-950);
-  --tl-sys-color-warning-container:        var(--tl-ref-amber-950);
-  --tl-sys-color-on-warning-container:     var(--tl-ref-amber-100);
-  --tl-sys-color-warning-border:           var(--tl-ref-amber-700);
+  --tl-sys-color-warning:                  var(--tl-ref-amber-600);
+  --tl-sys-color-on-warning:               var(--tl-ref-white);
+  --tl-sys-color-warning-container:        var(--tl-ref-amber-50);
+  --tl-sys-color-on-warning-container:     var(--tl-ref-amber-950);
+  --tl-sys-color-warning-border:           var(--tl-ref-amber-300);
 
-  --tl-sys-color-error:                    var(--tl-ref-rose-400);
-  --tl-sys-color-on-error:                 var(--tl-ref-rose-950);
-  --tl-sys-color-error-container:          var(--tl-ref-rose-950);
-  --tl-sys-color-on-error-container:       var(--tl-ref-rose-100);
-  --tl-sys-color-error-border:             var(--tl-ref-rose-700);
+  --tl-sys-color-error:                    var(--tl-ref-rose-600);
+  --tl-sys-color-on-error:                 var(--tl-ref-white);
+  --tl-sys-color-error-container:          var(--tl-ref-rose-50);
+  --tl-sys-color-on-error-container:       var(--tl-ref-rose-950);
+  --tl-sys-color-error-border:             var(--tl-ref-rose-300);
 
-  --tl-sys-color-info:                     var(--tl-ref-indigo-400);
+  --tl-sys-color-info:                     var(--tl-ref-indigo-600);
   --tl-sys-color-on-info:                  var(--tl-ref-white);
-  --tl-sys-color-info-container:           var(--tl-ref-indigo-900);
-  --tl-sys-color-on-info-container:        var(--tl-ref-indigo-100);
-  --tl-sys-color-info-border:              var(--tl-ref-indigo-600);
+  --tl-sys-color-info-container:           var(--tl-ref-indigo-50);
+  --tl-sys-color-on-info-container:        var(--tl-ref-indigo-950);
+  --tl-sys-color-info-border:              var(--tl-ref-indigo-300);
 
   /* ------------------------------------------------------------------------
      4. State Layers
@@ -102,219 +100,28 @@
   --tl-sys-state-pressed-opacity:          var(--tl-ref-opacity-pressed);
   --tl-sys-state-disabled-opacity:         var(--tl-ref-opacity-disabled);
 
-  --tl-sys-color-state-layer-primary:      var(--tl-ref-indigo-400);
-  --tl-sys-color-state-layer-on-surface:   var(--tl-ref-gray-0);
+  --tl-sys-color-state-layer-primary:      var(--tl-ref-indigo-600);
+  --tl-sys-color-state-layer-on-surface:   var(--tl-ref-gray-900);
 
   /* ------------------------------------------------------------------------
-     5. Elevation & Scrim (Dark Tonal Ambient Elevation)
+     5. Elevation & Scrim (Light Ambient Elevation)
      ------------------------------------------------------------------------ */
   --tl-sys-elevation-0:                    var(--tl-ref-elevation-0);
-  --tl-sys-elevation-1:                    var(--tl-ref-elevation-dark-1);
-  --tl-sys-elevation-2:                    var(--tl-ref-elevation-dark-2);
-  --tl-sys-elevation-3:                    var(--tl-ref-elevation-dark-3);
-  --tl-sys-elevation-4:                    var(--tl-ref-elevation-dark-4);
-  --tl-sys-elevation-5:                    var(--tl-ref-elevation-dark-5);
+  --tl-sys-elevation-1:                    var(--tl-ref-elevation-1);
+  --tl-sys-elevation-2:                    var(--tl-ref-elevation-2);
+  --tl-sys-elevation-3:                    var(--tl-ref-elevation-3);
+  --tl-sys-elevation-4:                    var(--tl-ref-elevation-4);
+  --tl-sys-elevation-5:                    var(--tl-ref-elevation-5);
 
   --tl-sys-color-scrim:                    var(--tl-ref-black);
-  --tl-sys-opacity-scrim:                  0.72;
+  --tl-sys-opacity-scrim:                  0.48;
 
   /* ------------------------------------------------------------------------
      6. Layer Identifiers
      ------------------------------------------------------------------------ */
-  --tl-sys-color-layer-primitives:         var(--tl-ref-gray-300);
-  --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-300);
-  --tl-sys-color-layer-component:          var(--tl-ref-teal-300);
-}
-
-/* ==========================================================================
-   DARK THEME (data-theme="dark")
-   ========================================================================== */
-[data-theme="dark"] {
-  /* 1. Brand & Role Colors (High-Contrast Vibrant Palette) */
-  --tl-sys-color-primary:                var(--tl-ref-indigo-500);
-  --tl-sys-color-on-primary:             var(--tl-ref-white);
-  --tl-sys-color-primary-container:      var(--tl-ref-indigo-900);
-  --tl-sys-color-on-primary-container:   var(--tl-ref-indigo-100);
-  --tl-sys-color-primary-hover:          var(--tl-ref-indigo-600);
-  --tl-sys-color-primary-active:         var(--tl-ref-indigo-700);
-
-  /* High-Contrast Interactive Links & Accent Text (8.5:1 AAA on Dark Canvas) */
-  --tl-sys-color-link:                   var(--tl-ref-indigo-300);
-  --tl-sys-color-link-hover:             var(--tl-ref-indigo-200);
-
-  /* Secondary */
-  --tl-sys-color-secondary:              var(--tl-ref-indigo-200);
-  --tl-sys-color-on-secondary:           var(--tl-ref-indigo-900);
-  --tl-sys-color-secondary-container:    var(--tl-ref-indigo-800);
-  --tl-sys-color-on-secondary-container: var(--tl-ref-indigo-50);
-
-  /* Tertiary */
-  --tl-sys-color-tertiary:               var(--tl-ref-teal-400);
-  --tl-sys-color-on-tertiary:            var(--tl-ref-teal-950);
-  --tl-sys-color-tertiary-container:     var(--tl-ref-teal-900);
-  --tl-sys-color-on-tertiary-container:  var(--tl-ref-teal-100);
-
-  /* 2. Surface Hierarchy (Dark Canvas: 1000/950/900/850/800 Progression) */
-  --tl-sys-color-surface:                  var(--tl-ref-gray-950);
-  --tl-sys-color-surface-dim:              var(--tl-ref-gray-1000);
-  --tl-sys-color-surface-bright:           var(--tl-ref-gray-850);
-  --tl-sys-color-surface-container-lowest: var(--tl-ref-gray-1000);
-  --tl-sys-color-surface-container-low:    var(--tl-ref-gray-950);
-  --tl-sys-color-surface-container:        var(--tl-ref-gray-900);
-  --tl-sys-color-surface-container-high:   var(--tl-ref-gray-850);
-  --tl-sys-color-surface-container-highest:var(--tl-ref-gray-800);
-
-  /* Text & Content on Surfaces (WCAG AAA Optimized) */
-  --tl-sys-color-on-surface:               var(--tl-ref-gray-0);
-  --tl-sys-color-on-surface-variant:       var(--tl-ref-gray-100);
-  --tl-sys-color-on-surface-muted:         var(--tl-ref-gray-300);
-  --tl-sys-color-inverse-surface:          var(--tl-ref-gray-50);
-  --tl-sys-color-inverse-on-surface:       var(--tl-ref-gray-900);
-  --tl-sys-color-inverse-primary:          var(--tl-ref-indigo-600);
-
-  /* Borders & Outlines (Crisp >= 3:1 Non-Text Contrast SC 1.4.11) */
-  --tl-sys-color-outline:                  var(--tl-ref-gray-500);
-  --tl-sys-color-outline-variant:          var(--tl-ref-gray-600);
-  --tl-sys-color-outline-subtle:           var(--tl-ref-gray-700);
-
-  /* 3. Functional / Status Roles */
-  --tl-sys-color-success:                  var(--tl-ref-emerald-400);
-  --tl-sys-color-on-success:               var(--tl-ref-emerald-950);
-  --tl-sys-color-success-container:        var(--tl-ref-emerald-950);
-  --tl-sys-color-on-success-container:     var(--tl-ref-emerald-100);
-  --tl-sys-color-success-border:           var(--tl-ref-emerald-700);
-
-  --tl-sys-color-warning:                  var(--tl-ref-amber-400);
-  --tl-sys-color-on-warning:               var(--tl-ref-amber-950);
-  --tl-sys-color-warning-container:        var(--tl-ref-amber-950);
-  --tl-sys-color-on-warning-container:     var(--tl-ref-amber-100);
-  --tl-sys-color-warning-border:           var(--tl-ref-amber-700);
-
-  --tl-sys-color-error:                    var(--tl-ref-rose-400);
-  --tl-sys-color-on-error:                 var(--tl-ref-rose-950);
-  --tl-sys-color-error-container:          var(--tl-ref-rose-950);
-  --tl-sys-color-on-error-container:       var(--tl-ref-rose-100);
-  --tl-sys-color-error-border:             var(--tl-ref-rose-700);
-
-  --tl-sys-color-info:                     var(--tl-ref-indigo-400);
-  --tl-sys-color-on-info:                  var(--tl-ref-white);
-  --tl-sys-color-info-container:           var(--tl-ref-indigo-900);
-  --tl-sys-color-on-info-container:        var(--tl-ref-indigo-100);
-  --tl-sys-color-info-border:              var(--tl-ref-indigo-600);
-
-  /* 4. State Layers */
-  --tl-sys-state-hover-opacity:            var(--tl-ref-opacity-hover);
-  --tl-sys-state-focus-opacity:            var(--tl-ref-opacity-focus);
-  --tl-sys-state-pressed-opacity:          var(--tl-ref-opacity-pressed);
-  --tl-sys-state-disabled-opacity:         var(--tl-ref-opacity-disabled);
-
-  --tl-sys-color-state-layer-primary:      var(--tl-ref-indigo-400);
-  --tl-sys-color-state-layer-on-surface:   var(--tl-ref-gray-0);
-
-  /* 5. Elevation */
-  --tl-sys-elevation-0:                    var(--tl-ref-elevation-0);
-  --tl-sys-elevation-1:                    var(--tl-ref-elevation-dark-1);
-  --tl-sys-elevation-2:                    var(--tl-ref-elevation-dark-2);
-  --tl-sys-elevation-3:                    var(--tl-ref-elevation-dark-3);
-  --tl-sys-elevation-4:                    var(--tl-ref-elevation-dark-4);
-  --tl-sys-elevation-5:                    var(--tl-ref-elevation-dark-5);
-
-  --tl-sys-color-scrim:                    var(--tl-ref-black);
-  --tl-sys-opacity-scrim:                  0.72;
-
-  /* 6. Layer Identifiers */
-  --tl-sys-color-layer-primitives:         var(--tl-ref-gray-300);
-  --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-300);
-  --tl-sys-color-layer-component:          var(--tl-ref-teal-300);
-}
-
-/* ==========================================================================
-   SYSTEM THEME MODE (prefers-color-scheme: dark fallback)
-   ========================================================================== */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]):not([data-theme="dark"]) {
-    --tl-sys-color-primary:                var(--tl-ref-indigo-500);
-    --tl-sys-color-on-primary:             var(--tl-ref-white);
-    --tl-sys-color-primary-container:      var(--tl-ref-indigo-900);
-    --tl-sys-color-on-primary-container:   var(--tl-ref-indigo-100);
-    --tl-sys-color-primary-hover:          var(--tl-ref-indigo-600);
-    --tl-sys-color-primary-active:         var(--tl-ref-indigo-700);
-
-    /* High-Contrast Interactive Links & Accent Text (8.5:1 AAA on Dark Canvas) */
-    --tl-sys-color-link:                   var(--tl-ref-indigo-300);
-    --tl-sys-color-link-hover:             var(--tl-ref-indigo-200);
-
-    --tl-sys-color-secondary:              var(--tl-ref-indigo-200);
-    --tl-sys-color-on-secondary:           var(--tl-ref-indigo-900);
-    --tl-sys-color-secondary-container:    var(--tl-ref-indigo-800);
-    --tl-sys-color-on-secondary-container: var(--tl-ref-indigo-50);
-
-    --tl-sys-color-tertiary:               var(--tl-ref-teal-400);
-    --tl-sys-color-on-tertiary:            var(--tl-ref-teal-950);
-    --tl-sys-color-tertiary-container:     var(--tl-ref-teal-900);
-    --tl-sys-color-on-tertiary-container:  var(--tl-ref-teal-100);
-
-    --tl-sys-color-surface:                  var(--tl-ref-gray-950);
-    --tl-sys-color-surface-dim:              var(--tl-ref-gray-1000);
-    --tl-sys-color-surface-bright:           var(--tl-ref-gray-850);
-    --tl-sys-color-surface-container-lowest: var(--tl-ref-gray-1000);
-    --tl-sys-color-surface-container-low:    var(--tl-ref-gray-950);
-    --tl-sys-color-surface-container:        var(--tl-ref-gray-900);
-    --tl-sys-color-surface-container-high:   var(--tl-ref-gray-850);
-    --tl-sys-color-surface-container-highest:var(--tl-ref-gray-800);
-
-    --tl-sys-color-on-surface:               var(--tl-ref-gray-0);
-    --tl-sys-color-on-surface-variant:       var(--tl-ref-gray-100);
-    --tl-sys-color-on-surface-muted:         var(--tl-ref-gray-300);
-    --tl-sys-color-inverse-surface:          var(--tl-ref-gray-50);
-    --tl-sys-color-inverse-on-surface:       var(--tl-ref-gray-900);
-    --tl-sys-color-inverse-primary:          var(--tl-ref-indigo-600);
-
-    --tl-sys-color-outline:                  var(--tl-ref-gray-500);
-    --tl-sys-color-outline-variant:          var(--tl-ref-gray-600);
-    --tl-sys-color-outline-subtle:           var(--tl-ref-gray-700);
-
-    --tl-sys-color-success:                  var(--tl-ref-emerald-400);
-    --tl-sys-color-on-success:               var(--tl-ref-emerald-950);
-    --tl-sys-color-success-container:        var(--tl-ref-emerald-950);
-    --tl-sys-color-on-success-container:     var(--tl-ref-emerald-100);
-    --tl-sys-color-success-border:           var(--tl-ref-emerald-700);
-
-    --tl-sys-color-warning:                  var(--tl-ref-amber-400);
-    --tl-sys-color-on-warning:               var(--tl-ref-amber-950);
-    --tl-sys-color-warning-container:        var(--tl-ref-amber-950);
-    --tl-sys-color-on-warning-container:     var(--tl-ref-amber-100);
-    --tl-sys-color-warning-border:           var(--tl-ref-amber-700);
-
-    --tl-sys-color-error:                    var(--tl-ref-rose-400);
-    --tl-sys-color-on-error:                 var(--tl-ref-rose-950);
-    --tl-sys-color-error-container:          var(--tl-ref-rose-950);
-    --tl-sys-color-on-error-container:       var(--tl-ref-rose-100);
-    --tl-sys-color-error-border:             var(--tl-ref-rose-700);
-
-    --tl-sys-color-info:                     var(--tl-ref-indigo-400);
-    --tl-sys-color-on-info:                  var(--tl-ref-white);
-    --tl-sys-color-info-container:           var(--tl-ref-indigo-900);
-    --tl-sys-color-on-info-container:        var(--tl-ref-indigo-100);
-    --tl-sys-color-info-border:              var(--tl-ref-indigo-600);
-
-    --tl-sys-color-state-layer-primary:      var(--tl-ref-indigo-400);
-    --tl-sys-color-state-layer-on-surface:   var(--tl-ref-gray-0);
-
-    --tl-sys-elevation-0:                    var(--tl-ref-elevation-0);
-    --tl-sys-elevation-1:                    var(--tl-ref-elevation-dark-1);
-    --tl-sys-elevation-2:                    var(--tl-ref-elevation-dark-2);
-    --tl-sys-elevation-3:                    var(--tl-ref-elevation-dark-3);
-    --tl-sys-elevation-4:                    var(--tl-ref-elevation-dark-4);
-    --tl-sys-elevation-5:                    var(--tl-ref-elevation-dark-5);
-
-    --tl-sys-color-scrim:                    var(--tl-ref-black);
-    --tl-sys-opacity-scrim:                  0.72;
-
-    --tl-sys-color-layer-primitives:         var(--tl-ref-gray-300);
-    --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-300);
-    --tl-sys-color-layer-component:          var(--tl-ref-teal-300);
-  }
+  --tl-sys-color-layer-primitives:         var(--tl-ref-gray-500);
+  --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-600);
+  --tl-sys-color-layer-component:          var(--tl-ref-teal-600);
 }
 
 /* ==========================================================================

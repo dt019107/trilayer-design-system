@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" data-density="default">
+<html lang="en" data-theme="light" data-density="default">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Trilayer Design System — Three layers. One source of truth. Production-grade design tokens, adaptive components, and enterprise architecture.">
-  <meta name="theme-color" content="#121417">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
   <meta property="og:title" content="Trilayer — Three layers. One source of truth.">
   <meta property="og:description" content="Trilayer Design System — Production-grade design tokens, adaptive components, and enterprise architecture.">
   <meta property="og:image" content="assets/og-image.png">
@@ -38,11 +38,11 @@
   <!-- Docs Portal Styling: Layer Inspector, Code Blocks, Playgrounds -->
   <link rel="stylesheet" href="css/docs.css">
 
-  <!-- Anti-FOUC Theme & Density Initialization (Pure Dark Mode) -->
+  <!-- Anti-FOUC Theme & Density Initialization (Pure Light Mode) -->
   <script>
     (function() {
       try {
-        document.documentElement.setAttribute("data-theme", "dark");
+        document.documentElement.setAttribute("data-theme", "light");
         var savedDensity = localStorage.getItem("trilayer_docs_density") || "default";
         document.documentElement.setAttribute("data-density", savedDensity);
       } catch (e) {}

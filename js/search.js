@@ -96,14 +96,14 @@ export class CommandPalette {
         path: "#/tokens/theming",
         category: "Tokens",
         desc: "Seed color picker, 12-step tonal palette generator, and WCAG contrast audit.",
-        tags: "theme color seed dark mode light mode primary palette tonal contrast oklch"
+        tags: "theme color seed light mode primary palette tonal contrast oklch"
       },
       {
         title: "Color System & Palettes",
         path: "#/foundations/color",
         category: "Foundations",
-        desc: "Role-based color tokens, primary accents, surface containers, and dark mode palette.",
-        tags: "color palette primary surface dark mode light mode tokens seed"
+        desc: "Role-based color tokens, primary accents, surface containers, and light mode palette.",
+        tags: "color palette primary surface light mode tokens seed"
       },
       {
         title: "WCAG 2.2 AA Accessibility Standards",

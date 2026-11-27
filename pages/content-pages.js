@@ -150,7 +150,7 @@ export const ContentPages = {
           </div>
           <div style="padding: 16px; background: var(--tl-sys-color-surface-container); border-radius: var(--tl-sys-shape-control);">
             <strong style="color: var(--tl-sys-color-link);">2. Instant Theme Swaps</strong>
-            <p style="font-size: 13px; margin: 4px 0 0;">Toggle <code>data-theme="light"</code> or <code>"dark"</code> on <code>&lt;html&gt;</code> to transform every surface instantly.</p>
+            <p style="font-size: 13px; margin: 4px 0 0;">Engineered with <code>data-theme="light"</code> on <code>&lt;html&gt;</code> for pristine surface contrast.</p>
           </div>
           <div style="padding: 16px; background: var(--tl-sys-color-surface-container); border-radius: var(--tl-sys-shape-control);">
             <strong style="color: var(--tl-sys-color-link);">3. Density Scaling</strong>
@@ -742,7 +742,7 @@ export const ContentPages = {
         <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">Released October 2026</span>
         <ul style="padding-left: 20px; margin: 16px 0 0; font-size: 13px; line-height: 1.8; color: var(--tl-sys-color-on-surface-variant);">
           <li>Added initial button, text field, dialog, and selection control component sets.</li>
-          <li>Introduced light/dark theme switching and density scaling.</li>
+          <li>Optimized for pure light theme architecture and density scaling.</li>
         </ul>
       </div>
 
@@ -829,7 +829,7 @@ export const ContentPages = {
           </div>
           <div style="padding: 16px; background: var(--tl-sys-color-surface-container); border-radius: var(--tl-sys-shape-control);">
             <strong>Step 3: Test Dark Theme Inversion</strong><br>
-            <span style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant);">Add <code>data-theme="dark"</code> to your application root to confirm background surfaces elevate to dark tones without broken contrast.</span>
+            <span style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant);">Root configured with <code>data-theme="light"</code> to ensure all surfaces provide crisp, accessible contrast.</span>
           </div>
         </div>
       </div>

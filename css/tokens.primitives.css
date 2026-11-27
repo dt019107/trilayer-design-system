@@ -236,12 +236,6 @@
   --tl-ref-elevation-4: inset 0 1px 0 0 rgba(255, 255, 255, 1.00), 0 16px 36px -4px rgba(18, 20, 23, 0.14), 0 4px 12px 0 rgba(18, 20, 23, 0.06);
   --tl-ref-elevation-5: inset 0 1px 0 0 rgba(255, 255, 255, 1.00), 0 28px 56px -8px rgba(18, 20, 23, 0.18), 0 8px 20px 0 rgba(18, 20, 23, 0.08);
 
-  /* Dark Elevation Ambient with Specular Inner Highlight */
-  --tl-ref-elevation-dark-1: inset 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.50);
-  --tl-ref-elevation-dark-2: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 4px 12px -1px rgba(0, 0, 0, 0.60), 0 2px 4px 0 rgba(0, 0, 0, 0.40);
-  --tl-ref-elevation-dark-3: inset 0 1px 0 0 rgba(255, 255, 255, 0.10), 0 8px 24px -3px rgba(0, 0, 0, 0.75), 0 4px 8px 0 rgba(0, 0, 0, 0.45);
-  --tl-ref-elevation-dark-4: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 16px 40px -6px rgba(0, 0, 0, 0.85), 0 6px 14px 0 rgba(0, 0, 0, 0.55);
-  --tl-ref-elevation-dark-5: inset 0 1px 0 0 rgba(255, 255, 255, 0.15), 0 28px 64px -10px rgba(0, 0, 0, 0.95), 0 10px 24px 0 rgba(0, 0, 0, 0.65);
 
   /* ==========================================================================
      MOTION PRIMITIVES (Cubic-bezier curves & Durations)

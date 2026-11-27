@@ -42,9 +42,9 @@ export default {
       componentToken: "--tl-comp-dialog-shadow",
       semanticToken: "--tl-sys-elevation-4",
       primitiveTokenLight: "--tl-ref-elevation-4",
-      primitiveTokenDark: "--tl-ref-elevation-dark-4",
+      primitiveTokenDark: "--tl-ref-elevation-4",
       valueLight: "0 12px 28px -4px rgba(18,20,23,0.12)",
-      valueDark: "0 16px 36px -6px rgba(0,0,0,0.70)"
+      valueDark: "0 12px 28px -4px rgba(18,20,23,0.12)"
     }
   ],
 

@@ -9,8 +9,6 @@ export function renderComponentPage(component) {
 
   const statusClass = (component.status || "stable").toLowerCase();
 
-  const isDark = (typeof document !== "undefined" && document.documentElement.getAttribute("data-theme") === "dark");
-
   return `
     <div class="tl-page-header">
       <div class="tl-page-title-row">
@@ -38,8 +36,8 @@ export function renderComponentPage(component) {
 
       <div style="display: flex; flex-direction: column; gap: 10px;">
         ${(component.layerInspectorChains || []).map(chain => {
-          const primToken = isDark ? (chain.primitiveTokenDark || chain.primitiveTokenLight) : chain.primitiveTokenLight;
-          const activeVal = isDark ? (chain.valueDark || chain.valueLight) : chain.valueLight;
+          const primToken = chain.primitiveTokenLight;
+          const activeVal = chain.valueLight;
           return `
           <div class="tl-token-chain-card">
             <strong style="font-size: 13px; color: var(--tl-sys-color-on-surface);">${chain.element}</strong>

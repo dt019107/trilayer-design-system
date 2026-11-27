@@ -222,15 +222,15 @@ export class ColorEngine {
     // Compute accessible on-primary text (white for dark primaries, deep tint for light primaries like amber)
     const onPrimary = this.getContrastRatio("#FFFFFF", p500) >= 4.5 ? "#FFFFFF" : p950;
 
-    // Dynamic semantic injection respecting Dark Theme mode
+    // Dynamic semantic injection for Pure Light Theme
     root.style.setProperty("--tl-sys-color-primary", p500);
     root.style.setProperty("--tl-sys-color-on-primary", onPrimary);
     root.style.setProperty("--tl-sys-color-primary-hover", p600);
     root.style.setProperty("--tl-sys-color-primary-active", p700);
-    root.style.setProperty("--tl-sys-color-primary-container", p900);
-    root.style.setProperty("--tl-sys-color-on-primary-container", p100);
-    root.style.setProperty("--tl-sys-color-secondary-container", p950);
-    root.style.setProperty("--tl-sys-color-layer-semantic", p400);
+    root.style.setProperty("--tl-sys-color-primary-container", p50);
+    root.style.setProperty("--tl-sys-color-on-primary-container", p900);
+    root.style.setProperty("--tl-sys-color-secondary-container", p50);
+    root.style.setProperty("--tl-sys-color-layer-semantic", p500);
 
     // Save to localStorage
     try {
@@ -252,12 +252,10 @@ export class ColorEngine {
    */
   static runContrastAudit(palette) {
     const p500 = palette.find(p => p.step === "500")?.hex || "#5B5BD6";
-    const p400 = palette.find(p => p.step === "400")?.hex || "#787FE3";
     const p50  = palette.find(p => p.step === "50")?.hex  || "#EFF0FC";
     const p900 = palette.find(p => p.step === "900")?.hex || "#262272";
     const p950 = palette.find(p => p.step === "950")?.hex || "#0D0C30";
     const white = "#FFFFFF";
-    const darkSurface = "#0A0C0E";
 
     // Adaptive on-primary foreground: white for deep tones, dark ink for high-luminance tones (amber/emerald)
     const onPrimary = this.getContrastRatio(white, p500) >= 4.5 ? white : p950;
@@ -276,13 +274,13 @@ export class ColorEngine {
         ...this.checkContrast(p900, p50)
       },
       {
-        pair: "Primary Accent on Dark Surface",
-        fg: p400,
-        bg: darkSurface,
-        ...this.checkContrast(p400, darkSurface)
+        pair: "Primary Brand Heading on Light Canvas",
+        fg: p900,
+        bg: white,
+        ...this.checkContrast(p900, white)
       },
       {
-        pair: "High-contrast Text on Canvas",
+        pair: "High-contrast Body Text on Canvas",
         fg: "#121417",
         bg: white,
         ...this.checkContrast("#121417", white)

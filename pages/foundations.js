@@ -83,15 +83,14 @@ export const FoundationPages = {
       <!-- Section: Semantic Role Mapping Table -->
       <div class="card" style="margin-bottom: 32px;">
         <h2 style="font-size: 18px; margin-bottom: 8px;">Layer 2: Semantic Color Roles</h2>
-        <p style="font-size: 14px; margin-bottom: 16px;">How primitive tones map into UI roles across Light and Dark themes.</p>
+        <p style="font-size: 14px; margin-bottom: 16px;">How primitive tones map into UI roles across the pure light theme architecture.</p>
         <div style="overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left;">
             <thead>
               <tr style="border-bottom: 2px solid var(--tl-sys-color-outline-variant); color: var(--tl-sys-color-on-surface);">
                 <th style="padding: 10px 12px;">Role Name</th>
                 <th style="padding: 10px 12px;">Semantic Token</th>
-                <th style="padding: 10px 12px;">Light Mode Ref</th>
-                <th style="padding: 10px 12px;">Dark Mode Ref</th>
+                <th style="padding: 10px 12px;">Primitive Reference</th>
                 <th style="padding: 10px 12px;">Description</th>
               </tr>
             </thead>
@@ -101,7 +100,6 @@ export const FoundationPages = {
                   <td style="padding: 10px 12px; font-weight: 600; color: var(--tl-sys-color-on-surface);">${item.name}</td>
                   <td style="padding: 10px 12px;"><code style="font-family: var(--tl-sys-font-family-code); font-size: 11px; color: var(--tl-sys-color-link);">${item.role}</code></td>
                   <td style="padding: 10px 12px;"><code style="font-family: var(--tl-sys-font-family-code); font-size: 11px;">${item.lightRef}</code></td>
-                  <td style="padding: 10px 12px;"><code style="font-family: var(--tl-sys-font-family-code); font-size: 11px;">${item.darkRef}</code></td>
                   <td style="padding: 10px 12px; color: var(--tl-sys-color-on-surface-variant);">${item.desc}</td>
                 </tr>
               `).join("")}

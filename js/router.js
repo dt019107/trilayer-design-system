@@ -327,7 +327,7 @@ export class Router {
               <strong style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tl-sys-color-on-surface);">Layer 2 &bull; Semantics</strong>
             </div>
             <p style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant); margin: 0; line-height: 1.5;">
-              Design intent tokens (surface, on-surface, primary, outline). Swap automatically between light and dark themes.
+              Design intent tokens (surface, on-surface, primary, outline). Strict 3-tier pure light theme architecture.
             </p>
           </div>
 
@@ -953,7 +953,7 @@ export class Router {
           <div style="padding: 16px; border-radius: var(--tl-sys-shape-container); background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline-variant);">
             <span class="layer-badge layer-badge--sem" style="margin-bottom: 8px;">Layer 2: Semantic</span>
             <h3 style="font-size: 15px; margin-bottom: 6px;">--tl-sys-*</h3>
-            <p style="font-size: 13px;">Role-based intent tokens. Adapts dynamically to light/dark themes and density modes.</p>
+            <p style="font-size: 13px;">Role-based intent tokens. Adapts dynamically to density modes on a pristine light canvas.</p>
           </div>
 
           <div style="padding: 16px; border-radius: var(--tl-sys-shape-container); background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline-variant);">
@@ -983,7 +983,7 @@ export class Router {
           <span class="tl-nav-badge tl-nav-badge--stable">Architecture Core</span>
         </div>
         <p class="tl-page-subtitle">
-          How Trilayer decouples design decisions across three isolated token tiers to prevent style leaks, allow instant theme swaps, and support seamless dark mode.
+          How Trilayer decouples design decisions across three isolated token tiers to prevent style leaks, allow instant palette re-seeding, and maintain pure light theme clarity.
         </p>
       </div>
 
