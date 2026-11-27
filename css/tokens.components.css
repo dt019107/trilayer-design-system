@@ -71,6 +71,31 @@
   --tl-comp-button-danger-hover-bg:    var(--tl-sys-color-error-container);
   --tl-comp-button-danger-shadow:      var(--tl-sys-elevation-1);
 
+  /* Miro Button Suite Variants */
+  --tl-comp-button-pill-radius:           var(--tl-sys-shape-pill);
+  --tl-comp-button-miro-primary-bg:       var(--tl-sys-color-miro-ink);
+  --tl-comp-button-miro-primary-text:     var(--tl-sys-color-miro-canvas);
+  --tl-comp-button-miro-primary-hover-bg: var(--tl-sys-color-miro-charcoal);
+  --tl-comp-button-miro-primary-active-bg:var(--tl-sys-color-miro-ink-deep);
+  --tl-comp-button-miro-yellow-bg:        var(--tl-sys-color-miro-yellow);
+  --tl-comp-button-miro-yellow-text:      var(--tl-sys-color-miro-ink);
+  --tl-comp-button-miro-yellow-hover-bg:  var(--tl-sys-color-miro-yellow-deep);
+  --tl-comp-button-miro-yellow-active-bg: var(--tl-sys-color-miro-yellow-dark);
+  --tl-comp-button-miro-blue-bg:          var(--tl-sys-color-miro-blue);
+  --tl-comp-button-miro-blue-text:        var(--tl-sys-color-miro-canvas);
+  --tl-comp-button-miro-blue-hover-bg:    var(--tl-sys-color-miro-blue-hover);
+  --tl-comp-button-miro-blue-active-bg:   var(--tl-sys-color-miro-blue-active);
+  --tl-comp-button-miro-secondary-bg:     var(--tl-sys-color-transparent);
+  --tl-comp-button-miro-secondary-text:   var(--tl-sys-color-miro-ink);
+  --tl-comp-button-miro-secondary-border: var(--tl-sys-color-miro-hairline-strong);
+  --tl-comp-button-miro-secondary-hover-bg:var(--tl-sys-color-miro-surface);
+  --tl-comp-button-miro-on-dark-bg:       var(--tl-sys-color-miro-canvas);
+  --tl-comp-button-miro-on-dark-text:     var(--tl-sys-color-miro-ink);
+  --tl-comp-button-miro-on-dark-hover-bg: var(--tl-sys-color-miro-surface);
+  --tl-comp-button-miro-ghost-bg:         var(--tl-sys-color-transparent);
+  --tl-comp-button-miro-ghost-text:       var(--tl-sys-color-miro-ink);
+  --tl-comp-button-miro-ghost-hover-bg:   var(--tl-sys-color-miro-surface);
+
   /* ==========================================================================
      2. TEXT FIELD & INPUT CONTROLS (--tl-comp-input-*)
      ========================================================================== */
@@ -117,6 +142,19 @@
   --tl-comp-card-title-color:         var(--tl-sys-color-on-surface);
   --tl-comp-card-title-size:          var(--tl-sys-typescale-title-large-size);
   --tl-comp-card-body-color:          var(--tl-sys-color-on-surface-variant);
+
+  /* Miro Feature Cards & Sticky Notes */
+  --tl-comp-card-feature-radius:          var(--tl-sys-shape-xxxl);
+  --tl-comp-card-feature-bg:              var(--tl-sys-color-miro-canvas);
+  --tl-comp-card-feature-border:          var(--tl-sys-color-miro-hairline-soft);
+  --tl-comp-card-feature-yellow-bg:       var(--tl-sys-color-miro-yellow);
+  --tl-comp-card-feature-yellow-text:     var(--tl-sys-color-miro-ink);
+  --tl-comp-card-feature-coral-bg:        var(--tl-sys-color-miro-coral-light);
+  --tl-comp-card-feature-coral-text:      var(--tl-sys-color-miro-coral-dark);
+  --tl-comp-card-feature-teal-bg:         var(--tl-sys-color-miro-teal-light);
+  --tl-comp-card-feature-teal-text:       var(--tl-sys-color-miro-moss-dark);
+  --tl-comp-card-feature-rose-bg:         var(--tl-sys-color-miro-rose-light);
+  --tl-comp-card-feature-rose-text:       var(--tl-sys-color-miro-ink);
 
   /* ==========================================================================
      5. BADGE & CHIP (--tl-comp-badge-*, --tl-comp-chip-*)
@@ -292,5 +330,16 @@
   --tl-comp-spinner-size-md:          var(--tl-sys-space-lg);
   --tl-comp-spinner-size-lg:          var(--tl-sys-density-control-height-sm);
   --tl-comp-spinner-duration:         var(--tl-sys-motion-duration-deliberate);
+
+  /* ==========================================================================
+     15. MIRO WORKSPACE CONTROLS, PRICING & WHITEBOARD SPECIMENS
+     ========================================================================== */
+  --tl-comp-input-miro-bg:                var(--tl-sys-color-miro-canvas);
+  --tl-comp-input-miro-border:            var(--tl-sys-color-miro-hairline-strong);
+  --tl-comp-input-miro-border-focus:      var(--tl-sys-color-miro-blue);
+  --tl-comp-input-miro-text:              var(--tl-sys-color-miro-ink);
+  --tl-comp-whiteboard-shadow:            var(--tl-sys-elevation-whiteboard);
+  --tl-comp-pricing-highlight-bg:         var(--tl-sys-color-miro-surface-pricing);
+  --tl-comp-pricing-highlight-border:     var(--tl-sys-color-miro-blue);
 }
 

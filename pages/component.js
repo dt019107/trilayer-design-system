@@ -509,6 +509,74 @@ function renderLiveSpecimen(id) {
           <button class="tl-toast__close" aria-label="Dismiss">&times;</button>
         </div>
       `;
+    case "whiteboard-mockup":
+      return `
+        <div class="tl-whiteboard-frame" style="width: 100%; border-radius: var(--tl-comp-card-feature-radius); background: var(--tl-sys-color-miro-surface); border: 1px solid var(--tl-sys-color-miro-hairline); box-shadow: var(--tl-comp-whiteboard-shadow); padding: 24px; position: relative; overflow: hidden; min-height: 380px;">
+          <!-- Top Floating Canvas Toolbar -->
+          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; background: var(--tl-sys-color-miro-canvas); padding: 4px 8px; border-radius: var(--tl-comp-button-pill-radius); box-shadow: var(--tl-sys-elevation-2); border: 1px solid var(--tl-sys-color-miro-hairline); z-index: 5;">
+            <button class="tl-btn tl-btn--ghost tl-btn--sm" style="padding: 4px 8px; height: 32px;" title="Select tool">↖ Select</button>
+            <button class="tl-btn tl-btn--miro-yellow tl-btn--sm" style="padding: 4px 10px; height: 32px;" title="Sticky note tool">📝 Sticky Note</button>
+            <button class="tl-btn tl-btn--ghost tl-btn--sm" style="padding: 4px 8px; height: 32px;" title="Connector line">➔ Arrow</button>
+            <button class="tl-btn tl-btn--ghost tl-btn--sm" style="padding: 4px 8px; height: 32px;" title="Shapes">▢ Shape</button>
+            <div style="width: 1px; height: 18px; background: var(--tl-sys-color-miro-hairline); margin: 0 4px;"></div>
+            <span style="font-size: 11px; font-weight: 700; color: var(--tl-sys-color-miro-slate); padding: 0 6px;">100%</span>
+          </div>
+
+          <!-- Canvas Interactive Elements Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding-top: 56px; position: relative;">
+            <!-- Sticky 1: Canary Yellow -->
+            <div class="tl-card tl-card--feature tl-card--feature-yellow" style="padding: 18px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(-1deg); cursor: pointer;">
+              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-ink); margin-bottom: 6px;">DESIGN SYSTEM ARCHITECTURE</div>
+              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-ink); margin: 0 0 12px 0;">⚡ Synchronize Roobert PRO type scale &amp; 3-tier token engine.</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--tl-sys-color-miro-slate);">
+                <span>Deepak T.</span>
+                <span>✔ Ready</span>
+              </div>
+            </div>
+
+            <!-- Sticky 2: Coral Pastel -->
+            <div class="tl-card tl-card--feature tl-card--feature-coral" style="padding: 18px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(1.5deg); cursor: pointer;">
+              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-coral-dark); margin-bottom: 6px;">COMPONENT FOUNDATIONS</div>
+              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-coral-dark); margin: 0 0 12px 0;">🎨 28px soft corner cards with yellow, coral, and teal pastel fills.</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--tl-sys-color-miro-coral-dark);">
+                <span>Sarah K.</span>
+                <span>In review</span>
+              </div>
+            </div>
+
+            <!-- Sticky 3: Teal Pastel -->
+            <div class="tl-card tl-card--feature tl-card--feature-teal" style="padding: 18px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(-0.8deg); cursor: pointer;">
+              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-moss-dark); margin-bottom: 6px;">ZERO-BUILD PIPELINE</div>
+              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-moss-dark); margin: 0 0 12px 0;">🚀 Vanilla ES modules with 100% automated QA regression guards.</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--tl-sys-color-miro-moss-dark);">
+                <span>Alex M.</span>
+                <span>Active</span>
+              </div>
+            </div>
+
+            <!-- Sticky 4: Rose Pastel -->
+            <div class="tl-card tl-card--feature tl-card--feature-rose" style="padding: 18px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(1.2deg); cursor: pointer;">
+              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-ink); margin-bottom: 6px;">WCAG 2.2 AA CONTRAST</div>
+              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-ink); margin: 0 0 12px 0;">🔒 Contrast ratios verified across all light &amp; dark canvases.</p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--tl-sys-color-miro-slate);">
+                <span>Elena R.</span>
+                <span>100% Pass</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Multiplayer Cursors -->
+          <div style="position: absolute; bottom: 24px; left: 40px; display: flex; align-items: center; gap: 4px; pointer-events: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--tl-sys-color-miro-blue)"><polygon points="0,0 24,10 12,12 10,24"/></svg>
+            <span style="background: var(--tl-sys-color-miro-blue); color: var(--tl-sys-color-miro-canvas); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">Deepak T.</span>
+          </div>
+
+          <div style="position: absolute; bottom: 32px; right: 80px; display: flex; align-items: center; gap: 4px; pointer-events: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--tl-sys-color-miro-coral)"><polygon points="0,0 24,10 12,12 10,24"/></svg>
+            <span style="background: var(--tl-sys-color-miro-coral); color: var(--tl-sys-color-miro-coral-dark); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">Sarah K.</span>
+          </div>
+        </div>
+      `;
     default:
       return `<button class="tl-btn tl-btn--primary tl-btn--md">${id}</button>`;
   }

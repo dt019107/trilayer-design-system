@@ -52,6 +52,52 @@
   --tl-ref-color-transparent: transparent;
 
   /* ==========================================================================
+     MIRO VISUAL WORKSPACE PRIMITIVES
+     ========================================================================== */
+  /* Miro Brand Canary Yellow */
+  --tl-ref-miro-yellow:            #FFD02F;
+  --tl-ref-miro-yellow-deep:       #FCB900;
+  --tl-ref-miro-yellow-light:      #FFF4C4;
+  --tl-ref-miro-yellow-dark:       #746019;
+
+  /* Miro Brand Blue */
+  --tl-ref-miro-blue:              #4262FF;
+  --tl-ref-miro-blue-450:          #5B76FE;
+  --tl-ref-miro-blue-pressed:      #2A41B6;
+
+  /* Miro Sticky Note Pastels */
+  --tl-ref-miro-coral:             #FF9999;
+  --tl-ref-miro-coral-light:       #FFC6C6;
+  --tl-ref-miro-coral-dark:        #600000;
+  --tl-ref-miro-rose:              #FFD8F4;
+  --tl-ref-miro-rose-light:        #FDE0F0;
+  --tl-ref-miro-pink:              #FDE0F0;
+  --tl-ref-miro-teal:              #0FBCB0;
+  --tl-ref-miro-teal-light:        #C3FAF5;
+  --tl-ref-miro-moss-dark:         #187574;
+  --tl-ref-miro-orange-light:      #FFE6CD;
+  --tl-ref-miro-red:               #FBD4D4;
+  --tl-ref-miro-red-dark:          #E3C5C5;
+
+  /* Miro Inks & Surfaces */
+  --tl-ref-miro-ink:               #1C1C1E;
+  --tl-ref-miro-ink-deep:          #050038;
+  --tl-ref-miro-charcoal:          #2C2C34;
+  --tl-ref-miro-slate:             #555A6A;
+  --tl-ref-miro-steel:             #6B6F7E;
+  --tl-ref-miro-stone:             #8E91A0;
+  --tl-ref-miro-muted:             #A5A8B5;
+  --tl-ref-miro-canvas:            #FFFFFF;
+  --tl-ref-miro-surface:           #F7F8FA;
+  --tl-ref-miro-surface-soft:      #FAFBFC;
+  --tl-ref-miro-surface-yellow:    #FFF8E0;
+  --tl-ref-miro-surface-pricing:   #F5F3FF;
+  --tl-ref-miro-hairline:          #E0E2E8;
+  --tl-ref-miro-hairline-soft:     #EEF0F3;
+  --tl-ref-miro-hairline-strong:   #C7CAD5;
+  --tl-ref-miro-success:           #00B473;
+
+  /* ==========================================================================
      COLOR RAMPS: TEAL (Component Layer Accent)
      ========================================================================== */
   --tl-ref-teal-50:  #F0FDFA;
@@ -176,6 +222,7 @@
   --tl-ref-radius-12:   12px;
   --tl-ref-radius-16:   16px;
   --tl-ref-radius-24:   24px;
+  --tl-ref-radius-28:   28px;
   --tl-ref-radius-32:   32px;
   --tl-ref-radius-full: 9999px;
 
@@ -185,6 +232,7 @@
   --tl-ref-font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --tl-ref-font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --tl-ref-font-code:    'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --tl-ref-font-roobert: 'Roobert PRO', 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Type Scale */
   --tl-ref-font-size-11: 11px;
@@ -195,12 +243,17 @@
   --tl-ref-font-size-16: 16px;
   --tl-ref-font-size-18: 18px;
   --tl-ref-font-size-20: 20px;
+  --tl-ref-font-size-22: 22px;
   --tl-ref-font-size-24: 24px;
   --tl-ref-font-size-28: 28px;
   --tl-ref-font-size-32: 32px;
+  --tl-ref-font-size-36: 36px;
   --tl-ref-font-size-40: 40px;
   --tl-ref-font-size-48: 48px;
   --tl-ref-font-size-56: 56px;
+  --tl-ref-font-size-60: 60px;
+  --tl-ref-font-size-64: 64px;
+  --tl-ref-font-size-80: 80px;
 
   /* Weights */
   --tl-ref-font-weight-400: 400;
@@ -242,6 +295,9 @@
   --tl-ref-elevation-dark-3: inset 0 1px 0 0 rgba(255, 255, 255, 0.10), 0 8px 24px -3px rgba(0, 0, 0, 0.75), 0 4px 8px 0 rgba(0, 0, 0, 0.45);
   --tl-ref-elevation-dark-4: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 16px 40px -6px rgba(0, 0, 0, 0.85), 0 6px 14px 0 rgba(0, 0, 0, 0.55);
   --tl-ref-elevation-dark-5: inset 0 1px 0 0 rgba(255, 255, 255, 0.15), 0 28px 64px -10px rgba(0, 0, 0, 0.95), 0 10px 24px 0 rgba(0, 0, 0, 0.65);
+
+  /* Miro Collaborative Canvas Elevation */
+  --tl-ref-elevation-whiteboard: 0px 12px 32px -4px rgba(5, 0, 56, 0.08), 0px 2px 6px 0px rgba(5, 0, 56, 0.04);
 
   /* ==========================================================================
      MOTION PRIMITIVES (Cubic-bezier curves & Durations)

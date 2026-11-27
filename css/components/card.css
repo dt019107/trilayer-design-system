@@ -82,3 +82,50 @@
   padding-top: var(--tl-comp-card-gap);
   border-top: 1px solid var(--tl-sys-color-outline-variant);
 }
+
+/* ==========================================================================
+   MIRO PASTEL FEATURE CARDS & STICKY NOTES
+   ========================================================================== */
+.tl-card--feature {
+  border-radius: var(--tl-comp-card-feature-radius);
+  background-color: var(--tl-comp-card-feature-bg);
+  border: 1px solid var(--tl-comp-card-feature-border);
+  box-shadow: var(--tl-sys-elevation-1);
+  padding: var(--tl-sys-space-xl);
+  transition: transform var(--tl-sys-motion-duration-standard) ease, box-shadow var(--tl-sys-motion-duration-standard) ease;
+}
+
+.tl-card--feature:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--tl-sys-elevation-2);
+}
+
+.tl-card--feature-yellow {
+  background-color: var(--tl-comp-card-feature-yellow-bg);
+  color: var(--tl-comp-card-feature-yellow-text);
+  border-color: var(--tl-sys-color-transparent);
+}
+
+.tl-card--feature-coral {
+  background-color: var(--tl-comp-card-feature-coral-bg);
+  color: var(--tl-comp-card-feature-coral-text);
+  border-color: var(--tl-sys-color-transparent);
+}
+
+.tl-card--feature-teal {
+  background-color: var(--tl-comp-card-feature-teal-bg);
+  color: var(--tl-comp-card-feature-teal-text);
+  border-color: var(--tl-sys-color-transparent);
+}
+
+.tl-card--feature-rose {
+  background-color: var(--tl-comp-card-feature-rose-bg);
+  color: var(--tl-comp-card-feature-rose-text);
+  border-color: var(--tl-sys-color-transparent);
+}
+
+.tl-card--pricing-highlight {
+  background-color: var(--tl-comp-pricing-highlight-bg);
+  border: 2px solid var(--tl-comp-pricing-highlight-border);
+  box-shadow: var(--tl-sys-elevation-2);
+}

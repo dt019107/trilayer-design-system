@@ -26,6 +26,7 @@ import iconButton from "./icon-button.js";
 import menu from "./menu.js";
 import progress from "./progress.js";
 import snackbar from "./snackbar.js";
+import whiteboardMockup from "./whiteboard-mockup.js";
 
 export const components = {
   "button": button,
@@ -49,7 +50,8 @@ export const components = {
   "tabs": tabs,
   "accordion": accordion,
   "divider": divider,
-  "progress": progress
+  "progress": progress,
+  "whiteboard-mockup": whiteboardMockup
 };
 
 export const componentsList = Object.values(components);

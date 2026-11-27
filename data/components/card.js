@@ -38,6 +38,11 @@ export default {
     }
   ],
   variants: [
+    { name: "Miro Feature Card (28px)", desc: "Soft 28px corner card with subtle elevation and generous 32px padding." },
+    { name: "Miro Canary Yellow Card", desc: "Signature brand yellow card (#ffd02f) for feature hero moments." },
+    { name: "Miro Coral Sticky Card", desc: "Pastel coral sticky note card (#ffc6c6) with #600000 ink." },
+    { name: "Miro Teal Sticky Card", desc: "Pastel teal sticky note card (#c3faf5) with #187574 moss text." },
+    { name: "Miro Rose Sticky Card", desc: "Pastel rose sticky note card (#fde0f0) for moodboards and ideas." },
     { name: "Elevated Card", desc: "Default resting surface with subtle ambient shadow." },
     { name: "Outlined Card", desc: "Flat boundary for dense dashboard grids." },
     { name: "Interactive Card", desc: "Clickable surface with hover elevation lift." }

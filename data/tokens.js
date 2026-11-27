@@ -197,6 +197,22 @@ export const colorPrimitives = {
     { name: "--tl-ref-violet-800", hex: "#5B21B6" },
     { name: "--tl-ref-violet-900", hex: "#4C1D95" },
     { name: "--tl-ref-violet-950", hex: "#2E1065" }
+  ],
+  miro: [
+    { name: "--tl-ref-miro-yellow", hex: "#FFD02F", isSeed: true },
+    { name: "--tl-ref-miro-yellow-deep", hex: "#FCB900" },
+    { name: "--tl-ref-miro-yellow-light", hex: "#FFF4C4" },
+    { name: "--tl-ref-miro-yellow-dark", hex: "#746019" },
+    { name: "--tl-ref-miro-blue", hex: "#4262FF" },
+    { name: "--tl-ref-miro-coral", hex: "#FF9999" },
+    { name: "--tl-ref-miro-coral-light", hex: "#FFC6C6" },
+    { name: "--tl-ref-miro-rose", hex: "#FFD8F4" },
+    { name: "--tl-ref-miro-teal", hex: "#0FBCB0" },
+    { name: "--tl-ref-miro-teal-light", hex: "#C3FAF5" },
+    { name: "--tl-ref-miro-ink", hex: "#1C1C1E" },
+    { name: "--tl-ref-miro-ink-deep", hex: "#050038" },
+    { name: "--tl-ref-miro-surface", hex: "#F7F8FA" },
+    { name: "--tl-ref-miro-surface-pricing", hex: "#F5F3FF" }
   ]
 };
 
@@ -236,10 +252,13 @@ export const shapeScale = [
   { token: "--tl-ref-radius-12",   value: "12px",   role: "--tl-sys-shape-md / --tl-sys-shape-container", desc: "Cards, panels, surface containers" },
   { token: "--tl-ref-radius-16",   value: "16px",   role: "--tl-sys-shape-lg / --tl-sys-shape-overlay", desc: "Modals, dialogs, sheets" },
   { token: "--tl-ref-radius-24",   value: "24px",   role: "--tl-sys-shape-xl", desc: "Hero feature banners, prominent cards" },
+  { token: "--tl-ref-radius-28",   value: "28px",   role: "--tl-sys-shape-xxxl", desc: "Miro pastel feature cards" },
+  { token: "--tl-ref-radius-32",   value: "32px",   role: "--tl-sys-shape-feature", desc: "Miro whiteboard container" },
   { token: "--tl-ref-radius-full", value: "9999px", role: "--tl-sys-shape-full / --tl-sys-shape-badge", desc: "Status pills, avatars, circular icon triggers" }
 ];
 
 export const typographyScale = [
+  { role: "Display Hero", token: "--tl-sys-typescale-display-hero", size: "80px", line: "1.05", weight: "800", font: "Roobert PRO" },
   { role: "Display Large", token: "--tl-sys-typescale-display-large", size: "56px", line: "1.15", weight: "800", font: "Manrope" },
   { role: "Headline Large", token: "--tl-sys-typescale-headline-large", size: "32px", line: "1.25", weight: "700", font: "Manrope" },
   { role: "Headline Medium", token: "--tl-sys-typescale-headline-medium", size: "24px", line: "1.35", weight: "700", font: "Manrope" },

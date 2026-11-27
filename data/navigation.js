@@ -63,7 +63,15 @@ export const navigation = [
       { title: "Snackbar", path: "/components/snackbar", status: "Beta" },
       { title: "Accordion", path: "/components/accordion", status: "Beta" },
       { title: "Progress", path: "/components/progress", status: "Beta" },
-      { title: "Divider", path: "/components/divider", status: "Stable" }
+      { title: "Divider", path: "/components/divider", status: "Stable" },
+      { title: "Whiteboard Mockup", path: "/components/whiteboard-mockup", status: "Stable" }
+    ]
+  },
+  {
+    title: "Pricing",
+    path: "/pricing",
+    children: [
+      { title: "Plans & Tiers", path: "/pricing" }
     ]
   },
   {
