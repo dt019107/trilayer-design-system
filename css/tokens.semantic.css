@@ -34,8 +34,8 @@
   --tl-sys-color-secondary-container:    var(--tl-ref-indigo-50);
   --tl-sys-color-on-secondary-container: var(--tl-ref-indigo-900);
 
-  /* Tertiary / Component Layer Accent (Teal) */
-  --tl-sys-color-tertiary:               var(--tl-ref-teal-600);
+  /* Tertiary / Component Layer Accent (Teal - WCAG AA >= 4.5:1 on light canvas) */
+  --tl-sys-color-tertiary:               var(--tl-ref-teal-700);
   --tl-sys-color-on-tertiary:            var(--tl-ref-white);
   --tl-sys-color-tertiary-container:     var(--tl-ref-teal-50);
   --tl-sys-color-on-tertiary-container:  var(--tl-ref-teal-950);
@@ -52,45 +52,45 @@
   --tl-sys-color-surface-container-high:   var(--tl-ref-gray-100);
   --tl-sys-color-surface-container-highest:var(--tl-ref-gray-150);
 
-  /* Text & Content on Light Surfaces (WCAG AAA 16.5:1 on #FFFFFF) */
+  /* Text & Content on Light Surfaces (High-Contrast WCAG AAA >= 7.0:1 on #FFFFFF) */
   --tl-sys-color-on-surface:               var(--tl-ref-gray-900);
-  --tl-sys-color-on-surface-variant:       var(--tl-ref-gray-600);
-  --tl-sys-color-on-surface-muted:         var(--tl-ref-gray-400);
+  --tl-sys-color-on-surface-variant:       var(--tl-ref-gray-700);
+  --tl-sys-color-on-surface-muted:         var(--tl-ref-gray-600);
   --tl-sys-color-inverse-surface:          var(--tl-ref-gray-950);
   --tl-sys-color-inverse-on-surface:       var(--tl-ref-gray-0);
   --tl-sys-color-inverse-primary:          var(--tl-ref-indigo-200);
 
-  /* Borders & Outlines (Crisp >= 3:1 Non-Text Contrast SC 1.4.11) */
-  --tl-sys-color-outline:                  var(--tl-ref-gray-300);
-  --tl-sys-color-outline-variant:          var(--tl-ref-gray-200);
-  --tl-sys-color-outline-subtle:           var(--tl-ref-gray-150);
+  /* Borders & Outlines (Crisp Non-Text Contrast SC 1.4.11) */
+  --tl-sys-color-outline:                  var(--tl-ref-gray-400);
+  --tl-sys-color-outline-variant:          var(--tl-ref-gray-300);
+  --tl-sys-color-outline-subtle:           var(--tl-ref-gray-200);
 
   /* ------------------------------------------------------------------------
-     3. Functional / Semantic Status Roles
+     3. Functional / Semantic Status Roles (WCAG AA Compliant >= 5.0:1)
      ------------------------------------------------------------------------ */
-  --tl-sys-color-success:                  var(--tl-ref-emerald-600);
+  --tl-sys-color-success:                  var(--tl-ref-emerald-700);
   --tl-sys-color-on-success:               var(--tl-ref-white);
   --tl-sys-color-success-container:        var(--tl-ref-emerald-50);
   --tl-sys-color-on-success-container:     var(--tl-ref-emerald-950);
-  --tl-sys-color-success-border:           var(--tl-ref-emerald-300);
+  --tl-sys-color-success-border:           var(--tl-ref-emerald-400);
 
-  --tl-sys-color-warning:                  var(--tl-ref-amber-600);
+  --tl-sys-color-warning:                  var(--tl-ref-amber-800);
   --tl-sys-color-on-warning:               var(--tl-ref-white);
   --tl-sys-color-warning-container:        var(--tl-ref-amber-50);
   --tl-sys-color-on-warning-container:     var(--tl-ref-amber-950);
-  --tl-sys-color-warning-border:           var(--tl-ref-amber-300);
+  --tl-sys-color-warning-border:           var(--tl-ref-amber-400);
 
-  --tl-sys-color-error:                    var(--tl-ref-rose-600);
+  --tl-sys-color-error:                    var(--tl-ref-rose-700);
   --tl-sys-color-on-error:                 var(--tl-ref-white);
   --tl-sys-color-error-container:          var(--tl-ref-rose-50);
   --tl-sys-color-on-error-container:       var(--tl-ref-rose-950);
-  --tl-sys-color-error-border:             var(--tl-ref-rose-300);
+  --tl-sys-color-error-border:             var(--tl-ref-rose-400);
 
-  --tl-sys-color-info:                     var(--tl-ref-indigo-600);
+  --tl-sys-color-info:                     var(--tl-ref-indigo-700);
   --tl-sys-color-on-info:                  var(--tl-ref-white);
   --tl-sys-color-info-container:           var(--tl-ref-indigo-50);
   --tl-sys-color-on-info-container:        var(--tl-ref-indigo-950);
-  --tl-sys-color-info-border:              var(--tl-ref-indigo-300);
+  --tl-sys-color-info-border:              var(--tl-ref-indigo-400);
 
   /* ------------------------------------------------------------------------
      4. State Layers
@@ -117,11 +117,11 @@
   --tl-sys-opacity-scrim:                  0.48;
 
   /* ------------------------------------------------------------------------
-     6. Layer Identifiers
+     6. Layer Identifiers (High-Contrast WCAG Compliant on Light Canvas)
      ------------------------------------------------------------------------ */
-  --tl-sys-color-layer-primitives:         var(--tl-ref-gray-500);
-  --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-600);
-  --tl-sys-color-layer-component:          var(--tl-ref-teal-600);
+  --tl-sys-color-layer-primitives:         var(--tl-ref-gray-700);
+  --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-700);
+  --tl-sys-color-layer-component:          var(--tl-ref-teal-700);
 }
 
 /* ==========================================================================

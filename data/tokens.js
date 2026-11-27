@@ -71,19 +71,19 @@ export const sampleTokenChains = [
     element: "Input Border (Default)",
     componentToken: "--tl-comp-input-border",
     semanticToken: "--tl-sys-color-outline",
-    primitiveTokenLight: "--tl-ref-gray-300",
-    primitiveTokenDark: "--tl-ref-gray-300",
-    valueLight: "#CED4DA",
-    valueDark: "#CED4DA"
+    primitiveTokenLight: "--tl-ref-gray-400",
+    primitiveTokenDark: "--tl-ref-gray-400",
+    valueLight: "#ADB5BD",
+    valueDark: "#ADB5BD"
   },
   {
     element: "Tertiary / Component Accent",
     componentToken: "--tl-comp-button-tertiary-bg",
     semanticToken: "--tl-sys-color-tertiary",
-    primitiveTokenLight: "--tl-ref-teal-600",
-    primitiveTokenDark: "--tl-ref-teal-600",
-    valueLight: "#0D9488",
-    valueDark: "#0D9488"
+    primitiveTokenLight: "--tl-ref-teal-700",
+    primitiveTokenDark: "--tl-ref-teal-700",
+    valueLight: "#0F766E",
+    valueDark: "#0F766E"
   }
 ];
 
@@ -205,12 +205,12 @@ export const semanticColorRoles = [
   { role: "--tl-sys-color-on-primary", name: "On Primary", desc: "Text and glyphs overlaid on primary color", lightRef: "--tl-ref-white", darkRef: "--tl-ref-white" },
   { role: "--tl-sys-color-primary-container", name: "Primary Container", desc: "Low-contrast brand accent fills", lightRef: "--tl-ref-indigo-50", darkRef: "--tl-ref-indigo-50" },
   { role: "--tl-sys-color-secondary", name: "Secondary", desc: "Medium-emphasis utility components", lightRef: "--tl-ref-indigo-700", darkRef: "--tl-ref-indigo-700" },
-  { role: "--tl-sys-color-tertiary", name: "Tertiary", desc: "Teal motif distinguishing component layers", lightRef: "--tl-ref-teal-600", darkRef: "--tl-ref-teal-600" },
+  { role: "--tl-sys-color-tertiary", name: "Tertiary", desc: "Teal motif distinguishing component layers", lightRef: "--tl-ref-teal-700", darkRef: "--tl-ref-teal-700" },
   { role: "--tl-sys-color-surface", name: "Surface", desc: "Default canvas background", lightRef: "--tl-ref-white", darkRef: "--tl-ref-white" },
   { role: "--tl-sys-color-surface-container", name: "Surface Container", desc: "Subtle background cards and panel blocks", lightRef: "--tl-ref-white", darkRef: "--tl-ref-white" },
   { role: "--tl-sys-color-on-surface", name: "On Surface", desc: "High-contrast headings and body text", lightRef: "--tl-ref-gray-900", darkRef: "--tl-ref-gray-900" },
-  { role: "--tl-sys-color-on-surface-variant", name: "On Surface Variant", desc: "Secondary descriptions and meta labels", lightRef: "--tl-ref-gray-600", darkRef: "--tl-ref-gray-600" },
-  { role: "--tl-sys-color-outline", name: "Outline", desc: "Default border and control boundaries", lightRef: "--tl-ref-gray-300", darkRef: "--tl-ref-gray-300" }
+  { role: "--tl-sys-color-on-surface-variant", name: "On Surface Variant", desc: "Secondary descriptions and meta labels", lightRef: "--tl-ref-gray-700", darkRef: "--tl-ref-gray-700" },
+  { role: "--tl-sys-color-outline", name: "Outline", desc: "Default border and control boundaries", lightRef: "--tl-ref-gray-400", darkRef: "--tl-ref-gray-400" }
 ];
 
 export const spacingScale = [

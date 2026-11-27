@@ -216,10 +216,11 @@
    ========================================================================== */
 .tl-code-block-wrapper {
   background-color: var(--tl-sys-color-surface-container-lowest);
-  border: 1px solid var(--tl-sys-color-outline-variant);
+  border: 1px solid var(--tl-sys-color-outline);
   border-radius: var(--tl-sys-shape-container);
   overflow: hidden;
   margin-bottom: var(--tl-sys-space-xl);
+  box-shadow: var(--tl-sys-elevation-1);
 }
 
 .tl-code-header {
@@ -227,8 +228,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--tl-sys-space-md);
-  background-color: var(--tl-sys-color-surface-container-low);
-  border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+  background-color: var(--tl-sys-color-surface-container-high);
+  border-bottom: 1px solid var(--tl-sys-color-outline);
 }
 
 .tl-code-tabs {
@@ -249,8 +250,9 @@
 }
 
 .tl-code-tab-btn.is-active {
-  color: var(--tl-sys-color-on-surface);
+  color: var(--tl-sys-color-link);
   border-bottom-color: var(--tl-sys-color-link);
+  font-weight: 700;
 }
 
 .tl-copy-code-btn {
@@ -271,6 +273,7 @@
 .tl-copy-code-btn:hover {
   background-color: var(--tl-sys-color-surface-container-high);
   border-color: var(--tl-sys-color-primary);
+  color: var(--tl-sys-color-link);
 }
 
 .tl-code-pre {
@@ -280,7 +283,9 @@
   -webkit-overflow-scrolling: touch;
   font-family: var(--tl-sys-font-family-code);
   font-size: var(--tl-sys-typescale-body-small-size);
-  line-height: 1.6;
+  font-weight: 500;
+  line-height: 1.65;
+  background-color: var(--tl-sys-color-surface-container-low);
   color: var(--tl-sys-color-on-surface);
   max-width: 100%;
 }
@@ -798,16 +803,18 @@
   padding: var(--tl-sys-space-sm) var(--tl-sys-space-md);
   text-align: left;
   font-size: var(--tl-sys-typescale-label-caps-size);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--tl-sys-color-on-surface-muted);
-  border-bottom: 1px solid var(--tl-sys-color-outline-variant);
-  background-color: var(--tl-sys-color-surface-container-low);
+  color: var(--tl-sys-color-on-surface);
+  border-bottom: 2px solid var(--tl-sys-color-outline);
+  background-color: var(--tl-sys-color-surface-container-high);
 }
 
 .tl-variant-matrix-table td {
   padding: var(--tl-sys-space-md);
   border-bottom: 1px solid var(--tl-sys-color-outline-variant);
+  color: var(--tl-sys-color-on-surface);
   vertical-align: middle;
 }
 

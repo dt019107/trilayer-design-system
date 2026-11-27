@@ -94,7 +94,7 @@
      ========================================================================== */
   --tl-comp-control-track-bg:         var(--tl-sys-color-surface-container-highest);
   --tl-comp-control-track-active-bg:  var(--tl-sys-color-primary);
-  --tl-comp-control-thumb-bg:         var(--tl-sys-color-on-surface);
+  --tl-comp-control-thumb-bg:         var(--tl-sys-color-on-primary);
   --tl-comp-control-border:           var(--tl-sys-color-outline);
   --tl-comp-control-radius:           var(--tl-sys-shape-control);
   --tl-comp-checkbox-size:            var(--tl-sys-space-md);
