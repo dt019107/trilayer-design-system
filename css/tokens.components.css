@@ -240,6 +240,15 @@
   --tl-comp-divider-vertical-height:  var(--tl-sys-space-lg);
   --tl-comp-divider-vertical-margin:  var(--tl-sys-space-md);
 
+  /* Dropdown & Context Menu */
+  --tl-comp-menu-bg:                  var(--tl-sys-color-surface-container-high);
+  --tl-comp-menu-border:              var(--tl-sys-color-outline);
+  --tl-comp-menu-radius:              var(--tl-sys-shape-container);
+  --tl-comp-menu-shadow:              var(--tl-sys-elevation-3);
+  --tl-comp-menu-item-hover-bg:       var(--tl-sys-color-surface-container-low);
+  --tl-comp-menu-item-text:           var(--tl-sys-color-on-surface);
+  --tl-comp-menu-z-index:             var(--tl-sys-z-dropdown);
+
   /* ==========================================================================
      10. SIGNATURE FEATURE: LAYER INSPECTOR ACCENT TOKENS
      ========================================================================== */

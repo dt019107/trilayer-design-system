@@ -463,14 +463,31 @@ function renderLiveSpecimen(id) {
       `;
     case "accordion":
       return `
-        <div class="tl-accordion" style="width: 100%; max-width: 500px;">
+        <div class="tl-accordion" style="width: 100%; max-width: 520px;">
           <div class="tl-accordion-item">
-            <button class="tl-accordion-trigger" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: transparent; border: none; color: var(--tl-sys-color-on-surface); font-size: 14px; font-weight: 600; cursor: pointer;">
+            <button type="button" class="tl-accordion-trigger" aria-expanded="true" aria-controls="acc-panel-1" onclick="window.__toggleSpecimenAccordion(this)">
               <span>How are token tiers isolated?</span>
-              <span>&minus;</span>
+              <svg class="tl-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
-            <div style="padding: 0 16px 14px 16px; color: var(--tl-sys-color-on-surface-variant); font-size: 13px; line-height: 1.5;">
-              Components only reference Semantic tokens, ensuring zero accidental coupling with raw primitives.
+            <div id="acc-panel-1" class="tl-accordion-panel is-open">
+              <div class="tl-accordion-panel-content">
+                Component tokens only alias Semantic roles, preventing raw literal values or primitive hex codes from coupling to components.
+              </div>
+            </div>
+          </div>
+          <div class="tl-accordion-item">
+            <button type="button" class="tl-accordion-trigger" aria-expanded="false" aria-controls="acc-panel-2" onclick="window.__toggleSpecimenAccordion(this)">
+              <span>Can theme density scale dynamically?</span>
+              <svg class="tl-accordion-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div id="acc-panel-2" class="tl-accordion-panel">
+              <div class="tl-accordion-panel-content">
+                Yes. The Semantic layer defines density steps (Compact, Default, Comfortable) that dynamically remap height, padding, and gaps without modifying component CSS.
+              </div>
             </div>
           </div>
         </div>
@@ -491,11 +508,26 @@ function renderLiveSpecimen(id) {
       `;
     case "menu":
       return `
-        <div class="tl-card" style="width: 100%; max-width: 240px; padding: 6px; box-shadow: var(--tl-sys-elevation-3);">
-          <button class="tl-btn tl-btn--ghost tl-btn--sm" style="width: 100%; justify-content: flex-start;">Rename Symbol</button>
-          <button class="tl-btn tl-btn--ghost tl-btn--sm" style="width: 100%; justify-content: flex-start;">Export Tokens</button>
-          <hr class="tl-divider" style="margin: 4px 0;">
-          <button class="tl-btn tl-btn--danger tl-btn--sm" style="width: 100%; justify-content: flex-start;">Delete Branch</button>
+        <div class="tl-dropdown" style="min-height: 180px;">
+          <button type="button" class="tl-btn tl-btn--outline tl-dropdown-trigger" aria-haspopup="true" aria-expanded="false" onclick="window.__toggleSpecimenDropdown(this)">
+            <span>Actions menu</span>
+            <svg class="tl-accordion-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="tl-dropdown-menu" role="menu">
+            <button type="button" class="tl-menu-item" role="menuitem" onclick="Toast.show({ title: 'Rename action', message: 'Ready to rename symbol.', type: 'info' }); window.__closeAllDropdowns();">
+              <span>Rename Symbol</span>
+              <kbd class="tl-kbd">F2</kbd>
+            </button>
+            <button type="button" class="tl-menu-item" role="menuitem" onclick="Toast.show({ title: 'Export complete', message: 'Tokens JSON exported.', type: 'success' }); window.__closeAllDropdowns();">
+              <span>Export Tokens</span>
+            </button>
+            <div class="tl-menu-divider" role="separator"></div>
+            <button type="button" class="tl-menu-item tl-menu-item--danger" role="menuitem" onclick="Toast.show({ title: 'Branch deleted', message: 'Feature branch removed.', type: 'error' }); window.__closeAllDropdowns();">
+              <span>Delete Branch</span>
+            </button>
+          </div>
         </div>
       `;
     case "progress":
@@ -820,6 +852,39 @@ if (typeof window !== "undefined") {
     document.body.style.overflow = "";
     const trigger = document.getElementById("specimen-dialog-trigger");
     if (trigger) trigger.focus();
+  };
+
+  window.__toggleSpecimenAccordion = function(trigger) {
+    if (!trigger) return;
+    const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+    const panelId = trigger.getAttribute("aria-controls");
+    const panel = panelId ? document.getElementById(panelId) : trigger.nextElementSibling;
+    trigger.setAttribute("aria-expanded", String(!isExpanded));
+    if (panel) {
+      panel.classList.toggle("is-open", !isExpanded);
+    }
+  };
+
+  window.__toggleSpecimenDropdown = function(trigger) {
+    if (!trigger) return;
+    const dropdown = trigger.closest(".tl-dropdown");
+    if (!dropdown) return;
+    const menu = dropdown.querySelector(".tl-dropdown-menu");
+    if (!menu) return;
+    const isOpen = menu.classList.contains("is-open");
+    window.__closeAllDropdowns();
+    if (!isOpen) {
+      menu.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+    }
+  };
+
+  window.__closeAllDropdowns = function() {
+    document.querySelectorAll(".tl-dropdown-menu.is-open").forEach(m => {
+      m.classList.remove("is-open");
+      const trig = m.parentElement?.querySelector(".tl-dropdown-trigger");
+      if (trig) trig.setAttribute("aria-expanded", "false");
+    });
   };
 }
 
