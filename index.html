@@ -54,15 +54,6 @@
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <div class="tl-app">
-    <!-- 1B. Sticky Top Promo Banner -->
-    <aside class="tl-promo-banner" aria-label="Product announcement">
-      <div class="tl-promo-banner__content">
-        <span class="tl-promo-banner__badge">NEW</span>
-        <span class="tl-promo-banner__text">Miro Visual Workspace Design System Integration Live</span>
-        <a href="#/pricing" class="tl-btn tl-btn--miro-yellow tl-btn--sm tl-promo-banner__cta">GET YOUR SPOT</a>
-      </div>
-    </aside>
-
     <!-- 2. Sticky App Header -->
     <header class="tl-header" role="banner">
       <div class="tl-header-left">
@@ -85,7 +76,6 @@
             <!-- Bottom plane: Slate (Primitives Layer) -->
             <path d="M16 17L30 24L16 31L2 24L16 17Z" fill="var(--tl-sys-color-layer-primitives)"/>
           </svg>
-          <span style="background: var(--tl-sys-color-miro-yellow); color: var(--tl-sys-color-miro-ink); font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.05em; font-family: var(--tl-sys-font-family-roobert);">MIRO</span>
           <span class="tl-brand-title">Trilayer</span>
           <span class="tl-brand-version">v2.0</span>
         </a>
@@ -96,7 +86,6 @@
           <a href="#/foundations/color" class="tl-header-nav-link" id="nav-link-foundations">Foundations</a>
           <a href="#/tokens/layers" class="tl-header-nav-link" id="nav-link-tokens">Tokens</a>
           <a href="#/components/button" class="tl-header-nav-link" id="nav-link-components">Components</a>
-          <a href="#/pricing" class="tl-header-nav-link" id="nav-link-pricing">Pricing</a>
           <a href="#/resources/figma" class="tl-header-nav-link" id="nav-link-figma">Figma</a>
         </nav>
       </div>
@@ -126,11 +115,6 @@
             <option value="comfortable">Comfortable</option>
           </select>
         </div>
-
-        <!-- Header CTA Button -->
-        <a href="#/pricing" class="tl-btn tl-btn--miro-primary tl-btn--sm" style="text-decoration: none; padding: 0 16px;">
-          Sign up free &rarr;
-        </a>
 
         <!-- GitHub Repository Link -->
         <a href="https://github.com/dt019107/trilayer-design-system" target="_blank" rel="noopener noreferrer" class="tl-header-btn" aria-label="View Trilayer on GitHub" title="GitHub Repository">
@@ -190,49 +174,9 @@
           <article id="tl-view-container"></article>
 
           <!-- Accessible Site Footer Landmark -->
-          <footer class="tl-footer" role="contentinfo" aria-label="Documentation Footer" style="margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--tl-sys-color-outline-variant); color: var(--tl-sys-color-on-surface-variant); font-size: 13px;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; margin-bottom: 40px;">
-              <div>
-                <div style="font-weight: 700; color: var(--tl-sys-color-on-surface); margin-bottom: 12px; font-size: 14px;">Product</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                  <li><a href="#/components" style="color: inherit; text-decoration: none;">Component Registry</a></li>
-                  <li><a href="#/components/whiteboard-mockup" style="color: inherit; text-decoration: none;">Whiteboard Canvas</a></li>
-                  <li><a href="#/pricing" style="color: inherit; text-decoration: none;">Pricing Plans</a></li>
-                  <li><a href="#/resources/figma" style="color: inherit; text-decoration: none;">Figma Code Connect</a></li>
-                </ul>
-              </div>
-              <div>
-                <div style="font-weight: 700; color: var(--tl-sys-color-on-surface); margin-bottom: 12px; font-size: 14px;">Foundations</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                  <li><a href="#/foundations/color" style="color: inherit; text-decoration: none;">Color System</a></li>
-                  <li><a href="#/foundations/typography" style="color: inherit; text-decoration: none;">Typography &amp; Roobert PRO</a></li>
-                  <li><a href="#/foundations/shape" style="color: inherit; text-decoration: none;">Shape &amp; Pill Geometry</a></li>
-                  <li><a href="#/foundations/accessibility" style="color: inherit; text-decoration: none;">WCAG 2.2 AA Standards</a></li>
-                </ul>
-              </div>
-              <div>
-                <div style="font-weight: 700; color: var(--tl-sys-color-on-surface); margin-bottom: 12px; font-size: 14px;">Tokens</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                  <li><a href="#/tokens/layers" style="color: inherit; text-decoration: none;">Three-Layer Architecture</a></li>
-                  <li><a href="#/tokens/reference" style="color: inherit; text-decoration: none;">Token Reference</a></li>
-                  <li><a href="#/tokens/theming" style="color: inherit; text-decoration: none;">Theme Engine</a></li>
-                  <li><a href="#/tokens/naming" style="color: inherit; text-decoration: none;">Taxonomy</a></li>
-                </ul>
-              </div>
-              <div>
-                <div style="font-weight: 700; color: var(--tl-sys-color-on-surface); margin-bottom: 12px; font-size: 14px;">Resources</div>
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                  <li><a href="#/get-started" style="color: inherit; text-decoration: none;">Getting Started</a></li>
-                  <li><a href="#/resources/changelog" style="color: inherit; text-decoration: none;">Changelog</a></li>
-                  <li><a href="#/resources/roadmap" style="color: inherit; text-decoration: none;">Roadmap</a></li>
-                  <li><a href="#/contribute" style="color: inherit; text-decoration: none;">Contribution</a></li>
-                </ul>
-              </div>
-            </div>
-            <div style="padding-top: 24px; border-top: 1px solid var(--tl-sys-color-outline-variant); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-              <p style="margin: 0;">Miro Visual Workspace &bull; Trilayer Token Engine v2.0</p>
-              <p style="margin: 0;">Strict 3-tier architecture with 100% verified WCAG 2.2 AA contrast compliance.</p>
-            </div>
+          <footer class="tl-footer" role="contentinfo" aria-label="Documentation Footer" style="margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--tl-sys-color-outline-variant); color: var(--tl-sys-color-on-surface-variant); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <p>Trilayer Design System v2.0 — Three layers. One source of truth.</p>
+            <p>Built with WCAG 2.2 AA compliant tokens and components.</p>
           </footer>
         </div>
       </main>

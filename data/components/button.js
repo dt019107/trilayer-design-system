@@ -49,11 +49,6 @@ export default {
   ],
 
   variants: [
-    { name: "Miro Black Pill (Primary)", desc: "Dominant primary action in the Miro visual workspace (12px 24px, 9999px radius, #1c1c1e)." },
-    { name: "Miro Canary Yellow", desc: "Canary brand moment (#ffd02f) for signature high-emphasis announcements." },
-    { name: "Miro Action Blue", desc: "Brand interactive blue (#4262ff) for canvas toolbars and action triggers." },
-    { name: "Miro Outlined Pill", desc: "Secondary action with hairline border and rounded.full geometry." },
-    { name: "Miro On-Dark Pill", desc: "Crisp white pill button for high-contrast dark CTA sections." },
     { name: "Primary", desc: "High emphasis, single primary action on screen." },
     { name: "Secondary (Tonal)", desc: "Medium emphasis for secondary pathways." },
     { name: "Tertiary (Teal)", desc: "Distinct accent representing the component layer." },
@@ -65,23 +60,20 @@ export default {
   states: ["Default", "Hover", "Focus-visible", "Active (Pressed)", "Disabled", "Loading"],
 
   codeSnippets: {
-    html: `<!-- Miro Primary Black Pill -->
-<button class="tl-btn tl-btn--miro-primary tl-btn--lg">Sign up free →</button>
+    html: `<!-- Primary Button -->
+<button class="tl-btn tl-btn--primary tl-btn--md">Save Changes</button>
 
-<!-- Miro Canary Yellow Pill -->
-<button class="tl-btn tl-btn--miro-yellow tl-btn--md">GET YOUR SPOT</button>
+<!-- Secondary / Tonal Button -->
+<button class="tl-btn tl-btn--secondary tl-btn--md">Save Draft</button>
 
-<!-- Miro Secondary Outlined Pill -->
-<button class="tl-btn tl-btn--miro-secondary tl-btn--md">Contact Sales</button>
-
-<!-- Standard Primary Button -->
-<button class="tl-btn tl-btn--primary tl-btn--md">Save Changes</button>`,
-    css: `.tl-btn--miro-primary {
-  background-color: var(--tl-comp-button-miro-primary-bg);
-  color: var(--tl-comp-button-miro-primary-text);
-  border-radius: var(--tl-comp-button-pill-radius);
-  height: var(--tl-comp-button-height-lg);
-  padding: 0 var(--tl-comp-button-padding-x-lg);
+<!-- Loading State -->
+<button class="tl-btn tl-btn--primary tl-btn--md is-loading" disabled>Saving...</button>`,
+    css: `.tl-btn--primary {
+  background-color: var(--tl-comp-button-primary-bg);
+  color: var(--tl-comp-button-primary-text);
+  border-radius: var(--tl-comp-button-radius);
+  height: var(--tl-comp-button-height-md);
+  padding: 0 var(--tl-comp-button-padding-x-md);
 }`
   },
 

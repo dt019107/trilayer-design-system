@@ -114,7 +114,6 @@
   --tl-sys-elevation-3:                    var(--tl-ref-elevation-dark-3);
   --tl-sys-elevation-4:                    var(--tl-ref-elevation-dark-4);
   --tl-sys-elevation-5:                    var(--tl-ref-elevation-dark-5);
-  --tl-sys-elevation-whiteboard:          var(--tl-ref-elevation-whiteboard);
 
   --tl-sys-color-scrim:                    var(--tl-ref-black);
   --tl-sys-opacity-scrim:                  0.72;
@@ -125,45 +124,6 @@
   --tl-sys-color-layer-primitives:         var(--tl-ref-gray-300);
   --tl-sys-color-layer-semantic:           var(--tl-ref-indigo-300);
   --tl-sys-color-layer-component:          var(--tl-ref-teal-300);
-
-  /* ------------------------------------------------------------------------
-     7. Miro Workspace Semantic Palette
-     ------------------------------------------------------------------------ */
-  --tl-sys-color-miro-yellow:             var(--tl-ref-miro-yellow);
-  --tl-sys-color-miro-yellow-deep:        var(--tl-ref-miro-yellow-deep);
-  --tl-sys-color-miro-yellow-light:       var(--tl-ref-miro-yellow-light);
-  --tl-sys-color-miro-yellow-dark:        var(--tl-ref-miro-yellow-dark);
-  --tl-sys-color-miro-blue:               var(--tl-ref-miro-blue);
-  --tl-sys-color-miro-blue-hover:         var(--tl-ref-miro-blue-450);
-  --tl-sys-color-miro-blue-active:        var(--tl-ref-miro-blue-pressed);
-  --tl-sys-color-miro-coral:              var(--tl-ref-miro-coral);
-  --tl-sys-color-miro-coral-light:        var(--tl-ref-miro-coral-light);
-  --tl-sys-color-miro-coral-dark:         var(--tl-ref-miro-coral-dark);
-  --tl-sys-color-miro-rose:               var(--tl-ref-miro-rose);
-  --tl-sys-color-miro-rose-light:         var(--tl-ref-miro-rose-light);
-  --tl-sys-color-miro-pink:               var(--tl-ref-miro-pink);
-  --tl-sys-color-miro-teal:               var(--tl-ref-miro-teal);
-  --tl-sys-color-miro-teal-light:         var(--tl-ref-miro-teal-light);
-  --tl-sys-color-miro-moss-dark:          var(--tl-ref-miro-moss-dark);
-  --tl-sys-color-miro-orange-light:       var(--tl-ref-miro-orange-light);
-  --tl-sys-color-miro-red:                var(--tl-ref-miro-red);
-  --tl-sys-color-miro-red-dark:           var(--tl-ref-miro-red-dark);
-  --tl-sys-color-miro-ink:                var(--tl-ref-miro-ink);
-  --tl-sys-color-miro-ink-deep:           var(--tl-ref-miro-ink-deep);
-  --tl-sys-color-miro-charcoal:           var(--tl-ref-miro-charcoal);
-  --tl-sys-color-miro-slate:              var(--tl-ref-miro-slate);
-  --tl-sys-color-miro-steel:              var(--tl-ref-miro-steel);
-  --tl-sys-color-miro-stone:              var(--tl-ref-miro-stone);
-  --tl-sys-color-miro-muted:              var(--tl-ref-miro-muted);
-  --tl-sys-color-miro-canvas:             var(--tl-ref-miro-canvas);
-  --tl-sys-color-miro-surface:            var(--tl-ref-miro-surface);
-  --tl-sys-color-miro-surface-soft:       var(--tl-ref-miro-surface-soft);
-  --tl-sys-color-miro-surface-yellow:     var(--tl-ref-miro-surface-yellow);
-  --tl-sys-color-miro-surface-pricing:    var(--tl-ref-miro-surface-pricing);
-  --tl-sys-color-miro-hairline:           var(--tl-ref-miro-hairline);
-  --tl-sys-color-miro-hairline-soft:      var(--tl-ref-miro-hairline-soft);
-  --tl-sys-color-miro-hairline-strong:    var(--tl-ref-miro-hairline-strong);
-  --tl-sys-color-miro-success:            var(--tl-ref-miro-success);
 }
 
 /* ==========================================================================
@@ -258,7 +218,6 @@
   --tl-sys-elevation-3:                    var(--tl-ref-elevation-dark-3);
   --tl-sys-elevation-4:                    var(--tl-ref-elevation-dark-4);
   --tl-sys-elevation-5:                    var(--tl-ref-elevation-dark-5);
-  --tl-sys-elevation-whiteboard:          var(--tl-ref-elevation-whiteboard);
 
   --tl-sys-color-scrim:                    var(--tl-ref-black);
   --tl-sys-opacity-scrim:                  0.72;
@@ -368,10 +327,7 @@
   --tl-sys-shape-md:          var(--tl-ref-radius-12);
   --tl-sys-shape-lg:          var(--tl-ref-radius-16);
   --tl-sys-shape-xl:          var(--tl-ref-radius-24);
-  --tl-sys-shape-xxxl:        var(--tl-ref-radius-28);
-  --tl-sys-shape-feature:     var(--tl-ref-radius-32);
   --tl-sys-shape-full:        var(--tl-ref-radius-full);
-  --tl-sys-shape-pill:        var(--tl-ref-radius-full);
 
   /* Functional Roles */
   --tl-sys-shape-control:     var(--tl-ref-radius-8);  /* Buttons, inputs, chips */
@@ -387,10 +343,8 @@
   --tl-sys-font-family-heading: var(--tl-ref-font-heading);
   --tl-sys-font-family-body:    var(--tl-ref-font-body);
   --tl-sys-font-family-code:    var(--tl-ref-font-code);
-  --tl-sys-font-family-roobert: var(--tl-ref-font-roobert);
 
   /* Display */
-  --tl-sys-typescale-display-hero-size:    var(--tl-ref-font-size-80);
   --tl-sys-typescale-display-large-size:   var(--tl-ref-font-size-56);
   --tl-sys-typescale-display-large-line:   var(--tl-ref-line-height-115);
   --tl-sys-typescale-display-large-weight: var(--tl-ref-font-weight-800);

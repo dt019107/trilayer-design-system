@@ -226,7 +226,6 @@ async function runAudit() {
     { r: "#/resources/changelog", h: ContentPages.renderChangelog() },
     { r: "#/resources/roadmap", h: ContentPages.renderRoadmap() },
     { r: "#/resources/migration", h: ContentPages.renderMigration() },
-    { r: "#/pricing", h: ContentPages.renderPricing() },
     { r: "#/contribute", h: ContentPages.renderContribute() },
     { r: "#/tokens/theming", h: renderThemingPlayground() },
     ...Object.entries(components).map(([id, comp]) => ({ r: `#/components/${id}`, h: renderComponentPage(comp) }))

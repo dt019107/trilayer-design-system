@@ -149,24 +149,3 @@
   cursor: not-allowed;
   background-color: var(--tl-sys-color-surface-container);
 }
-
-/* ==========================================================================
-   MIRO WORKSPACE FORM INPUTS & PILLS
-   ========================================================================== */
-.tl-input--miro {
-  background-color: var(--tl-comp-input-miro-bg);
-  border: 1px solid var(--tl-comp-input-miro-border);
-  color: var(--tl-comp-input-miro-text);
-  border-radius: var(--tl-sys-shape-control);
-}
-
-.tl-input--miro:focus {
-  border-color: var(--tl-comp-input-miro-border-focus);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--tl-comp-input-miro-border-focus) 25%, var(--tl-sys-color-transparent));
-}
-
-.tl-input--pill {
-  border-radius: var(--tl-comp-button-pill-radius);
-  padding-left: var(--tl-comp-input-padding-x);
-  padding-right: var(--tl-comp-input-padding-x);
-}

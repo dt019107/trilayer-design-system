@@ -159,13 +159,6 @@ export class Router {
       return;
     }
 
-    // Pricing (Miro 4-tier Workspace)
-    if (path === "/pricing") {
-      this.container.innerHTML = ContentPages.renderPricing();
-      document.title = "Pricing Plans & Workspace Tiers — Miro Design System";
-      return;
-    }
-
     // Patterns (Phase 8)
     if (path === "/patterns" || path === "/patterns/forms") {
       this.container.innerHTML = ContentPages.renderPatternsForms();
@@ -290,18 +283,14 @@ export class Router {
 
     this.container.innerHTML = `
       <div class="tl-home-hero">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
-          <div class="tl-hero-eyebrow" style="display: inline-flex; align-items: center; gap: 8px;">
-            <span class="tl-toggle-monthly-yearly__discount">NEW</span>
-            Miro Visual Workspace &bull; Three-Tier Token Architecture
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+          <div class="tl-hero-eyebrow">
+            Trilayer v2.0 &bull; Three-Tier Token Architecture
           </div>
           <div class="tl-hero-actions-row">
-            <a href="tokens/tokens.json" download="trilayer-tokens.json" class="tl-btn tl-btn--miro-yellow tl-btn--sm" style="text-decoration: none;">
+            <a href="tokens/tokens.json" download="trilayer-tokens.json" class="tl-btn tl-btn--primary tl-btn--sm" style="text-decoration: none;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Export Tokens
-            </a>
-            <a href="#/pricing" class="tl-btn tl-btn--outline tl-btn--sm" style="text-decoration: none;">
-              Pricing Plans
             </a>
             <a href="#/resources/figma" class="tl-btn tl-btn--outline tl-btn--sm" style="text-decoration: none;">
               Figma Guide
@@ -312,74 +301,13 @@ export class Router {
           </div>
         </div>
 
-        <!-- Magazine-grade 80px Display Hero -->
-        <div style="margin-bottom: 36px;">
-          <h1 style="font-family: var(--tl-sys-font-family-roobert); font-size: clamp(36px, 5.5vw, var(--tl-sys-typescale-display-hero-size)); font-weight: 800; line-height: 1.05; letter-spacing: -0.035em; color: var(--tl-sys-color-on-surface); margin-bottom: 20px; text-wrap: balance;">
-            Where words end and visual collaboration begins.
-          </h1>
-          <p style="font-size: clamp(16px, 1.8vw, 19px); color: var(--tl-sys-color-on-surface-variant); max-width: 66ch; margin-bottom: 28px; line-height: 1.6;">
-            A unified design system marrying Miro's visual workspace—canary yellow moments, pastel sticky cards, and rounded pill geometry—with Trilayer's strict 3-tier token contract.
-          </p>
-          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
-            <a href="#/get-started" class="tl-btn tl-btn--miro-primary tl-btn--lg" style="text-decoration: none; padding: 0 32px; font-size: 16px;">
-              Sign up free &rarr;
-            </a>
-            <a href="#/pricing" class="tl-btn tl-btn--miro-secondary tl-btn--lg" style="text-decoration: none; padding: 0 24px; font-size: 16px;">
-              Explore pricing
-            </a>
-            <a href="#/components/whiteboard-mockup" class="tl-btn tl-btn--outline tl-btn--lg" style="text-decoration: none; padding: 0 20px;">
-              Whiteboard Canvas Specimen
-            </a>
-          </div>
-        </div>
+        <h1 style="font-size: clamp(32px, 4.5vw, 48px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.025em; color: var(--tl-sys-color-on-surface);">
+          Three-Tier Token Architecture for Web Applications
+        </h1>
 
-        <!-- Miro Whiteboard Interactive Collaborative Canvas Specimen -->
-        <div class="tl-whiteboard-frame" style="width: 100%; border-radius: var(--tl-comp-card-feature-radius); background: var(--tl-sys-color-miro-surface); border: 1px solid var(--tl-sys-color-miro-hairline); box-shadow: var(--tl-comp-whiteboard-shadow); padding: 24px; position: relative; overflow: hidden; min-height: 340px; margin-bottom: 40px;">
-          <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; background: var(--tl-sys-color-miro-canvas); padding: 4px 8px; border-radius: var(--tl-comp-button-pill-radius); box-shadow: var(--tl-sys-elevation-2); border: 1px solid var(--tl-sys-color-miro-hairline); z-index: 5;">
-            <button class="tl-btn tl-btn--ghost tl-btn--sm" style="padding: 4px 8px; height: 32px;">↖ Select</button>
-            <button class="tl-btn tl-btn--miro-yellow tl-btn--sm" style="padding: 4px 10px; height: 32px;">📝 Sticky Note</button>
-            <button class="tl-btn tl-btn--ghost tl-btn--sm" style="padding: 4px 8px; height: 32px;">➔ Arrow</button>
-            <button class="tl-btn tl-btn--ghost tl-btn--sm" style="padding: 4px 8px; height: 32px;">▢ Shape</button>
-            <div style="width: 1px; height: 18px; background: var(--tl-sys-color-miro-hairline); margin: 0 4px;"></div>
-            <span style="font-size: 11px; font-weight: 700; color: var(--tl-sys-color-miro-slate); padding: 0 6px;">100%</span>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; padding-top: 50px; position: relative;">
-            <div class="tl-card tl-card--feature tl-card--feature-yellow" style="padding: 16px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(-1deg);">
-              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-ink); margin-bottom: 4px;">TOKEN ENGINE</div>
-              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-ink); margin: 0 0 10px 0;">⚡ Roobert PRO type scale &amp; 3-tier token contract.</p>
-              <span style="font-size: 11px; color: var(--tl-sys-color-miro-slate);">Deepak T. &bull; Ready</span>
-            </div>
-
-            <div class="tl-card tl-card--feature tl-card--feature-coral" style="padding: 16px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(1.5deg);">
-              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-coral-dark); margin-bottom: 4px;">STICKY TINTS</div>
-              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-coral-dark); margin: 0 0 10px 0;">🎨 28px soft corner cards with yellow, coral &amp; teal fills.</p>
-              <span style="font-size: 11px; color: var(--tl-sys-color-miro-coral-dark);">Sarah K. &bull; Verified</span>
-            </div>
-
-            <div class="tl-card tl-card--feature tl-card--feature-teal" style="padding: 16px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(-0.8deg);">
-              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-moss-dark); margin-bottom: 4px;">ZERO-BUILD</div>
-              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-moss-dark); margin: 0 0 10px 0;">🚀 Vanilla ES modules with 100% automated QA regression guards.</p>
-              <span style="font-size: 11px; color: var(--tl-sys-color-miro-moss-dark);">Alex M. &bull; Live</span>
-            </div>
-
-            <div class="tl-card tl-card--feature tl-card--feature-rose" style="padding: 16px; border-radius: var(--tl-sys-shape-md); box-shadow: var(--tl-sys-elevation-2); transform: rotate(1.2deg);">
-              <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: var(--tl-sys-color-miro-ink); margin-bottom: 4px;">WCAG 2.2 AA</div>
-              <p style="font-size: 13px; font-weight: 600; line-height: 1.4; color: var(--tl-sys-color-miro-ink); margin: 0 0 10px 0;">🔒 Contrast ratios verified across light &amp; dark canvases.</p>
-              <span style="font-size: 11px; color: var(--tl-sys-color-miro-slate);">Elena R. &bull; Pass</span>
-            </div>
-          </div>
-
-          <div style="position: absolute; bottom: 20px; left: 32px; display: flex; align-items: center; gap: 4px; pointer-events: none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--tl-sys-color-miro-blue)"><polygon points="0,0 24,10 12,12 10,24"/></svg>
-            <span style="background: var(--tl-sys-color-miro-blue); color: var(--tl-sys-color-miro-canvas); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">Deepak T.</span>
-          </div>
-
-          <div style="position: absolute; bottom: 24px; right: 60px; display: flex; align-items: center; gap: 4px; pointer-events: none;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--tl-sys-color-miro-coral)"><polygon points="0,0 24,10 12,12 10,24"/></svg>
-            <span style="background: var(--tl-sys-color-miro-coral); color: var(--tl-sys-color-miro-coral-dark); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 9999px;">Sarah K.</span>
-          </div>
-        </div>
+        <p style="font-size: clamp(15px, 1.6vw, 17px); color: var(--tl-sys-color-on-surface-variant); max-width: 65ch; margin-bottom: 24px; line-height: 1.6;">
+          Organize design tokens into Primitives, Semantic roles, and Component variables. Built with vanilla CSS custom properties, an 8pt spatial cadence, and zero runtime dependencies.
+        </p>
 
         <!-- 3-Tier Architecture Foundation Cards (Decision Support) -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 28px;">
