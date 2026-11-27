@@ -498,13 +498,15 @@ function renderLiveSpecimen(id) {
       `;
     case "snackbar":
       return `
-        <div class="tl-toast tl-toast--info" style="position: static; max-width: 380px;">
-          <div class="tl-toast__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+        <div class="tl-toast tl-toast--info" style="position: static; max-width: 420px; width: 100%;">
+          <div class="tl-toast__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
           <div class="tl-toast__content">
             <span class="tl-toast__title">Changes published</span>
             <span class="tl-toast__message">Design tokens updated in production.</span>
+            <button type="button" class="tl-toast__action" onclick="Toast.show({ title: 'Undo initiated', message: 'Reverting design tokens...', type: 'warning' })">Undo change</button>
           </div>
-          <button class="tl-toast__close" aria-label="Dismiss">&times;</button>
+          <button type="button" class="tl-toast__close" aria-label="Dismiss notification" onclick="Toast.show({ title: 'Dismissed', message: 'Notification closed.', type: 'neutral', duration: 2500 })"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          <div class="tl-toast__progress" aria-hidden="true"></div>
         </div>
       `;
     default:
@@ -629,6 +631,28 @@ function renderVariantMatrix(id, variants = []) {
         preview: `<span class="tl-badge tl-badge--danger"><span class="tl-badge__dot"></span>Failed</span>`,
         token: `.tl-badge--danger`,
         intent: `Failed builds, critical issues, and high-priority alerts.`
+      }
+    ],
+    snackbar: [
+      {
+        preview: `<div class="tl-toast tl-toast--info" style="position: static; width: 100%;"><div class="tl-toast__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div><div class="tl-toast__content"><span class="tl-toast__title">Information</span><span class="tl-toast__message">System maintenance scheduled.</span></div></div>`,
+        token: `.tl-toast--info`,
+        intent: `Informational status updates with polite screen-reader announcement.`
+      },
+      {
+        preview: `<div class="tl-toast tl-toast--success" style="position: static; width: 100%;"><div class="tl-toast__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><div class="tl-toast__content"><span class="tl-toast__title">Synchronized</span><span class="tl-toast__message">Tokens published to CDN.</span></div></div>`,
+        token: `.tl-toast--success`,
+        intent: `Positive confirmation of completed actions and background jobs.`
+      },
+      {
+        preview: `<div class="tl-toast tl-toast--warning" style="position: static; width: 100%;"><div class="tl-toast__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="tl-toast__content"><span class="tl-toast__title">Warning</span><span class="tl-toast__message">Session expiring in 2m.</span><button type="button" class="tl-toast__action">Extend</button></div></div>`,
+        token: `.tl-toast--warning`,
+        intent: `Non-blocking alert requiring prompt user attention or undo action.`
+      },
+      {
+        preview: `<div class="tl-toast tl-toast--error" style="position: static; width: 100%;"><div class="tl-toast__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div><div class="tl-toast__content"><span class="tl-toast__title">Sync failure</span><span class="tl-toast__message">Could not reach token service.</span><button type="button" class="tl-toast__action">Retry</button></div></div>`,
+        token: `.tl-toast--error`,
+        intent: `Assertive alert for recoverable network or operational failures.`
       }
     ]
   };

@@ -200,9 +200,12 @@
   --tl-comp-tooltip-padding-x:        var(--tl-sys-space-sm);
   --tl-comp-tooltip-z-index:          var(--tl-sys-z-tooltip);
 
+  /* Toast & Notification System */
   --tl-comp-toast-bg:                 var(--tl-sys-color-surface-container-highest);
   --tl-comp-toast-border:             var(--tl-sys-color-outline);
   --tl-comp-toast-text:               var(--tl-sys-color-on-surface);
+  --tl-comp-toast-title-color:        var(--tl-sys-color-on-surface);
+  --tl-comp-toast-desc-color:         var(--tl-sys-color-on-surface-variant);
   --tl-comp-toast-radius:             var(--tl-sys-shape-container);
   --tl-comp-toast-shadow:             var(--tl-sys-elevation-3);
   --tl-comp-toast-z-index:            var(--tl-sys-z-toast);
@@ -211,6 +214,16 @@
   --tl-comp-toast-close-padding:      var(--tl-sys-space-xs);
   --tl-comp-toast-offset:             var(--tl-sys-space-lg);
   --tl-comp-toast-gap:                var(--tl-sys-density-gap-md);
+  --tl-comp-toast-action-color:       var(--tl-sys-color-primary);
+  --tl-comp-toast-action-hover-bg:    var(--tl-sys-color-surface-container-low);
+  --tl-comp-toast-info-icon:          var(--tl-sys-color-info);
+  --tl-comp-toast-info-border:        var(--tl-sys-color-info-border);
+  --tl-comp-toast-success-icon:       var(--tl-sys-color-success);
+  --tl-comp-toast-success-border:     var(--tl-sys-color-success-border);
+  --tl-comp-toast-warning-icon:       var(--tl-sys-color-warning);
+  --tl-comp-toast-warning-border:     var(--tl-sys-color-warning-border);
+  --tl-comp-toast-error-icon:         var(--tl-sys-color-error);
+  --tl-comp-toast-error-border:       var(--tl-sys-color-error-border);
 
   /* ==========================================================================
      9. TABS & ACCORDION (--tl-comp-tabs-*, --tl-comp-accordion-*)
