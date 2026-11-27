@@ -13,6 +13,7 @@ export class CommandPalette {
     this.input = document.getElementById("tl-search-input");
     this.resultsList = document.getElementById("tl-search-results");
     this.triggerBtn = document.getElementById("tl-search-trigger");
+    this.statusEl = document.getElementById("tl-search-status");
 
     this.selectedIndex = 0;
     this.currentResults = [];
@@ -209,7 +210,7 @@ export class CommandPalette {
       this.input.addEventListener("keydown", (e) => this.handleKeyDown(e));
     }
 
-    // Global shortcut listener (Cmd+K / Ctrl+K / Escape)
+    // Global shortcut listener (Cmd+K / Ctrl+K / Escape / Tab trap)
     window.addEventListener("keydown", (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
@@ -217,6 +218,8 @@ export class CommandPalette {
       } else if (e.key === "Escape" && this.isOpen()) {
         e.preventDefault();
         this.close();
+      } else if (e.key === "Tab" && this.isOpen()) {
+        this.trapFocus(e);
       }
     });
   }
@@ -373,6 +376,42 @@ export class CommandPalette {
     });
 
     this.resultsList.innerHTML = html;
+
+    // Announce count to assistive technologies
+    if (this.statusEl) {
+      if (this.currentResults.length === 0) {
+        this.statusEl.textContent = "No documentation results found.";
+      } else {
+        this.statusEl.textContent = `${this.currentResults.length} documentation result${this.currentResults.length === 1 ? "" : "s"} found. Use arrow keys to navigate.`;
+      }
+    }
+  }
+
+  trapFocus(e) {
+    if (!this.modal) return;
+    const focusable = Array.from(
+      this.modal.querySelectorAll('input, button, [href], [tabindex]:not([tabindex="-1"])')
+    ).filter(el => !el.disabled && el.offsetParent !== null);
+
+    if (focusable.length === 0) {
+      e.preventDefault();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   }
 
   handleKeyDown(e) {

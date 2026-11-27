@@ -47,12 +47,24 @@ export class Dialog {
     this.previouslyFocused = triggerElement || document.activeElement;
     this.overlay.classList.add("is-open");
     this.overlay.setAttribute("aria-hidden", "false");
+    this.overlay.setAttribute("role", "dialog");
+    this.overlay.setAttribute("aria-modal", "true");
     document.body.style.overflow = "hidden";
 
-    // Focus first interactive element inside dialog
+    // Auto-associate title for screen reader announcement
+    const titleEl = this.dialog ? this.dialog.querySelector(".tl-dialog-title") : null;
+    if (titleEl && !this.overlay.hasAttribute("aria-labelledby")) {
+      if (!titleEl.id) titleEl.id = `tl-dialog-title-${Math.random().toString(36).substr(2, 9)}`;
+      this.overlay.setAttribute("aria-labelledby", titleEl.id);
+    }
+
+    // Focus first interactive element inside dialog or dialog shell as fallback
     const focusable = this.getFocusableElements();
     if (focusable.length > 0) {
       setTimeout(() => focusable[0].focus(), 50);
+    } else if (this.dialog) {
+      this.dialog.setAttribute("tabindex", "-1");
+      setTimeout(() => this.dialog.focus(), 50);
     }
   }
 

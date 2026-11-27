@@ -256,56 +256,70 @@ function renderLiveSpecimen(id) {
       `;
     case "text-field":
       return `
-        <div style="width: 100%; max-width: 320px;" class="tl-form-group">
-          <label class="tl-label">Workspace Vanity URL</label>
-          <input type="text" class="tl-input" value="trilayer-design" placeholder="Enter subdomain...">
-          <span class="tl-helper-text">Accessible by all organization members.</span>
+        <div style="width: 100%; max-width: 340px;" class="tl-form-group">
+          <label class="tl-label" for="specimen-vanity-url">
+            Workspace vanity URL <span class="tl-label-required" aria-hidden="true">*</span>
+          </label>
+          <input type="text" id="specimen-vanity-url" class="tl-input" value="trilayer-design" placeholder="Enter subdomain..." aria-required="true" aria-describedby="specimen-vanity-desc">
+          <span id="specimen-vanity-desc" class="tl-helper-text">Accessible by all organization members.</span>
         </div>
       `;
     case "dialog":
       return `
-        <div class="tl-card" style="width: 100%; max-width: 380px;">
-          <div class="tl-card-header">
-            <h3 class="tl-card-title">Revoke API Key?</h3>
-          </div>
-          <div class="tl-card-body">Any automated sync actions will fail immediately.</div>
-          <div class="tl-card-footer">
-            <button class="tl-btn tl-btn--outline tl-btn--sm">Keep</button>
-            <button class="tl-btn tl-btn--danger tl-btn--sm">Revoke Key</button>
+        <div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+          <button type="button" id="specimen-dialog-trigger" class="tl-btn tl-btn--outline" onclick="window.__openSpecimenDialog()">
+            Launch specimen dialog
+          </button>
+          <div id="specimen-dialog-overlay" class="tl-dialog-overlay" role="dialog" aria-modal="true" aria-labelledby="specimen-dialog-title" aria-describedby="specimen-dialog-desc" aria-hidden="true">
+            <div class="tl-dialog">
+              <div class="tl-dialog-header">
+                <h3 class="tl-dialog-title" id="specimen-dialog-title">Revoke API key</h3>
+                <button type="button" class="tl-btn-icon tl-btn-icon--sm" data-dialog-close aria-label="Close dialog" onclick="window.__closeSpecimenDialog()">&times;</button>
+              </div>
+              <div class="tl-dialog-body" id="specimen-dialog-desc">
+                Any automated build synchronizations using this key will fail immediately. This operation cannot be undone.
+              </div>
+              <div class="tl-dialog-footer">
+                <button type="button" class="tl-btn tl-btn--outline tl-btn--sm" data-dialog-close onclick="window.__closeSpecimenDialog()">Cancel</button>
+                <button type="button" class="tl-btn tl-btn--danger tl-btn--sm" onclick="Toast.show({ title: 'Key revoked', message: 'API key successfully deactivated.', type: 'error' }); window.__closeSpecimenDialog();">Confirm revocation</button>
+              </div>
+            </div>
           </div>
         </div>
       `;
     case "checkbox":
       return `
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <label class="tl-checkbox-label">
-            <input type="checkbox" class="tl-checkbox-input" checked>
+        <fieldset style="border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <legend class="tl-label" style="margin-bottom: 4px;">Sync preferences</legend>
+          <label class="tl-checkbox-label" for="cb-auto-sync">
+            <input type="checkbox" id="cb-auto-sync" class="tl-checkbox-input" checked>
             <span>Auto-sync design tokens</span>
           </label>
-          <label class="tl-checkbox-label">
-            <input type="checkbox" class="tl-checkbox-input">
+          <label class="tl-checkbox-label" for="cb-strict-lint">
+            <input type="checkbox" id="cb-strict-lint" class="tl-checkbox-input">
             <span>Enforce strict token linting</span>
           </label>
-        </div>
+        </fieldset>
       `;
     case "radio":
       return `
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <label class="tl-radio-label">
-            <input type="radio" name="r-specimen" class="tl-radio-input" checked>
-            <span>Indigo Velvet Palette (Default)</span>
+        <fieldset style="border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <legend class="tl-label" style="margin-bottom: 4px;">Theme palette</legend>
+          <label class="tl-radio-label" for="r-palette-indigo">
+            <input type="radio" id="r-palette-indigo" name="r-specimen" class="tl-radio-input" checked>
+            <span>Indigo Velvet palette (Default)</span>
           </label>
-          <label class="tl-radio-label">
-            <input type="radio" name="r-specimen" class="tl-radio-input">
-            <span>Emerald Forest Palette</span>
+          <label class="tl-radio-label" for="r-palette-emerald">
+            <input type="radio" id="r-palette-emerald" name="r-specimen" class="tl-radio-input">
+            <span>Emerald Forest palette</span>
           </label>
-        </div>
+        </fieldset>
       `;
     case "switch":
       return `
-        <label class="tl-switch-label">
-          <input type="checkbox" class="tl-switch-input" checked>
-          <span>Dark Mode Synchronizer</span>
+        <label class="tl-switch-label" for="specimen-switch">
+          <input type="checkbox" id="specimen-switch" class="tl-switch-input" role="switch" aria-checked="true" checked onchange="this.setAttribute('aria-checked', this.checked)">
+          <span>Dark mode synchronizer</span>
         </label>
       `;
     case "card":
@@ -778,6 +792,34 @@ if (typeof window !== "undefined") {
         }
       }
     }
+  };
+
+  window.__openSpecimenDialog = function() {
+    const overlay = document.getElementById("specimen-dialog-overlay");
+    if (!overlay) return;
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    const closeBtn = overlay.querySelector("[data-dialog-close]");
+    if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        window.__closeSpecimenDialog();
+        window.removeEventListener("keydown", onKey);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+  };
+
+  window.__closeSpecimenDialog = function() {
+    const overlay = document.getElementById("specimen-dialog-overlay");
+    if (!overlay) return;
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    const trigger = document.getElementById("specimen-dialog-trigger");
+    if (trigger) trigger.focus();
   };
 }
 
