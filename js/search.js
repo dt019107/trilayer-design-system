@@ -186,8 +186,13 @@ export class CommandPalette {
   }
 
   bindEvents() {
-    // Open on button click
+    // Dynamic platform shortcut detection (Cmd+K on Apple, Ctrl+K on Windows/Linux)
+    const isMac = typeof navigator !== "undefined" && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform || navigator.userAgent || "");
+    const shortcutGlyph = isMac ? "⌘K" : "Ctrl+K";
     if (this.triggerBtn) {
+      const kbd = this.triggerBtn.querySelector(".tl-kbd");
+      if (kbd) kbd.textContent = shortcutGlyph;
+      this.triggerBtn.setAttribute("aria-label", `Search documentation (Press ${shortcutGlyph})`);
       this.triggerBtn.addEventListener("click", () => this.open());
     }
 
@@ -279,6 +284,7 @@ export class CommandPalette {
    */
   search(query) {
     const q = query.trim().toLowerCase();
+    this.lastQuery = query.trim();
 
     if (!q) {
       // Default: show quick suggested components & foundations
@@ -321,6 +327,13 @@ export class CommandPalette {
     this.renderResults();
   }
 
+  highlightMatch(text, query) {
+    if (!query || !query.trim() || !text) return text;
+    const cleanQ = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${cleanQ})`, 'gi');
+    return text.replace(regex, '<mark class="tl-search-match">$1</mark>');
+  }
+
   renderResults() {
     if (!this.resultsList) return;
 
@@ -337,6 +350,8 @@ export class CommandPalette {
     let html = "";
     this.currentResults.forEach((item, index) => {
       const isSelected = index === this.selectedIndex;
+      const titleHighlighted = this.highlightMatch(item.title, this.lastQuery);
+      const descHighlighted = this.highlightMatch(item.desc, this.lastQuery);
       html += `
         <div class="tl-search-item ${isSelected ? 'is-selected' : ''}" 
              role="option" 
@@ -345,11 +360,11 @@ export class CommandPalette {
              onclick="window.__selectSearchResult(${index})">
           <div style="flex: 1; min-width: 0;">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
-              <strong style="color: var(--tl-sys-color-on-surface); font-size: 14px;">${item.title}</strong>
+              <strong style="color: var(--tl-sys-color-on-surface); font-size: 14px;">${titleHighlighted}</strong>
               <span class="tl-search-item-cat">${item.category}</span>
             </div>
             <div style="font-size: 12px; color: var(--tl-sys-color-on-surface-variant); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-              ${item.desc}
+              ${descHighlighted}
             </div>
           </div>
           <span style="font-size: 12px; color: var(--tl-sys-color-primary); font-weight: 600;">&rarr;</span>

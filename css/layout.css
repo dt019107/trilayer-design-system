@@ -499,7 +499,6 @@
 .tl-nav-link:hover {
   background-color: var(--tl-sys-color-surface-container-high);
   color: var(--tl-sys-color-on-surface);
-  transform: translateX(3px);
   text-decoration: none;
 }
 
@@ -1115,13 +1114,21 @@
 }
 
 .tl-search-item-cat {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: none;
   padding: 1px 6px;
   border-radius: var(--tl-sys-shape-badge);
   background-color: var(--tl-sys-color-surface-container-high);
   color: var(--tl-sys-color-on-surface-variant);
+}
+
+.tl-search-match {
+  background-color: color-mix(in srgb, var(--tl-sys-color-primary) 18%, transparent);
+  color: var(--tl-sys-color-primary);
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 0 2px;
 }
 
 .tl-search-empty {

@@ -45,7 +45,7 @@ export class NavigationController {
       <div class="tl-sidebar-filter-wrapper">
         <div class="tl-sidebar-filter-box">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="tl-sidebar-filter-icon" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="tl-sidebar-filter" class="tl-sidebar-filter-input" placeholder="Quick filter..." aria-label="Filter navigation items">
+          <input type="text" id="tl-sidebar-filter" class="tl-sidebar-filter-input" placeholder="Filter menu items..." aria-label="Filter navigation items">
           <button id="tl-sidebar-filter-clear" class="tl-sidebar-filter-clear" aria-label="Clear filter" style="display: none;">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
@@ -180,6 +180,12 @@ export class NavigationController {
       link.classList.toggle("is-active", isActive);
       if (isActive) {
         link.setAttribute("aria-current", "page");
+        const parentGroup = link.closest(".tl-nav-group");
+        if (parentGroup) {
+          parentGroup.classList.remove("is-collapsed");
+          const headerBtn = parentGroup.querySelector(".tl-nav-group-header");
+          if (headerBtn) headerBtn.setAttribute("aria-expanded", "true");
+        }
       } else {
         link.removeAttribute("aria-current");
       }
