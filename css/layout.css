@@ -96,7 +96,7 @@
 
 .tl-brand-title {
   font-family: var(--tl-sys-font-family-heading);
-  font-weight: 800;
+  font-weight: 600;
   font-size: var(--tl-sys-typescale-title-large-size);
   letter-spacing: -0.025em;
   color: var(--tl-sys-color-on-surface);
@@ -427,11 +427,11 @@
   display: flex;
   align-items: center;
   gap: var(--tl-sys-space-xs);
-  font-family: var(--tl-sys-font-family-heading);
-  font-size: var(--tl-sys-typescale-label-caps-size);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: var(--tl-sys-typescale-label-caps-track);
+  font-family: var(--tl-sys-font-family-body);
+  font-size: var(--tl-sys-typescale-body-small-size);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
   color: var(--tl-sys-color-on-surface-variant);
 }
 
@@ -513,12 +513,12 @@
 }
 
 .tl-nav-badge {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 600;
   padding: 2px 6px;
-  border-radius: var(--tl-sys-shape-badge);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  border-radius: var(--tl-sys-shape-xs);
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 .tl-nav-badge--stable {
@@ -604,10 +604,10 @@
 .tl-page-title {
   font-size: clamp(26px, 4.5vw, 40px);
   font-family: var(--tl-sys-font-family-heading);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--tl-sys-color-on-surface);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   text-wrap: balance;
 }
 

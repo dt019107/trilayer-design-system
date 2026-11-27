@@ -154,18 +154,18 @@
   /* Display */
   --tl-sys-typescale-display-large-size:   var(--tl-ref-font-size-56);
   --tl-sys-typescale-display-large-line:   var(--tl-ref-line-height-115);
-  --tl-sys-typescale-display-large-weight: var(--tl-ref-font-weight-800);
+  --tl-sys-typescale-display-large-weight: var(--tl-ref-font-weight-600);
   --tl-sys-typescale-display-large-track:  var(--tl-ref-letter-spacing-tight);
 
   /* Headline */
   --tl-sys-typescale-headline-large-size:   var(--tl-ref-font-size-32);
   --tl-sys-typescale-headline-large-line:   var(--tl-ref-line-height-125);
-  --tl-sys-typescale-headline-large-weight: var(--tl-ref-font-weight-700);
+  --tl-sys-typescale-headline-large-weight: var(--tl-ref-font-weight-600);
   --tl-sys-typescale-headline-large-track:  var(--tl-ref-letter-spacing-tight);
 
   --tl-sys-typescale-headline-medium-size:  var(--tl-ref-font-size-24);
   --tl-sys-typescale-headline-medium-line:  var(--tl-ref-line-height-135);
-  --tl-sys-typescale-headline-medium-weight:var(--tl-ref-font-weight-700);
+  --tl-sys-typescale-headline-medium-weight:var(--tl-ref-font-weight-600);
   --tl-sys-typescale-headline-medium-track: var(--tl-ref-letter-spacing-snug);
 
   /* Title */
@@ -176,7 +176,7 @@
 
   --tl-sys-typescale-title-medium-size:  var(--tl-ref-font-size-16);
   --tl-sys-typescale-title-medium-line:  var(--tl-ref-line-height-140);
-  --tl-sys-typescale-title-medium-weight:var(--tl-ref-font-weight-600);
+  --tl-sys-typescale-title-medium-weight:var(--tl-ref-font-weight-500);
   --tl-sys-typescale-title-medium-track: var(--tl-ref-letter-spacing-normal);
 
   /* Body */
@@ -203,8 +203,8 @@
 
   --tl-sys-typescale-label-caps-size:    var(--tl-ref-font-size-11);
   --tl-sys-typescale-label-caps-line:    var(--tl-ref-line-height-100);
-  --tl-sys-typescale-label-caps-weight:  var(--tl-ref-font-weight-700);
-  --tl-sys-typescale-label-caps-track:   var(--tl-ref-letter-spacing-caps);
+  --tl-sys-typescale-label-caps-weight:  var(--tl-ref-font-weight-600);
+  --tl-sys-typescale-label-caps-track:   var(--tl-ref-letter-spacing-normal);
 }
 
 /* ==========================================================================

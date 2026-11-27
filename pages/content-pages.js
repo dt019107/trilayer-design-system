@@ -16,7 +16,7 @@ export const ContentPages = {
           <span class="tl-badge tl-badge--brand">v2.0 Architecture</span>
         </div>
         <p class="tl-page-subtitle">
-          Trilayer is engineered for seamless collaboration between designers and front-end engineers using a unified three-layer token contract.
+          Trilayer specifies a unified three-layer token contract between design files and front-end code.
         </p>
       </div>
 

@@ -78,8 +78,8 @@ export function renderComponentPage(component) {
     <!-- 2. LIVE PLAYGROUND DEMO -->
     <div class="card" style="margin-bottom: 32px; padding: 0; overflow: hidden;">
       <div style="padding: 16px 24px; border-bottom: 1px solid var(--tl-sys-color-outline-variant); background-color: var(--tl-sys-color-surface-container-low); display: flex; align-items: center; justify-content: space-between;">
-        <h2 style="font-size: 16px; margin: 0;">Interactive Demo</h2>
-        <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">Dynamic state testing</span>
+        <h2 style="font-size: 16px; font-weight: 600; margin: 0;">Interactive specimen</h2>
+        <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">Live component states</span>
       </div>
 
       <div class="tl-playground-stage" id="comp-demo-stage">
@@ -88,34 +88,34 @@ export function renderComponentPage(component) {
       </div>
 
       <div class="tl-playground-controls">
-        <span class="tl-playground-control-label">Test Controls:</span>
-        <button class="tl-btn tl-btn--outline tl-btn--sm" id="btn-toggle-anatomy" onclick="window.__toggleAnatomy()" aria-label="Toggle Figma Anatomy Overlay">
+        <span class="tl-playground-control-label">Controls:</span>
+        <button class="tl-btn tl-btn--outline tl-btn--sm" id="btn-toggle-anatomy" onclick="window.__toggleAnatomy()" aria-label="Toggle component anatomy inspection overlay">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          Figma Anatomy
+          Component anatomy
         </button>
-        <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: 'Triggered ${component.title} action', type: 'info' })">Test Trigger</button>
-        <button class="tl-btn tl-btn--secondary tl-btn--sm" onclick="Toast.show({ message: '${component.title} component verified', type: 'success' })">Verify Component</button>
+        <button class="tl-btn tl-btn--outline tl-btn--sm" onclick="Toast.show({ message: '${component.title} action triggered', type: 'info' })">Trigger action</button>
+        <button class="tl-btn tl-btn--secondary tl-btn--sm" onclick="Toast.show({ message: '${component.title} state confirmed', type: 'success' })">Confirm state</button>
       </div>
     </div>
 
-    <!-- 2B. VARIANT MATRIX (Biings Design System Pattern) -->
+    <!-- 2. VARIANT MATRIX -->
     <div class="card" style="margin-bottom: 32px; padding: 0; overflow: hidden;">
       <div style="padding: 16px 24px; border-bottom: 1px solid var(--tl-sys-color-outline-variant); background-color: var(--tl-sys-color-surface-container-low); display: flex; align-items: center; justify-content: space-between;">
-        <h2 style="font-size: 16px; margin: 0;">Variant Matrix</h2>
-        <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">Visual Live Previews &amp; Usage Rules</span>
+        <h2 style="font-size: 16px; font-weight: 600; margin: 0;">Variant matrix</h2>
+        <span style="font-size: 12px; color: var(--tl-sys-color-on-surface-muted);">Supported variants and states</span>
       </div>
       <div style="overflow-x: auto;">
         ${renderVariantMatrix(component.id, component.variants)}
       </div>
     </div>
 
-    <!-- 3. CODE BLOCK TABS (HTML / CSS / FIGMA CODE CONNECT) WITH COPY BUTTON -->
+    <!-- 3. CODE BLOCK TABS (HTML / CSS / FIGMA) WITH COPY BUTTON -->
     <div class="tl-code-block-wrapper">
       <div class="tl-code-header">
         <div class="tl-code-tabs" role="tablist">
           <button class="tl-code-tab-btn is-active" id="tab-html" onclick="window.__switchCodeTab('html')">HTML</button>
-          <button class="tl-code-tab-btn" id="tab-css" onclick="window.__switchCodeTab('css')">CSS (Component Layer)</button>
-          <button class="tl-code-tab-btn" id="tab-figma" onclick="window.__switchCodeTab('figma')">Figma Code Connect (.figma.tsx)</button>
+          <button class="tl-code-tab-btn" id="tab-css" onclick="window.__switchCodeTab('css')">CSS (Component)</button>
+          <button class="tl-code-tab-btn" id="tab-figma" onclick="window.__switchCodeTab('figma')">Figma (.figma.tsx)</button>
         </div>
         <button class="tl-copy-code-btn" id="btn-copy-code" onclick="window.__copyActiveCode()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>

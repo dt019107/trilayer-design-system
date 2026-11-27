@@ -285,7 +285,7 @@ export class Router {
       <div class="tl-home-hero">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
           <div class="tl-hero-eyebrow">
-            Trilayer v2.0 &bull; Three-Tier Token Architecture
+            Trilayer &bull; Three-tier token architecture
           </div>
           <div class="tl-hero-actions-row">
             <a href="tokens/tokens.json" download="trilayer-tokens.json" class="tl-btn tl-btn--primary tl-btn--sm" style="text-decoration: none;">
@@ -301,8 +301,8 @@ export class Router {
           </div>
         </div>
 
-        <h1 style="font-size: clamp(32px, 4.5vw, 48px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.025em; color: var(--tl-sys-color-on-surface);">
-          Three-Tier Token Architecture for Web Applications
+        <h1 style="font-size: clamp(30px, 4vw, 44px); font-weight: 600; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; color: var(--tl-sys-color-on-surface);">
+          Three-tier token architecture for web applications
         </h1>
 
         <p style="font-size: clamp(15px, 1.6vw, 17px); color: var(--tl-sys-color-on-surface-variant); max-width: 65ch; margin-bottom: 24px; line-height: 1.6;">
@@ -314,7 +314,7 @@ export class Router {
           <div class="tl-card" style="padding: 16px; background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline);">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
               <span style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: var(--tl-sys-color-layer-primitives);"></span>
-              <strong style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tl-sys-color-on-surface);">Layer 1 &bull; Primitives</strong>
+              <strong style="font-size: 13px; font-weight: 600; color: var(--tl-sys-color-on-surface);">Layer 1 &bull; Primitives</strong>
             </div>
             <p style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant); margin: 0; line-height: 1.5;">
               Raw palette steps (50&ndash;950), font definitions, and 8pt spatial units. Values are never referenced directly in components.
@@ -324,7 +324,7 @@ export class Router {
           <div class="tl-card" style="padding: 16px; background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline);">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
               <span style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: var(--tl-sys-color-layer-semantic);"></span>
-              <strong style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tl-sys-color-on-surface);">Layer 2 &bull; Semantics</strong>
+              <strong style="font-size: 13px; font-weight: 600; color: var(--tl-sys-color-on-surface);">Layer 2 &bull; Semantics</strong>
             </div>
             <p style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant); margin: 0; line-height: 1.5;">
               Design intent tokens (surface, on-surface, primary, outline). Strict 3-tier pure light theme architecture.
@@ -334,7 +334,7 @@ export class Router {
           <div class="tl-card" style="padding: 16px; background: var(--tl-sys-color-surface-container); border: 1px solid var(--tl-sys-color-outline);">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
               <span style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: var(--tl-sys-color-layer-component);"></span>
-              <strong style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tl-sys-color-on-surface);">Layer 3 &bull; Components</strong>
+              <strong style="font-size: 13px; font-weight: 600; color: var(--tl-sys-color-on-surface);">Layer 3 &bull; Components</strong>
             </div>
             <p style="font-size: 13px; color: var(--tl-sys-color-on-surface-variant); margin: 0; line-height: 1.5;">
               Component-scoped custom properties (<code style="font-size: 11px;">--tl-comp-*</code>) resolving to semantic tokens. Prevents cascading regression risks.
@@ -367,7 +367,7 @@ export class Router {
             
             <!-- 3-Tier Trace Chain -->
             <div style="background: var(--tl-sys-color-surface-container-high); border: 1px solid var(--tl-sys-color-outline); border-radius: var(--tl-sys-shape-control); padding: 12px; margin-top: 4px;">
-              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tl-sys-color-on-surface-muted); margin-bottom: 8px;">Token Resolution Chain</div>
+              <div style="font-size: 12px; font-weight: 600; color: var(--tl-sys-color-on-surface); margin-bottom: 8px;">Token resolution chain</div>
               <div style="font-family: var(--tl-sys-font-family-code); font-size: 11px; display: flex; flex-direction: column; gap: 6px;">
                 <div style="display: flex; align-items: center; justify-content: space-between;"><span style="color: var(--tl-sys-color-on-surface-muted);">Layer 1 Primitive:</span><span style="color: var(--tl-sys-color-link);">--tl-ref-color-indigo-600</span></div>
                 <div style="display: flex; align-items: center; justify-content: space-between;"><span style="color: var(--tl-sys-color-on-surface-muted);">Layer 2 Semantic:</span><span style="color: var(--tl-sys-color-success);">--tl-sys-color-primary</span></div>
@@ -379,7 +379,7 @@ export class Router {
           <!-- Live Reactive Component Playground -->
           <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; background: var(--tl-sys-color-surface-container-high); border: 1px solid var(--tl-sys-color-outline); border-radius: var(--tl-sys-shape-control); padding: 18px;">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tl-sys-color-on-surface-muted);">Component Reactive Binding</span>
+              <span style="font-size: 12px; font-weight: 600; color: var(--tl-sys-color-on-surface);">Component preview</span>
               <span id="hero-contrast-ratio" class="tl-badge tl-badge--brand" style="font-size: 11px; text-transform: none;">7.2:1 AAA</span>
             </div>
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
@@ -400,14 +400,14 @@ export class Router {
           </div>
         </div>
 
-        <!-- Quick-Start Installation & Drop-in Integration (Biings DS Pattern) -->
-        <div class="tl-card tl-has-lift tl-surface-ambient" style="margin-top: 24px; padding: clamp(20px, 3vw, 28px); border-radius: var(--tl-sys-shape-container); border: 1px solid var(--tl-sys-color-outline);">
+        <!-- Quick-Start Installation -->
+        <div class="tl-card tl-surface-ambient" style="margin-top: 24px; padding: clamp(20px, 3vw, 28px); border-radius: var(--tl-sys-shape-container); border: 1px solid var(--tl-sys-color-outline);">
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
             <div>
-              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tl-sys-color-link); margin-bottom: 4px;">Developer Onboarding</div>
-              <h2 style="font-size: 18px; margin: 0; color: var(--tl-sys-color-on-surface);">Quick Start: 3 Steps to Production</h2>
+              <div style="font-size: 12px; font-weight: 600; color: var(--tl-sys-color-link); margin-bottom: 4px;">Setup</div>
+              <h2 style="font-size: 18px; font-weight: 600; margin: 0; color: var(--tl-sys-color-on-surface);">Quick start</h2>
             </div>
-            <span class="tl-badge tl-badge--brand">Zero-Build &bull; ES Modules</span>
+            <span class="tl-badge tl-badge--brand">ES Modules</span>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">

@@ -363,31 +363,26 @@
    ========================================================================== */
 .tl-home-hero {
   position: relative;
-  background:
-    radial-gradient(1000px circle at 50% -10%, color-mix(in srgb, var(--tl-sys-color-primary) 22%, transparent), transparent 70%),
-    radial-gradient(600px circle at 85% 20%, color-mix(in srgb, var(--tl-sys-color-link) 12%, transparent), transparent 60%),
-    var(--tl-sys-color-surface-container-lowest);
+  background-color: var(--tl-sys-color-surface);
   border-radius: var(--tl-sys-shape-container);
   padding: clamp(24px, 4.5vw, 48px) clamp(18px, 4vw, 36px);
   margin-bottom: clamp(48px, 6vw, 64px);
   overflow: hidden;
-  border: 1px solid var(--tl-sys-color-outline-variant);
-  box-shadow: var(--tl-sys-elevation-3);
+  border: 1px solid var(--tl-sys-color-outline);
+  box-shadow: var(--tl-sys-elevation-1);
 }
 
 .tl-hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: var(--tl-sys-space-xs);
-  padding: 6px 12px;
+  padding: 4px 10px;
   background-color: var(--tl-sys-color-surface-container-high);
   border: 1px solid var(--tl-sys-color-outline);
-  border-radius: var(--tl-sys-shape-badge);
+  border-radius: var(--tl-sys-shape-control);
   font-family: var(--tl-sys-font-family-code);
   font-size: var(--tl-sys-typescale-label-caps-size);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-weight: 600;
   color: var(--tl-sys-color-on-surface);
   margin-bottom: var(--tl-sys-space-sm);
   max-width: 100%;
@@ -422,23 +417,8 @@
   height: 8px;
   border-radius: var(--tl-sys-shape-full);
   background-color: var(--tl-sys-color-success);
-  box-shadow: 0 0 8px var(--tl-sys-color-success);
   display: inline-block;
-  animation: tl-pulse 2s infinite;
   flex-shrink: 0;
-}
-
-@keyframes tl-pulse {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
-}
-
-.tl-gradient-text {
-  background: linear-gradient(135deg, var(--tl-sys-color-on-surface) 30%, var(--tl-sys-color-link) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
 }
 
 /* System Metrics Grid (Responsive 2-col on mobile, 4-col on desktop) */
@@ -472,20 +452,21 @@
   display: flex;
   flex-direction: column;
   gap: var(--tl-sys-space-2xs);
-  transition: transform var(--tl-sys-motion-duration-quick) ease, box-shadow var(--tl-sys-motion-duration-quick) ease;
+  transition: border-color var(--tl-sys-motion-duration-quick) ease, box-shadow var(--tl-sys-motion-duration-quick) ease;
 }
 
 .tl-hero-stat-card:hover {
-  transform: translateY(-2px);
+  border-color: var(--tl-sys-color-primary);
   box-shadow: var(--tl-sys-elevation-2);
 }
 
 .tl-hero-stat-value {
   font-family: var(--tl-sys-font-family-heading);
   font-size: clamp(22px, 3.5vw, 32px);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--tl-sys-color-on-surface);
   line-height: 1.1;
+  font-variant-numeric: tabular-nums;
 }
 
 .tl-hero-stat-label {
@@ -772,24 +753,21 @@
    TACTILE MICRO-INTERACTIONS & AMBIENT SHEEN (Biings Pattern)
    ========================================================================== */
 .tl-has-lift {
-  transition: transform var(--tl-sys-motion-duration-quick) cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow var(--tl-sys-motion-duration-quick) cubic-bezier(0.16, 1, 0.3, 1),
-              border-color var(--tl-sys-motion-duration-quick) ease;
+  transition: border-color var(--tl-sys-motion-duration-quick) ease,
+              box-shadow var(--tl-sys-motion-duration-quick) ease;
 }
 
 .tl-has-lift:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--tl-sys-elevation-3);
-  border-color: color-mix(in srgb, var(--tl-sys-color-primary) 40%, var(--tl-sys-color-outline));
+  border-color: var(--tl-sys-color-primary);
+  box-shadow: var(--tl-sys-elevation-2);
 }
 
 .tl-has-lift:active {
-  transform: scale(0.988) translateY(0px);
+  box-shadow: var(--tl-sys-elevation-1);
 }
 
 .tl-surface-ambient {
   position: relative;
-  background-image: radial-gradient(ellipse at top left, color-mix(in srgb, var(--tl-sys-color-primary) 6%, transparent) 0%, transparent 70%);
 }
 
 /* 3-Column Variant Matrix Table */
